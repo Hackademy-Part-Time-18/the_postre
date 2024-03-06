@@ -2,7 +2,7 @@
     <div class="container-fluid p-5 bg-info text-center text-white">
         <div class="row justify-content-conter">
             <h1 class="display">
-                Inserisci un Articolo
+                <a href="{{route('article.create)}}">Inserisci un Articolo</a>
             </h1>
         </div>
     </div>
