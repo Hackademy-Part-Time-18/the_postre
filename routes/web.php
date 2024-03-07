@@ -20,3 +20,6 @@ Route::get('/article/create', [ArticleController::class, 'create'])->name ('arti
 Route::post('/article/store', [ArticleController::class, 'store'])->name('article.store');
 Route::get('/articles/{article}/show', [ArticleController::class, 'show'])->name('articles.show');
 Route::get('/articles/{category}/index', [ArticleController::class, 'articlesForcategory'])->name('articles.category');
+Route::get('/login',[PublicController::class , 'login'])->name ('login');
+Route::get('/register',[PublicController::class , 'register'])->name ('register');
+
