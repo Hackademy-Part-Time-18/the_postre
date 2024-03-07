@@ -22,4 +22,4 @@ Route::get('/articles/{article}/show', [ArticleController::class, 'show'])->name
 Route::get('/articles/{category}/index', [ArticleController::class, 'articlesForcategory'])->name('articles.category');
 Route::get('/login',[PublicController::class , 'login'])->name ('login');
 Route::get('/register',[PublicController::class , 'register'])->name ('register');
-
+Route::get('/article/index', [ArticleController::class, 'index'])->name('article.index');

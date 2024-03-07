@@ -7,19 +7,26 @@
             </h1>
         </header>
 
-    <p>
-            @foreach($articles as $article)
-        <div class="card" style="width: 18rem;">
-            <img src="{{Storage::url($article->img) }}" class="card-img-top" alt="{{ $article->title }}">
-            <div class="card-body">
-                <h5 class="card-title">{{ $article->title }}</h5>
-                <p class="card-text">{{ substr($article->description, 0, 20)}}</p>
-                <a href="{{ route('articles.category', $article->category) }}" class="card-text">{{ $article->category→name }}</a>
-                <a href="{{ route('articles.show', $article) }}" class="btn btn-primary">Go somewhere</a>
+        <x-layout>
+            <div class="container my-5">
+                <div class="row justify-content-around"> @foreach($articles as $article)
+                    <div class="col-12 col-md-3">
+                        <div class="card">
+                            <img src="{{Storage::url($article->image)}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title"> {{$article->title}}</h5>
+                                <p class="card-text">{{$article->subtitle}}</p>
+                                <p class="small text-muted fst-italic text-capitalize">{{$article->category->name}}</p>
+                            </div>
+                            <div class="card-footer text-muted d-flex justify-content-between align-items-center"> Redatto il {{$article->created_at->format('d/m/Y')}} da {{$article->user->name}}
+                            <a href="#" class="btn btn-info text-white">Leggi</a>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
             </div>
-        </div>
-        @endforeach
-    </p>
+        </x-layout>
 
     </div>
 </x-layout>
