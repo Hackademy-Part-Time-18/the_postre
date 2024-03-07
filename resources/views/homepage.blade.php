@@ -1,8 +1,11 @@
 <x-layout>
     <div>
-        <div>
-            <h1>The Postre</h1>
-        </div>
+        <header>
+            <h1 class="site-heading text-center text-faded d-none d-lg-block">
+                <span class="site-heading-upper text-primary mb-3">A Free Bootstrap Business Theme</span>
+                <span class="site-heading-lower">Business Casual</span>
+            </h1>
+        </header>
 
     </div>
 </x-layout>
