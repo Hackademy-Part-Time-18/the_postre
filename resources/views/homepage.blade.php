@@ -6,7 +6,7 @@
                 <span class="site-heading-lower">Business Casual</span>
             </h1>
         </header>
-
+     
     <p>
             @foreach($articles as $article)
         <div class="card" style="width: 18rem;">
