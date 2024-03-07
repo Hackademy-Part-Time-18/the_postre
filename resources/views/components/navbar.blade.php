@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
-  <div class="container w-2">
+  <div class="container col-12">
               <div class="container-fluid">
                 <div>
                     <ul>
@@ -9,7 +9,7 @@
               </div>
       <div class="collapse navbar-collapse mx-auto" id="navbarSupportedContent">
           <ul class="navbar-nav mx-auto">
-              <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="">Home</a></li>
+              <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{{ route('homepage') }}">Home</a></li>
                 {{-- navbar (user login) --}}
               @auth
               <li class="nav-item dropdown">
