@@ -23,3 +23,4 @@ Route::get('/articles/{category}/index', [ArticleController::class, 'articlesFor
 Route::get('/login',[PublicController::class , 'login'])->name ('login');
 Route::get('/register',[PublicController::class , 'register'])->name ('register');
 Route::get('/article/index', [ArticleController::class, 'index'])->name('article.index');
+Route::get('/article/show/{article}', [ArticleController::class, 'show'])->name('article.show');

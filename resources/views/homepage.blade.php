@@ -6,7 +6,8 @@
                 <span class="site-heading-lower">Business Casual</span>
             </h1>
         </header>
-     
+
+        <x-layout>
             <div class="container my-5">
                 <div class="row justify-content-around"> @foreach($articles as $article)
                     <div class="col-12 col-md-3">
@@ -25,6 +26,7 @@
                     @endforeach
                 </div>
             </div>
+        </x-layout>
 
     </div>
 </x-layout>
