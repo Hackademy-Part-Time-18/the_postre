@@ -18,9 +18,9 @@ return new class extends Migration
             $table->longText('body');
             $table->string('image');
             $table->unsignedBigInteger('user_id')->nullable();
-            $table->foreign('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->nullable();
             $table->unsignedBigInteger('category_id')->nullable();
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('SET_NULL');
+            $table->foreign('category_id')->references('id')->on('categories')->nullOnDelete();
             $table->timestamps();
         });
     }
