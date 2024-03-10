@@ -24,3 +24,4 @@ Route::get('/login',[PublicController::class , 'login'])->name ('login');
 Route::get('/register',[PublicController::class , 'register'])->name ('register');
 Route::get('/article/index', [ArticleController::class, 'index'])->name('article.index');
 Route::get('/article/show/{article}', [ArticleController::class, 'show'])->name('article.show');
+Route::get('/home',[PublicController::class , 'homepage'])->name ('homepage');
