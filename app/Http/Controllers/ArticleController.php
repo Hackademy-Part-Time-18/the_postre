@@ -21,7 +21,7 @@ class ArticleController extends Controller
     public function byCategory(Category $category)
     {
         $articles = $category->articles()->orderby('created_at' , 'desc')->get();
-        return view('article.byCategory' , compact('category' , 'articles'));
+        return view('article.by-category' , compact('category' , 'articles'));
     }
 
     /**
@@ -64,6 +64,11 @@ class ArticleController extends Controller
     public function show(Article $article)
     {
         return view('article.show', compact('article'));
+    }
+
+    public function __construct()
+    {
+        $this->middleware('auth')->except('index' , 'show');
     }
 
     /**

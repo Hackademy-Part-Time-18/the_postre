@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\PublicController;
 use Illuminate\Support\Facades\Route;
@@ -24,6 +25,7 @@ Route::post('/article/store', [ArticleController::class, 'store'])->name('articl
 // Insert article
 Route::get('/article/index', [ArticleController::class, 'index'])->name('article.index');
 Route::get('/articles/{category}/index', [ArticleController::class, 'articlesForcategory'])->name('articles.category');
+Route::get('/articles/category/{category}', [ArticleController::class, 'byCategory'])->name('articles.byCategory');
 // Show article
 Route::get('/article/show/{article}', [ArticleController::class, 'show'])->name('article.show');
 Route::get('/articles/{article}/show', [ArticleController::class, 'show'])->name('articles.show');
@@ -33,3 +35,7 @@ Route::get('/login',[PublicController::class , 'login'])->name ('login');
 Route::get('/register',[PublicController::class , 'register'])->name ('register');
 //
 Route::get('/{url?}',[PublicController::class , 'navbar'])->name ('navbar');
+//
+Route::middleware('admin')->group(function(){
+    Route::get('/admin/dashboard' , [AdminController::class, 'dashboard'])->name('admin.dashboard');
+});
