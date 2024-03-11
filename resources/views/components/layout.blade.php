@@ -13,6 +13,7 @@
         rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet" />
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @yield('head')
     <title>The Postre</title>
 
 </head>

@@ -48,7 +48,7 @@
             </div>
         </div>
     </div>
-    
+    @section('head')
     {{-- <p class="tip">Click on button in image container</p>
     <div class="cont">
       <div class="form sign-in">
