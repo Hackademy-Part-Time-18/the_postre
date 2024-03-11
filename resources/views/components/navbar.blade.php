@@ -49,7 +49,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="{{ route('register') }}">Registrati</a></li>
                             <li><a class="dropdown-item" href="{{ route('login') }}">Accedi</a></li>
-                            <li><a class="dropdown-item" href="{{ route('login') }}">Inserisci articolo</a></li>
+                            <li><a class="dropdown-item" href="{{ route('article.create') }}">Inserisci articolo</a></li>
                         </ul>
                     @endguest
             </ul>

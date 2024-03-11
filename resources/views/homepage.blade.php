@@ -46,17 +46,10 @@
             </div>
         </header>
     </div>
-<<<<<<< HEAD
-        @if(session('message'))
-        <div class="alert alert-success text-center">{{session('message')}}
-        </div>
-        @endif
-=======
     @if (session('message'))
         <div class="alert alert-success text-center">{{ session('message') }}
-        </div>div
+        </div>
     @endif
->>>>>>> 2d0aebe83159e5b22bf591ccd04a0e9f8525d4e1
 
     <div class="container my-5">
         <div class="row justify-content-around">
