@@ -18,10 +18,10 @@ class ArticleController extends Controller
      return view ('article.index', compact('articles'));
     }
 
-    public function articlesForcategory(Category $category)
+    public function byCategory(Category $category)
     {
         $articles = $category->articles()->orderby('created_at' , 'desc')->get();
-        return view('article.articlesForcategory' , compact('category' , 'articles'));
+        return view('article.byCategory' , compact('category' , 'articles'));
     }
 
     /**

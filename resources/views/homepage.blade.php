@@ -45,10 +45,10 @@
                 </div>
             </div>
         </header>
-
-        @if (session('message'))
-            <div class="alert alert-success text-center">{{ session('message') }}
-            </div>div
+    </div>
+        @if(session('message'))
+        <div class="alert alert-success text-center">{{session('message')}}
+        </div>div 
         @endif
 
         <div class="container my-5">
@@ -75,7 +75,4 @@
         </div>
         <div style="height: 5000px">
 
-        </div>
-
-    </div>
 </x-layout>
