@@ -1,6 +1,6 @@
 <x-layout>
     <div>
-        {{-- <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+         <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                     <div class="col-lg-8 align-self-end">
                         <h1 class="text-white font-weight-bold">Il tuo posto preferito per sapere la vita degli altri</h1>
                         <hr class="divider" />
@@ -9,7 +9,7 @@
                         <p class="text-white-75 mb-5">!!Tutto lo sapiamo!!</p>
                         <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
                     </div>
-                </div> --}}
+                </div> 
 
         {{-- header --}}
         <header class="masthead" name="page-top">
