@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\CareerRequestMail;
 use App\Models\Article;
 use Illuminate\Http\Request;
 use Illuminate\Routing\RouteUri;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class PublicController extends Controller
 {
@@ -14,28 +17,50 @@ class PublicController extends Controller
         $articles = Article::orderBy('created_at', 'desc')->take(6)->get();
         return view('homepagepage', compact('articles'));
     }
-    public function login()
-    {
-        return view('auth.login');
-    }
-    public function register()
-    {
-        return view('auth.register');
-    }
-    public function navbar($url = null) {
-        $urlPath = parse_url(url()->previous(), PHP_URL_PATH); // Ottieni il percorso dell'URL precedente
-    
-        // Verifica se l'URL precedente contiene un hash, come /#example
-        if (strpos($urlPath, '#') !== false) {
-            return redirect()->to('#page-top');
+    public function login () {
+            return view('auth.login');
         }
-    
-        // Se l'URL attuale è / o /homepage o nessun valore è stato fornito
-        if ($url === '/' || $url === 'homepage' || $url === null) {
-            return redirect()->to('#page-top');
-        } else {
-            return redirect()->route('homepage');
+        public function register () {
+            return view('auth.register');
         }
-    }    
-    
+
+
+    public function careers()
+    {
+        return view('careers');
+    }
+
+    public function careersSubmit(Request $request)
+    {
+        $request->validate([
+            'role' => 'required',
+            'email' => 'required|email',
+            'message' => 'required',
+        ]);
+
+       $user = Auth::user();
+       $role = $request->role;
+       $email = $request->email;
+       $message = $request->message;
+
+       Mail::to('admin@thepostre.it')->send(new CareerRequestMail(compact('role', 'email', 'message')));
+
+       switch ($variable) {
+        case 'admin':
+            $user->is_admin = NULL;
+            break;
+
+        case 'revisor':
+             $user->is_revisor = NULL;
+                break;
+
+        case 'writer':
+             $user->is_writer = NULL;
+                    break;
+       }
+
+       $user->update();
+
+       return redirect(route('homepage'))->with('message' , 'Grazie per averci contattato!');
+    }
 }
