@@ -9,7 +9,7 @@ class PublicController extends Controller
 {    
    public function homepage () {
     $articles = Article::orderBy('created_at', 'desc')->take(6)->get();
-        return view('home', compact('articles'));
+        return view('homepage', compact('articles'));
     }
     public function login () {
             return view('auth.login');
@@ -17,4 +17,21 @@ class PublicController extends Controller
         public function register () {
             return view('auth.register');
         }
+
+
+    public function careers()
+    {
+        return view('careers');
+    }
+
+    public function careersSubmit(Request $request)
+    {
+        $request->validate([
+            'role' => 'required',
+            'email' => 'required|email',
+            'message' => 'required',
+        ]);
+
+        dd($request->all());
+    }
 }

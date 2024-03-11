@@ -6,7 +6,7 @@
                 <span class="site-heading-lower">The Postre</span>
             </h1>
         </header>
-        
+    </div>
         @if(session('message'))
         <div class="alert alert-success text-center">{{session('message')}}
         </div>div 
@@ -31,6 +31,4 @@
             </div>
         </div>
 
-
-    </div>
 </x-layout>
