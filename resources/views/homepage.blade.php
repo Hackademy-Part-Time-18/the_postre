@@ -1,15 +1,15 @@
 <x-layout>
     <div>
-         <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
-                    <div class="col-lg-8 align-self-end">
-                        <h1 class="text-white font-weight-bold">Il tuo posto preferito per sapere la vita degli altri</h1>
-                        <hr class="divider" />
-                    </div>
-                    <div class="col-lg-8 align-self-baseline">
-                        <p class="text-white-75 mb-5">!!Tutto lo sapiamo!!</p>
-                        <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
-                    </div>
-                </div> 
+        {{-- <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+            <div class="col-lg-8 align-self-end">
+                <h1 class="text-white font-weight-bold">Il tuo posto preferito per sapere la vita degli altri</h1>
+                <hr class="divider" />
+            </div>
+            <div class="col-lg-8 align-self-baseline">
+                <p class="text-white-75 mb-5">!!Tutto lo sapiamo!!</p>
+                <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
+            </div>
+        </div> --}}
 
         {{-- header --}}
         <header class="masthead" name="page-top">
@@ -46,33 +46,33 @@
             </div>
         </header>
     </div>
-        @if(session('message'))
-        <div class="alert alert-success text-center">{{session('message')}}
+    @if (session('message'))
+        <div class="alert alert-success text-center">{{ session('message') }}
         </div>div
-        @endif
+    @endif
 
-        <div class="container my-5">
-            <div class="row justify-content-around">
-                @foreach ($articles as $article)
-                    <div class="col-12 col-md-3">
-                        <div class="card">
-                            <img src="{{ Storage::url($article->image) }}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title"> {{ $article->title }}</h5>
-                                <p class="card-text">{{ $article->subtitle }}</p>
-                                <p class="small text-muted fst-italic text-capitalize">{{ $article->category->name }}
-                                </p>
-                            </div>
-                            <div class="card-footer text-muted d-flex justify-content-between align-items-center">
-                                Redatto il {{ $article->created_at->format('d/m/Y') }} da {{ $article->user->name }}
-                                <a href="{{ route('article.show', compact('article')) }}"
-                                    class="btn btn-info text-white">Leggi</a>
-                            </div>
+    <div class="container my-5">
+        <div class="row justify-content-around">
+            @foreach ($articles as $article)
+                <div class="col-12 col-md-3">
+                    <div class="card">
+                        <img src="{{ Storage::url($article->image) }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title"> {{ $article->title }}</h5>
+                            <p class="card-text">{{ $article->subtitle }}</p>
+                            <p class="small text-muted fst-italic text-capitalize">{{ $article->category->name }}
+                            </p>
+                        </div>
+                        <div class="card-footer text-muted d-flex justify-content-between align-items-center">
+                            Redatto il {{ $article->created_at->format('d/m/Y') }} da {{ $article->user->name }}
+                            <a href="{{ route('article.show', compact('article')) }}"
+                                class="btn btn-info text-white">Leggi</a>
                         </div>
                     </div>
-                @endforeach
-            </div>
+                </div>
+            @endforeach
         </div>
-        <div style="height: 5000px">
+    </div>
+    <div style="height: 5000px">
 
 </x-layout>
