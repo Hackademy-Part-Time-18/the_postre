@@ -28,7 +28,7 @@
             </div>
             @endif
 
-            <form action="" method="" class="p-5">
+            <form action="{{route('careers.submit')}}" method="POST" class="p-5">
                 @csrf
                 <div class="mb-3">
                     <label for="role" class="form-label">Per quale ruolo ti stai candidando?</label>
@@ -41,7 +41,7 @@
                 </div>
                 <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" name="email" class="form-control" id="email" value="{{ old('email') ?? Auth::user()->email }}">
+                <input type="email" name="email" class="form-control" id="email" value="">
                 </div>
                 <div class="mb-3">
                 <label for="message" class="form-label">Parlaci di te</label>
