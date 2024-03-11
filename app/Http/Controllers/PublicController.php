@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Mail;
 
 class PublicController extends Controller
 {
+
     protected $url;
     public function homepage()
     {

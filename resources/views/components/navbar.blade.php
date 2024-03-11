@@ -8,7 +8,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav mx-auto">
-                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('article.create') }}">article</a></li>
                 <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
                 <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
@@ -61,3 +61,20 @@
         </form>
     </div>
 </nav>
+{{--     public function navbar($url = null) {
+        $urlPath = parse_url(url()->previous(), PHP_URL_PATH); // Ottieni il percorso dell'URL precedente
+    
+        // Verifica se l'URL precedente contiene un hash, come /#example
+        if (strpos($urlPath, '#') !== false) {
+            return redirect()->to('#page-top');
+        }
+    
+        // Se l'URL attuale è / o /homepage o nessun valore è stato fornito
+        if ($url === '/' || $url === 'homepage' || $url === null) {
+            return redirect()->to('#page-top');
+        } else {
+            return redirect()->route('homepage');
+        }
+    }    
+    
+ --}}
