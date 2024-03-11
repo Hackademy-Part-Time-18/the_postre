@@ -2,11 +2,15 @@
     <div>
         <header>
             <h1 class="site-heading text-center text-faded d-none d-lg-block">
-                <span class="site-heading-upper text-primary mb-3">A Free Bootstrap Business Theme</span>
-                <span class="site-heading-lower">Business Casual</span>
+                <span class="site-heading-upper text-primary mb-3">Sito di articoli online</span>
+                <span class="site-heading-lower">The Postre</span>
             </h1>
         </header>
-
+    </div>
+        @if(session('message'))
+        <div class="alert alert-success text-center">{{session('message')}}
+        </div>div 
+        @endif
 
         <div class="container my-5">
             <div class="row justify-content-around">
@@ -28,6 +32,4 @@
             </div>
         </div>
 
-
-    </div>
 </x-layout>
