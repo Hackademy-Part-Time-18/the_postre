@@ -1,5 +1,5 @@
 <x-layout>
-    {{-- <div>
+    <div>
         <div>
             <h1>register</h1>
         </div>
@@ -47,81 +47,65 @@
                 </form>
             </div>
         </div>
-    </div> --}}
-    
-    <div class="main">
-        @if ($errors->any ())
-        <div>
-            <ul>
-                @foreach ($errors->all () as $error)
-                <li>
-                    {{$error}}
-                </li>
-                @endforeach
-            </ul>
-        </div>
-        @endif
-        <section class="signup">
-    
-            <div class="container">
-                <div class="signup-content">
-                    <form method="POST" id="signup-form" class="signup-form">
-                        <h2 class="form-title">Create account</h2>
-                        <div class="form-group">
-                            <input type="text" class="form-input" name="name" id="name"
-                                placeholder="Your Name">
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-input" name="email" id="email"
-                                placeholder="Your Email">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-input" name="password" id="password"
-                                placeholder="Password">
-                            <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-input" name="re_password" id="re_password"
-                                placeholder="Repeat your password">
-                        </div>
-                        <div class="form-group">
-                            <input type="checkbox" name="agree-term" id="agree-term" class="agree-term">
-                            <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all
-                                statements in <a href="#" class="term-service">Terms of service</a></label>
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" name="submit" id="submit" class="form-submit" value="Sign up">
-                        </div>
-                    </form>
-                    <p class="loginhere">
-                        Have already an account ? <a href="#" class="loginhere-link">Login here</a>
-                    </p>
-                </div>
-            </div>
-        </section>
     </div>
     
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="js/main.js"></script>
+    {{-- <p class="tip">Click on button in image container</p>
+    <div class="cont">
+      <div class="form sign-in">
+        <h2>Welcome back,</h2>
+        <label>
+          <span>Email</span>
+          <input type="email" />
+        </label>
+        <label>
+          <span>Password</span>
+          <input type="password" />
+        </label>
+        <p class="forgot-pass">Forgot password?</p>
+        <button type="button" class="submit">Sign In</button>
+        <button type="button" class="fb-btn">Connect with <span>facebook</span></button>
+      </div>
+      <div class="sub-cont">
+        <div class="img">
+          <div class="img__text m--up">
+            <h2>New here?</h2>
+            <p>Sign up and discover great amount of new opportunities!</p>
+          </div>
+          <div class="img__text m--in">
+            <h2>One of us?</h2>
+            <p>If you already has an account, just sign in. We've missed you!</p>
+          </div>
+          <div class="img__btn">
+            <span class="m--up">Sign Up</span>
+            <span class="m--in">Sign In</span>
+          </div>
+        </div>
+        <div class="form sign-up">
+          <h2>Time to feel like home,</h2>
+          <label>
+            <span>Name</span>
+            <input type="text" />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" />
+          </label>
+          <label>
+            <span>Password</span>
+            <input type="password" />
+          </label>
+          <button type="button" class="submit">Sign Up</button>
+          <button type="button" class="fb-btn">Join with <span>facebook</span></button>
+        </div>
+      </div>
+    </div>
     
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-    
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-    
-        gtag('config', 'UA-23581568-13');
-    </script>
-    <script defer=""
-        src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317"
-        integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA=="
-        data-cf-beacon="{&quot;rayId&quot;:&quot;862db2b1c85c0e4f&quot;,&quot;version&quot;:&quot;2024.2.4&quot;,&quot;token&quot;:&quot;cd0b4b3a733644fc843ef0b185f98241&quot;}"
-        crossorigin="anonymous"></script>
-    
-
-
+    <a href="https://dribbble.com/shots/3306190-Login-Registration-form" target="_blank" class="icon-link">
+      <img src="http://icons.iconarchive.com/icons/uiconstock/socialmedia/256/Dribbble-icon.png">
+    </a>
+    <a href="https://codepen.io/suez/pen/XWyBpre" target="_blank" class="link-footer">New 2023 Version</a>
+    <a href="https://twitter.com/NikolayTalanov" target="_blank" class="icon-link icon-link--twitter">
+      <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/twitter-128.png">
+    </a> --}}
 </x-layout>    
 
