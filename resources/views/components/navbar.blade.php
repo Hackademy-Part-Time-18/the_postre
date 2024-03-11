@@ -1,66 +1,62 @@
-<nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
-  <div class="container col-12">
-              <div class="container-fluid">
-                <div>
-                    <ul>
-
-                    </ul>
-                </div>
-              </div>
-      <div class="collapse navbar-collapse mx-auto" id="navbarSupportedContent">
-          <ul class="navbar-nav mx-auto">
-              <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{{ route('homepage') }}">Home</a></li>
+<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+    <div class=" container px-4 px-lg-5">
+        <a class="navbar-brand" href="{{ route('navbar') }}">ThePostre</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container px-4 px-lg-5">
+        <div class="collapse navbar-collapse mx-auto" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
                 {{-- navbar (user login) --}}
-              @auth
-              <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="{{route('article.create')}}" id="navbarDropdown" role="button"
-                      data-bs-toggle="dropdown" aria-expanded="false">
-                      Benvenuto {{ Auth::user()->name }}
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li>
-                          <a class="dropdown-item" href="">Profilo</a>
-                      </li>
-                      <li>
-                          <hr class="dropdown-divider">
-                      </li>
-                      <li><a class="dropdown-item" href="#"
-                              onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a>
-                      </li>
-                      <form method="post" action="{{ route('logout') }}" id="form-logout" class="d-none">
-                          @csrf
-                      </form>
-                  </ul>
-              </li>
-              @endauth
+                @auth
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="{{ route('article.create') }}" id="navbarDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Benvenuto {{ Auth::user()->name }}
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item" href="">Profilo</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#"
+                                    onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a>
+                            </li>
+                            <form method="post" action="{{ route('logout') }}" id="form-logout" class="d-none">
+                                @csrf
+                            </form>
+                        </ul>
+                    </li>
+                @endauth
                 {{-- navbar(user no login) --}}
-              @guest
-              <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                      data-bs-toggle="dropdown" aria-expanded="false"> Benvenuto Ospite </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="{{ route('register') }}">Registrati</a></li>
-                      <li><a class="dropdown-item" href="{{ route('login') }}">Accedi</a></li>
-                  </ul>
-              @endguest
-          </ul>
-      </div>
-      {{-- search bar --}}
-      <div class="container-fluid mx-auto">
-        <form class="d-flex input-group w-auto">
-          <input
-            type="search"
-            class="form-control rounded"
-            placeholder="Search"
-            aria-label="Search"
-            aria-describedby="search-addon"
-          />
-          <span class="input-group-text border-0" id="search-addon">
-            <i class="fas fa-search"></i>
-          </span>
+                @guest
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false"> Benvenuto Ospite </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{{ route('register') }}">Registrati</a></li>
+                            <li><a class="dropdown-item" href="{{ route('login') }}">Accedi</a></li>
+                        </ul>
+                    @endguest
+            </ul>
+        </div>
+
+        <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
         </form>
-      </div>
-  </div>
-
+    </div>
 </nav>
-
