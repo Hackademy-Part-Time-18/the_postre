@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout :navbar="$navbar">
 <div>
         <header>
             <h1 class="site-heading text-center text-faded d-none d-lg-block">
