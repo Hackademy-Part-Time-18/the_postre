@@ -1,5 +1,4 @@
-<x-layout>
-
+<x-layout :navbar=false>
     <div class ="row ">
         <div class="col-md-6 mx-auto p-0">
             <div class="card">

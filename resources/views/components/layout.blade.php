@@ -17,6 +17,7 @@
 
 <body id="page-top">
     <x-navbar />
+
     <div>
         {{ $slot }}
 

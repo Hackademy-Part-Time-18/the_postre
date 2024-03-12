@@ -12,11 +12,12 @@ use Illuminate\Support\Facades\Mail;
 class PublicController extends Controller
 {
 
-    protected $url;
+    private $url;
     public function homepage()
     {
+        $navbar = true;
         $articles = Article::orderBy('created_at', 'desc')->take(6)->get();
-        return view('homepage', compact('articles'));
+        return view('homepage', compact('articles'),['navbar'=> $navbar]);
     }
     public function login () {
             return view('auth.login');
@@ -60,7 +61,7 @@ class PublicController extends Controller
                     break;
        }
 
-       $user->update();
+    //    $user->update();
 
        return redirect(route('homepage'))->with('message' , 'Grazie per averci contattato!');
 
