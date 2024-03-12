@@ -1,4 +1,4 @@
-<nav class=" navbar @if ($navbar = false)  navbar-no @endif  navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+<nav class=" navbar  navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
     <div class=" container px-4 px-lg-5">
         <a class="navbar-brand" href="{{ route('navbar') }}">ThePostre</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"

@@ -16,8 +16,12 @@
 </head>
 
 <body id="page-top">
+    @if ($navbar) 
     <x-navbar />
-
+     @else
+     <x-navbar />
+    <div style="height: 70px"></div>
+     @endif
     <div>
         {{ $slot }}
 
