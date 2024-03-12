@@ -11,6 +11,6 @@
     <p>Ricevuta da {{ $info['email']}}</p>
 
     <h4>Messaggio:</h4>
-    <p>{{ $info['message']}}</p>
+    <p>{{ $info['presentation']}}</p>
 </body>
 </html>

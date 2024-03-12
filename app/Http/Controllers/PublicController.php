@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\CareerRequestMail;
+use App\Mail\RequestRoleMail;
 use App\Models\Article;
 use Illuminate\Http\Request;
 use Illuminate\Routing\RouteUri;
@@ -32,7 +32,7 @@ class PublicController extends Controller
         return view('careers');
     }
 
-    public function careersSubmit(Request $request)
+    public function sendRoleRequest(Request $request)
     {
         $request->validate([
             'role' => 'required',
@@ -41,11 +41,12 @@ class PublicController extends Controller
         ]);
 
        $user = Auth::user();
-       $role = $request->role;
-       $email = $request->email;
-       $message = $request->message;
+       $role = $request->input('role');
+       $email = $request->input('email');
+       $presentation = $request->input('presentation');
+       $requestMail = new RequestRoleMail(compact('role', 'email', 'presentation'));
 
-       Mail::to('admin@thepostre.it')->send(new CareerRequestMail(compact('role', 'email', 'message')));
+       Mail::to('admin@thepostre.it')->send($requestMail);
 
        switch ($role) {
         case 'admin':
@@ -61,7 +62,7 @@ class PublicController extends Controller
                     break;
        }
 
-    //    $user->update();
+       $user->update();
 
        return redirect(route('homepage'))->with('message' , 'Grazie per averci contattato!');
 
