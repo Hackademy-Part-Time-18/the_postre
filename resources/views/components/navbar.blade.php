@@ -13,10 +13,6 @@
                 <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
             </ul>
-        </div>
-    </div>
-    <div class="container px-4 px-lg-5">
-        <div class="collapse navbar-collapse mx-auto" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto">
                 {{-- navbar (user login) --}}
                 @auth
@@ -32,9 +28,10 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#"
+                            <li><a class="dropdown-item" href="/"
                                     onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a>
                             </li>
+                            <li><a class="dropdown-item" href="{{ route('article.create') }}">Inserisci articolo</a></li>
                             <form method="post" action="{{ route('logout') }}" id="form-logout" class="d-none">
                                 @csrf
                             </form>
@@ -49,10 +46,14 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="{{ route('register') }}">Registrati</a></li>
                             <li><a class="dropdown-item" href="{{ route('login') }}">Accedi</a></li>
-                            <li><a class="dropdown-item" href="{{ route('article.create') }}">Inserisci articolo</a></li>
                         </ul>
                     @endguest
             </ul>
+
+        </div>
+    </div>
+    <div class="container px-4 px-lg-5">
+        <div class="collapse navbar-collapse mx-auto" id="navbarSupportedContent">
         </div>
 
         <form class="d-flex">

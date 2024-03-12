@@ -48,7 +48,7 @@
                                     </div> --}}
                                 </div>
                                 {{-- register form --}}
-
+                            </form>
 
                                 <form action="{{ route('register') }}" method="POST">
                                     @csrf
@@ -85,7 +85,7 @@
                                                 id="password_confirmation" placeholder="Repeat your password">
                                         </div>
                                         <div class="group">
-                                            <input type="submit" class="button" value="Sign Up">
+                                            <button type="submit" class="button" value="Sign Up"></button>
                                         </div>
                                         <div class="hr"></div>
                                     </div>
