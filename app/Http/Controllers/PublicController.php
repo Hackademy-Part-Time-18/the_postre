@@ -46,7 +46,7 @@ class PublicController extends Controller
 
        Mail::to('admin@thepostre.it')->send(new CareerRequestMail(compact('role', 'email', 'message')));
 
-       switch ($variable) {
+       switch ($role) {
         case 'admin':
             $user->is_admin = NULL;
             break;
@@ -63,5 +63,11 @@ class PublicController extends Controller
        $user->update();
 
        return redirect(route('homepage'))->with('message' , 'Grazie per averci contattato!');
+
     }
+    public function workWithUs()
+    {
+        return view('workWithUs');
+    }
+    
 }
