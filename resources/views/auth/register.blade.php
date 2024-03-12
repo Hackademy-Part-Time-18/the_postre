@@ -85,7 +85,7 @@
                                                 id="password_confirmation" placeholder="Repeat your password">
                                         </div>
                                         <div class="group">
-                                            <button type="submit" class="button" value="Sign Up"></button>
+                                            <input type="submit" class="button" value="Sign Up">
                                         </div>
                                         <div class="hr"></div>
                                     </div>
