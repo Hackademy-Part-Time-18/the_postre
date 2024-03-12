@@ -1,102 +1,101 @@
 <x-layout>
-    {{-- <div>
-        <div>
-            <h1>register</h1>
-        </div>
 
-    </div>
-    <div>
-        <div>
-            <div>
-                @if ($errors->any())
-                    <div>
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>
-                                    {{ $error }}
-                                </li>
-                            @endforeach
-                        </ul>
+    <div class ="row ">
+        <div class="col-md-6 mx-auto p-0">
+            <div class="card">
+                <div class="login-box">
+                    <div class="login-snip">
+                        <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1"
+                            class="tab">Accedi</label>
+                        <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2"
+                            class="tab">Registrati</label>
+                        <div class="login-space">
+                            {{-- login --}}
+                            <form action="{{ route('login') }}" method="POST">
+                                @csrf
+                                <div class="login">
+                                    @if ($errors->any())
+                                        <div>
+                                            <ul>
+                                                @foreach ($errors->all() as $error)
+                                                    <li>
+                                                        {{ $error }}
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    @endif
+                                    <div class="group">
+                                        <label for="email" class="label">Email</label>
+                                        <input name="email" type="email" class="input" id="email"
+                                            placeholder="Enter your email" value="{{ old('email') }}">
+                                    </div>
+                                    <div class="group">
+                                        <label for="password" class="label">Password</label>
+                                        <input name="password" type="password" class="input" id="password"
+                                            placeholder="Enter your password">
+                                    </div>
+                                    <div class="group">
+                                        <input id="check" type="checkbox" class="check" checked>
+                                        <label for="check"><span class="icon"></span>Ricordami</label>
+                                    </div>
+                                    <div class="group">
+                                        <input type="submit" class="button " value="Sign In">
+                                    </div>
+                                    <div class="hr"></div>
+                                    {{-- <div class="foot">
+                                      <p id="username"><a href="#tab-2"> non sei registrato?</a></p>
+                                        <a href="#">Forgot Password?</a>
+                                    </div> --}}
+                                </div>
+                                {{-- register form --}}
+
+
+                                <form action="{{ route('register') }}" method="POST">
+                                    @csrf
+                                    <div class="sign-up-form">
+                                        @if ($errors->any())
+                                            <div>
+                                                <ul>
+                                                    @foreach ($errors->all() as $error)
+                                                        <li>
+                                                            {{ $error }}
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        @endif
+                                        <div class="group">
+                                            <label for="username" class="label">Username</label>
+                                            <input name="name" type="text" class="input" id="username"
+                                                value="{{ old('name') }}" placeholder="Create your Username">
+                                        </div>
+                                        <div class="group">
+                                            <label for="email" class="label">Email</label>
+                                            <input type="text" id="email" class="input" name="email"
+                                                placeholder="Enter your email address">
+                                        </div>
+                                        <div class="group">
+                                            <label for="password" class="label">Password</label>
+                                            <input name="password" type="password" class="input" id="password"
+                                                placeholder="Create your password">
+                                        </div>
+                                        <div class="group">
+                                            <label for="password_confirmation" class="label">Password confirm</label>
+                                            <input name="password_confirmation" type="password" class="input"
+                                                id="password_confirmation" placeholder="Repeat your password">
+                                        </div>
+                                        <div class="group">
+                                            <input type="submit" class="button" value="Sign Up">
+                                        </div>
+                                        <div class="hr"></div>
+                                    </div>
+                                </form>
+                        </div>
                     </div>
-                @endif
-                    <div>
-                        <label for="username" class="form-label">Username</label>
-                        <input name="name" type="text" class="form-control" id="username" value="{{ old('name') }}">
-                    </div>
-                    <div>
-                        <label for="email" class="form-label">Email</label>
-                    <div>
-                        <label for="password" class="form-label">Password</label>
-                        <input name="password" type="password" class="form-control" id="password">
-                    </div>
-                    <div>
-                        <label for="password_confirmation" class="form-label">Password confirm</label>
-                        <input name="password_confirmation" type="password" class="form-control"
-                            id="password_confirmation">
-                    </div>
-                    <div>
-                        <button class="btn bg-info text-white">Register</button>
-                        <p class="small mt-2" id="username"> sei già registrato? <a href="{{ route('login') }}">clicca
-                                qui</a></p>
-                    </div>
-                </form>
+                </div>
             </div>
         </div>
-    </div> --}}
-    <section class="vh-100 bg-image"
-  style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
-  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
-    <div class="container h-100">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-          <div class="card" style="border-radius: 15px;">
-            <div class="card-body p-5">
-              <h2 class="text-uppercase text-center mb-5">Create an account</h2>
-
-              <form action="{{ route('register') }}" method="POST">
-                @csrf
-            <div class="form-outline mb-4">
-                  <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example1cg">Your Name</label>
-                </div>
-
-                <div class="form-outline mb-4">
-                  <input type="email" id="form3Example3cg" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example3cg">Your Email</label>
-                </div>
-
-                <div class="form-outline mb-4">
-                  <input type="password" id="form3Example4cg" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example4cg">Password</label>
-                </div>
-
-                <div class="form-outline mb-4">
-                  <input type="password" id="form3Example4cdg" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example4cdg">Repeat your password</label>
-                </div>
-
-                <div class="form-check d-flex justify-content-center mb-5">
-                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
-                  <label class="form-check-label" for="form2Example3g">
-                    I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
-                  </label>
-                </div>
-
-                <div class="d-flex justify-content-center">
-                  <button type="button"
-                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
-                </div>
-
-                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!"
-                    class="fw-bold text-body"><u>Login here</u></a></p>
-
-              </form>
-
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-</section>
+
 </x-layout>

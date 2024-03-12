@@ -1,4 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+
+<nav @if(!isset($hasHeader) || !$hasHeader)@endif class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
     <div class=" container px-4 px-lg-5">
         <a class="navbar-brand" href="{{ route('navbar') }}">ThePostre</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
@@ -61,6 +62,7 @@
         </form>
     </div>
 </nav>
+
 {{--     public function navbar($url = null) {
         $urlPath = parse_url(url()->previous(), PHP_URL_PATH); // Ottieni il percorso dell'URL precedente
     
