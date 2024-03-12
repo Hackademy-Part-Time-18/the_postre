@@ -20,7 +20,7 @@ class PublicController extends Controller
         return view('homepage', compact('articles' , 'navbar'));
     }
     public function login () {
-            return view('auth.login');
+            return view('auth.register');
         }
         public function register () {
             return view('auth.register');

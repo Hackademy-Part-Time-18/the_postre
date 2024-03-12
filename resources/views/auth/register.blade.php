@@ -1,6 +1,7 @@
 <x-layout :navbar=false>
-    <div class ="row ">
-        <div class="col-md-6 mx-auto p-0">
+    <div class="bg-100"></div>
+    <div class ="row">
+        <div class="col-md-6 col-ms-12 mx-auto p-0">
             <div class="card">
                 <div class="login-box">
                     <div class="login-snip">

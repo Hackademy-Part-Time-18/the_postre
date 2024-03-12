@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout :navbar=false>
 <div>
 <div>
     <h1>Login</h1>
