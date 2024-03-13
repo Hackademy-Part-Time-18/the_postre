@@ -1,4 +1,4 @@
-<x-layout :navbar=false>
+<x-layout>
     <div class="container-fluid p-5 bg-info text-center text-white">
         <div class="row justify-content-conter">
             <h1 class="display">

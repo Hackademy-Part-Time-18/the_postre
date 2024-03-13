@@ -16,12 +16,10 @@
 </head>
 
 <body id="page-top">
-    @if ($navbar) 
     <x-navbar />
-     @else
-     <x-navbar />
+    @if (request()->route()->getName()!='homepage') 
     <div style="height: 70px"></div>
-     @endif
+    @endif
     <div>
         {{ $slot }}
 
