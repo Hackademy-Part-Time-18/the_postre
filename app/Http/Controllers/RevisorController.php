@@ -23,4 +23,10 @@ class RevisorController extends Controller
         $articles = Article::where('is_accepted', true)->orderBy('created_at', 'desc')->take(6)->get();
         return view('homepage', compact('articles'));
     }
+
+    public function articles_by_category(Category $category){
+        $articles = Article::where('category_id' , $category->id)->where('is_accepted' , true)->orderBy('created_at', 'DESC')->get();
+
+        return view('article.category' , compact('articles', 'category')); 
+    }
 }
