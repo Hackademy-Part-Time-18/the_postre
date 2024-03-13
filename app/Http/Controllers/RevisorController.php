@@ -17,4 +17,18 @@ class RevisorController extends Controller
     {
         return view ('revisor.article-detail' , compact('article'));
     }
+
+    public function acceptArticle(Article $article){
+        $article->is_accepted = true;
+        $article->save();
+
+        return redirect()-> route('revisor.dashboard');
+    }
+
+    public function rejectArticle(Article $article){
+        $article->is_accepted = false;
+        $article->save();
+
+        return redirect()->route('revisor.dashboard');
+    }
 }
