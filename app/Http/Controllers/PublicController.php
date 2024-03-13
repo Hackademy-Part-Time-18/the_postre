@@ -15,9 +15,8 @@ class PublicController extends Controller
     private $url;
     public function homepage()
     {
-        $navbar = true;
         $articles = Article::orderBy('created_at', 'desc')->take(6)->get();
-        return view('homepage', compact('articles' , 'navbar'));
+        return view('homepage', compact('articles'));
     }
     public function login () {
             return view('auth.login');
