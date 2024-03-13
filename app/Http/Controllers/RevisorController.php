@@ -43,7 +43,5 @@ class RevisorController extends Controller
         $article->save();
 
         return redirect()->route('revisor.dashboard');
-
-   }
-
+ 
 }
