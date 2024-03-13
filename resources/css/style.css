@@ -10,7 +10,10 @@ background-size: cover;
 background-position: center;
 z-index: -1;
 }
-
+/* Header css */
+.header{
+    height: 50%;
+}
 /* CSS Register and Login */
 body{
 margin:0;
