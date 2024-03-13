@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class RevisorController extends Controller
@@ -42,5 +43,7 @@ class RevisorController extends Controller
         $article->save();
 
         return redirect()->route('revisor.dashboard');
-    }
+
+   }
+
 }
