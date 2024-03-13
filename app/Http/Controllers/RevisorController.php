@@ -15,7 +15,19 @@ class RevisorController extends Controller
 
     public function articleDetail(Article $article)
     {
-        return view ('revisor.article-detail' , compact('article'));
+        return view('Revisor.article-detail', compact('article'));
+    }
+
+    public function home()
+    {
+        $articles = Article::where('is_accepted', true)->orderBy('created_at', 'desc')->take(6)->get();
+        return view('homepage', compact('articles'));
+    }
+
+    public function articles_by_category(Category $category){
+        $articles = Article::where('category_id' , $category->id)->where('is_accepted' , true)->orderBy('created_at', 'DESC')->get();
+
+        return view('article.category' , compact('articles', 'category')); 
     }
 
     public function acceptArticle(Article $article){
