@@ -56,7 +56,7 @@
                     @endguest
                 @endif
             </ul>
-            <form class="d-flex col-md-6">
+            <form class="d-flex col-md-6" style="width: 20vw;">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
             </form>
