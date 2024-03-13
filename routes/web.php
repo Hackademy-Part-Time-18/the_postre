@@ -25,11 +25,12 @@ Route::post('/article/store', [ArticleController::class, 'store'])->name('articl
 // Insert article
 Route::get('/article/index', [ArticleController::class, 'index'])->name('article.index');
 Route::get('/articles/{category}/index', [ArticleController::class, 'articlesForcategory'])->name('articles.category');
-Route::get('/articles/category/{category}', [ArticleController::class, 'byCategory'])->name('articles.byCategory');
+Route::get('/articles/category/{category}', [ArticleController::class, 'byCategory'])->name('article.byCategory');
 // Show article
 Route::get('/article/show/{article}', [ArticleController::class, 'show'])->name('article.show');
 Route::get('/articles/{article}/show', [ArticleController::class, 'show'])->name('articles.show');
 Route::get('/article/category/{category}' , [ArticleController::class, 'byCategory'])->name('article.byCategory');
+Route::get('/article/user/{user}' , [ArticleController::class, 'byUser'])->name('article.byUser');
 // Login routes
 Route::get('/login',[PublicController::class , 'login'])->name ('login');
 // Register routes
@@ -37,6 +38,16 @@ Route::get('/register',[PublicController::class , 'register'])->name ('register'
 //
 Route::get('/{url?}',[PublicController::class , 'navbar'])->name ('navbar');
 //
+Route::get('/work-with-us', [PublicController::class, 'workWithUs'])->name('work.with.us');
+Route::post('/user/send-role-request', [PublicController::class, 'sendRoleRequest'])->name('user.role.request');
+//
 Route::middleware('admin')->group(function(){
     Route::get('/admin/dashboard' , [AdminController::class, 'dashboard'])->name('admin.dashboard');
+    Route::get('/admin/{user}/set-revisor', [AdminController::class, 'makeUserRevisor'])->name('admin.makeUserRevisor');
+    Route::get('/admin/{user}/set-admin' , [AdminController::class, 'makeUserAdmin'])->name('admin.makeUserAdmin');
+    Route::get('/admin/{user}/set-writer', [AdminController::class, 'makeuserWriter'])->name('admin.makeUserWriter');
+});
+Route::middleware('writer')->group(function(){
+    Route::get('/article/create', [ArticleController::class,  'create'])->name('article.create');
+    Route::post('/article/store', [ArticleController::class, 'store'])->name('article.store');
 });

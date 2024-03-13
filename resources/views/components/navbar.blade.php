@@ -6,17 +6,17 @@
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
+        <div class="collapse navbar-collapse justify-content-between" id="navbarResponsive">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item"><a class="nav-link" href="{{ route('article.create') }}">article</a></li>
+                @if(request()->route()->getName()=='homepage')
+
                 <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
                 <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+
+                @endif
             </ul>
-        </div>
-    </div>
-    <div class="container px-4 px-lg-5">
-        <div class="collapse navbar-collapse mx-auto" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto">
                 {{-- navbar (user login) --}}
                 @auth
@@ -32,6 +32,8 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
+                            <li><a class="dropdown-item" href="{{ route('article.create') }}">Inserisci articolo</a></li>
+
                             <li><a class="dropdown-item" href="#"
                                     onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a>
                             </li>
@@ -46,20 +48,20 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false"> Benvenuto Ospite </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{{ route('register') }}">Registrati</a></li>
-                            <li><a class="dropdown-item" href="{{ route('login') }}">Accedi</a></li>
-                            <li><a class="dropdown-item" href="{{ route('login') }}">Inserisci articolo</a></li>
+                        <ul class="dropdown-menu mb-2" aria-labelledby="navbarDropdown">
+                            <li ><a id="btn-accedi" class="dropdown-item" href="{{ route('register') }}">Registrati</a></li>
+                            <li ><a id="btn-registrati" class="dropdown-item" href="{{ route('login') }}">Accedi</a></li>
                         </ul>
                     @endguest
             </ul>
+            <div class="container mx-auto px-4 px-lg-5">
+                <form class="d-flex col-md-6">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"
+                            style="border: orange !important;"></i></button>
+                </form>
+            </div>
         </div>
-
-        <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
-        </form>
-    </div>
 </nav>
 {{--     public function navbar($url = null) {
         $urlPath = parse_url(url()->previous(), PHP_URL_PATH); // Ottieni il percorso dell'URL precedente

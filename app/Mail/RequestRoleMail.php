@@ -9,7 +9,7 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class CareerRequestMail extends Mailable
+class RequestRoleMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -20,6 +20,15 @@ class CareerRequestMail extends Mailable
     public function __construct($info)
     {
         $this->info = $info;
+    }
+
+    public function build()
+    {
+        return $this->view('mail.Rolerequest',
+        [
+            'info' => $this->info
+        ]
+        );
     }
 
     /**

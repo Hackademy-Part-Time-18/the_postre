@@ -46,17 +46,10 @@
             </div>
         </header>
     </div>
-<<<<<<< HEAD
-        @if(session('message'))
-        <div class="alert alert-success text-center">{{session('message')}}
-        </div>
-        @endif
-=======
     @if (session('message'))
         <div class="alert alert-success text-center">{{ session('message') }}
-        </div>div
+        </div>
     @endif
->>>>>>> 2d0aebe83159e5b22bf591ccd04a0e9f8525d4e1
 
     <div class="container my-5">
         <div class="row justify-content-around">
@@ -67,8 +60,7 @@
                         <div class="card-body">
                             <h5 class="card-title"> {{ $article->title }}</h5>
                             <p class="card-text">{{ $article->subtitle }}</p>
-                            <p class="small text-muted fst-italic text-capitalize">{{ $article->category->name }}
-                            </p>
+                            <p class="small text-muted fst-italic text-capitalize">{{ $article->category->name }}</p>
                         </div>
                         <div class="card-footer text-muted d-flex justify-content-between align-items-center">
                             Redatto il {{ $article->created_at->format('d/m/Y') }} da {{ $article->user->name }}
