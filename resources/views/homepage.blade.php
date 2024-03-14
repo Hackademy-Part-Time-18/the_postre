@@ -37,7 +37,7 @@
         <div class="header">
 
         <header class="masthead" name="page-top">
-            <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+            <div class="row gx-4 gx-lg-6 h-100 align-items-center justify-content-center text-center">
                 <div class="col-lg-8 align-self-end">
                     <h1 class="text-white font-weight-bold">Il tuo posto preferito per sapere la vita degli altri</h1>
                     <hr class="divider" />
@@ -57,7 +57,7 @@
     <div class="container my-5">
         <div class="row justify-content-around">
             @foreach ($articles as $article)
-                <div class="col-12 col-md-3">
+                <div class="col-12 col-md-6 col-sm-6">
                     <div class="card">
                         <img src="{{ Storage::url($article->image) }}" class="card-img-top" alt="...">
                         <div class="card-body">

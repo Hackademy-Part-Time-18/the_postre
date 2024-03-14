@@ -1,11 +1,7 @@
 <x-layout>
-    <div class="container-fluid p-5 bg-info text-center text-white">
-        <div class="row justify-content-conter">
-            <h1 class="display">
-                <a href="{{route('article.create')}}">Inserisci un Articolo</a>
-            </h1>
-        </div>
-    </div>
+    {{-- background --}}
+    <div class="bg-100"></div>
+    {{-- background --}}
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-12 col-md-8">
