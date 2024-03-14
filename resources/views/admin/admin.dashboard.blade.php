@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col-12">
             <h2>Richiesta di revisore</h2>
-            <x-revisor-requests-table :revisorRequests="$revisoreRequests" role="revisore"/>
+            <x-revisor-requests-table :revisorRequests="$revisorRequests" role="revisore"/>
         </div>
     </div>
 </div>

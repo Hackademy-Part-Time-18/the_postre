@@ -24,26 +24,16 @@
 
             </div>
             <div class="col-12 col-md-6">
-                @if ($errors->any())
-                <div class="alert alert-danger"></div>
-                <ul>
-                    @foreach ($errors->all() as $error)
-                    <li>{{$error}}</li>
-                    @endforeach
-                </ul>
-            </div>
-            @endif
-
-            <form action="{{route('user.role.request')}}" method="POST" class="p-5">
+                <form action="{{route('user.role.request')}}" method="POST" class="p-5">
                 @csrf
-                <div class="mb-3">
-                    <label for="role" class="form-label">Per quale ruolo ti stai candidando?</label>
-                    <select name="role" id="role" class="form-control">
-                        <option value="">Scegli qui</option>
-                        <option value="admin">Amministratore</option>
-                        <option value="revisor">Revisore</option>
-                        <option value="writer">Scrittore</option>
-                    </select>
+                    <div class="mb-3">
+                        <label for="role" class="form-label">Per quale ruolo ti stai candidando?</label>
+                        <select name="role" id="role" class="form-control">
+                            <option value="">Scegli qui</option>
+                            <option value="admin">Amministratore</option>
+                            <option value="revisor">Revisore</option>
+                            <option value="writer">Scrittore</option>
+                        </select>
                 </div>
                 <div class="mb-3">
                 <label for="email" class="form-label h5">Inviaci la tua email</label>
