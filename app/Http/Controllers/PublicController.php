@@ -61,14 +61,14 @@ class PublicController extends Controller
                     break;
        }
 
-       $user->updat();
+       $user->update();
 
        return redirect(route('homepage'))->with('message' , 'Grazie per averci contattato!');
 
     }
     public function workWithUs()
     {
-        return view('workWithUs');
+        return view('workwithus');
     }
     
 }

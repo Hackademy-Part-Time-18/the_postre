@@ -46,4 +46,6 @@ class RevisorController extends Controller
         return view('article.category' , compact('articles', 'category')); 
     }
 
+
+
 }
