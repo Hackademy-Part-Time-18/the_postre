@@ -63,8 +63,8 @@ class PublicController extends Controller
        $user->update();
 
        return redirect(route('homepage'))->with('message' , 'Grazie per averci contattato!');
-
     }
+
     public function workWithUs()
     {
         return view('workwithus');
