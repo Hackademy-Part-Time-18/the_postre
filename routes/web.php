@@ -37,9 +37,7 @@ Route::get('/login',[PublicController::class , 'login'])->name ('login');
 // Register routes
 Route::get('/register',[PublicController::class , 'register'])->name ('register');
 //
-Route::get('/{url?}',[PublicController::class , 'navbar'])->name ('navbar');
-//
-Route::get('/work-with-us', [PublicController::class, 'workwithus'])->name('work.with.us');
+Route::get('/work-with-us', [PublicController::class, 'workWithUs'])->name('work.with.us');
 Route::post('/user/send-role-request', [PublicController::class, 'sendRoleRequest'])->name('user.role.request');
 //
 Route::middleware('admin')->group(function(){

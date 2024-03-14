@@ -1,18 +1,34 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
     <div class=" container px-4 px-lg-5 ">
-        <a class="navbar-brand" href="{{ route('navbar') }}">ThePostre</a>
+        <a class="navbar-brand" href="{{ route('homepage') }}">ThePostre</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
             aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon">{{ assets('favicon.ico') }}</span>
+            <span class="navbar-toggler-icon">{{ asset('favicon.ico') }}</span>
         </button>
         <div class="collapse navbar-collapse " id="navbarResponsive">
             <ul class="navbar-nav mx-auto align-items-start">
-                @if (request()->route()->getName() == 'homepage')
-                    <li class="nav-item"><a class="nav-link" href="{{ route('article.create') }}">article</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('admin.dashboard') }}">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    @if (request()->route()->getName() == 'homepage'||request()->route()->getName() == 'work.with.us')
+                        data-bs-toggle="dropdown" aria-expanded="false">Categoria</a>
+                    <ul class="dropdown-menu mb-2" aria-labelledby="navbarDropdown">
+                            @foreach ($categories as $category)
+                                <li><a id="btn-registrati" class="dropdown-item"
+                                        href="">{{ $category['name'] }}</a>
+                                </li>
+                            @endforeach
+                        @endif
+                    </ul>
+                    @if (request()->route()->getName() == 'homepage'||request()->route()->getName() == 'work.with.us')
+                    @auth
+                        
+                    <li class="nav-item"><a class="nav-link" href="{{ route('work.with.us') }}">Lavora con noi</a>
+                    </li>
+                    @endauth
+                <li class="nav-item"><a class="nav-link" href="{{ route('admin.dashboard') }}">Portfolio</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 @endif
             </ul>
             <ul class="navbar-nav mx-auto">
@@ -31,7 +47,8 @@
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="{{ route('article.create') }}">Inserisci articolo</a>
+                                <li><a class="dropdown-item" href="{{ route('article.create') }}">Inserisci
+                                        articolo</a>
                                 </li>
                                 <li><a class="dropdown-item" href="#"
                                         onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a>
@@ -57,8 +74,8 @@
                     @endguest
                 @endif
             </ul>
-            <div class="">
-                <form style="width: 30vw;" class="d-flex">
+            <div class="mx-auto">
+                <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
                 </form>

@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Mail;
 class PublicController extends Controller
 {
 
-    private $url;
     public function homepage()
     {
         $articles = Article::orderBy('created_at', 'desc')->take(6)->get();

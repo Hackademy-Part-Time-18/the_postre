@@ -34,7 +34,6 @@
                 </a>
             </div>
         </div> --}}
-        <div class="header">
 
         <header class="masthead" name="page-top">
             <div class="row gx-4 gx-lg-6 h-100 align-items-center justify-content-center text-center">
@@ -48,12 +47,14 @@
                 </div>
             </div>
         </header>
-    </div>
+{{-- lavora con noi --}}
+
+        {{-- message --}}
     @if (session('message'))
         <div class="alert alert-success text-center">{{ session('message') }}
         </div>
     @endif
-
+{{-- create article card --}}
     <div class="container my-5">
         <div class="row justify-content-around">
             @foreach ($articles as $article)
