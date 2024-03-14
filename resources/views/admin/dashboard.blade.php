@@ -21,7 +21,7 @@
     <div class="row">
         <div class="col-12">
             <h2>Richiesta di scrittore</h2>
-            <x-writer-request-table :writerRequests="$writerRequests" role="scrittore"/>
+            <x-writer-requests-table :writerRequests="$writerRequests" role="scrittore"/>
         </div>
     </div>
 </div>
