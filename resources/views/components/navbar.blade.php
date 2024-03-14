@@ -11,7 +11,7 @@
                 @if (request()->route()->getName() == 'homepage')
                     <li class="nav-item"><a class="nav-link" href="{{ route('article.create') }}">article</a></li>
                     <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('admin.dashboard') }}">Portfolio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 @endif
             </ul>
@@ -56,10 +56,12 @@
                     @endguest
                 @endif
             </ul>
-            <form class="d-flex col-md-6" style="width: 20vw;">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
-            </form>
+            <div class="">
+                <form class="d-flex col-md-6" style="width: 20vw;">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
+                </form>
+            </div>
         </div>
     </div>
 </nav>

@@ -168,9 +168,8 @@ a{color:inherit;text-decoration:none}
 .foot{
 text-align:center;
 }
-.card{
+.card-register{
 width: 500px;
-left: 100px;
 }
 
 ::placeholder{
