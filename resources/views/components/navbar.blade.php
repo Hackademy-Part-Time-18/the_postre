@@ -4,7 +4,7 @@
         <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
             aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon">{{ assets('favicon.ico') }}</span>
         </button>
         <div class="collapse navbar-collapse " id="navbarResponsive">
             <ul class="navbar-nav mx-auto align-items-start">
@@ -50,14 +50,15 @@
                             <ul class="dropdown-menu mb-2" aria-labelledby="navbarDropdown">
                                 <li><a id="btn-accedi" class="dropdown-item" href="{{ route('register') }}">Registrati</a>
                                 </li>
-                                <li><a id="btn-registrati" class="dropdown-item" href="{{ route('login') }}">Accedi</a></li>
+                                <li><a id="btn-registrati" class="dropdown-item" href="{{ route('login') }}">Accedi</a>
+                                </li>
                             </ul>
                         </li>
                     @endguest
                 @endif
             </ul>
             <div class="">
-                <form class="d-flex col-md-6" style="width: 20vw;">
+                <form style="width: 30vw;" class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
                 </form>
@@ -65,20 +66,3 @@
         </div>
     </div>
 </nav>
-{{--     public function navbar($url = null) {
-        $urlPath = parse_url(url()->previous(), PHP_URL_PATH); // Ottieni il percorso dell'URL precedente
-    
-        // Verifica se l'URL precedente contiene un hash, come /#example
-        if (strpos($urlPath, '#') !== false) {
-            return redirect()->to('#page-top');
-        }
-    
-        // Se l'URL attuale è / o /homepage o nessun valore è stato fornito
-        if ($url === '/' || $url === 'homepage' || $url === null) {
-            return redirect()->to('#page-top');
-        } else {
-            return redirect()->route('homepage');
-        }
-    }    
-    
---}}
