@@ -17,13 +17,12 @@
     @if (request()->route()->getName()!='homepage') 
     <div style="height: 70px"></div>
     @endif
-    <div>
-        {{ $slot }}
 
-    </div>
+    {{ $slot }}
 
 
 
+    <x-footer/>
 </body>
 
 </html>

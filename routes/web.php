@@ -39,6 +39,7 @@ Route::get('/register',[PublicController::class , 'register'])->name ('register'
 //
 Route::get('/work-with-us', [PublicController::class, 'workWithUs'])->name('work.with.us');
 Route::post('/user/send-role-request', [PublicController::class, 'sendRoleRequest'])->name('user.role.request');
+Route::post('/invia-mail',[PublicController::class, 'send'])->name('send');
 //
 Route::middleware('admin')->group(function(){
     Route::get('/admin/dashboard' , [AdminController::class, 'dashboard'])->name('admin.dashboard');

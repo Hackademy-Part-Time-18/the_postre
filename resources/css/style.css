@@ -10,15 +10,15 @@ background-size: cover;
 background-position: center;
 z-index: -1;
 }
-/* Header css */
-.header{
-    height: 50%;
+/* message css */
+.bg-message{
+    color: #fff;
+    background-color: rgb(244, 98, 58);
 }
 /* CSS Register and Login */
 body{
 margin:0;
-color:#6a6f8c;
-background:#c8c8c8;
+background:#efeeee;
 font:600 16px/18px 'Open Sans',sans-serif;
 }
 
