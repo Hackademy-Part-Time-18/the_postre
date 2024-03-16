@@ -11,7 +11,7 @@
             </div>
             <div class="col-lg-8 align-self-baseline">
                 <p class="text-white-75 mb-5">!!Tutto lo sapiamo!!</p>
-                <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
+                <a class="btn btn-primary btn-xl" href="{{ route('article.index') }}">Tutti gli articoli</a>
             </div>
         </div>
     </header>
@@ -40,7 +40,7 @@
                         <div class="card-footer text-muted d-flex justify-content-between align-items-center">
                             Redatto il {{ $article->created_at->format('d/m/Y') }} da {{ $article->user->name }}
                             <a href="{{ route('article.show', compact('article')) }}"
-                                class="btn bg-message text-white">Leggi</a>
+                                class="btn btn-dark bg-message text-white border-0">Leggi</a>
                         </div>
                     </div>
                 </div>

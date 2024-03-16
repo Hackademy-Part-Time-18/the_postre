@@ -10,6 +10,10 @@ background-size: cover;
 background-position: center;
 z-index: -1;
 }
+/* border card */
+.border-05{
+    border-radius: 1%;
+}
 /* message css */
 .bg-message{
     color: #fff;

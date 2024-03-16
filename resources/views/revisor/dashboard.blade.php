@@ -1,4 +1,5 @@
 <x-layout>
+    <div class="bg-100"></div>
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-6">
@@ -9,7 +10,7 @@
         </div>
         <div class="row">
             <div class="col-12">
-                <x-revisor-table :articles="articles"/>
+                <x-revisor-table :articles="articles" />
 
             </div>
 

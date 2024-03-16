@@ -8,28 +8,26 @@
         </button>
         <div class="collapse navbar-collapse " id="navbarResponsive">
             <ul class="navbar-nav mx-auto align-items-start">
-                @if (request()->route()->getName() == 'homepage' || request()->route()->getName() == 'work.with.us')
+                @if (request()->route()->getName() != 'register' && request()->route()->getName() != 'login')
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">Categoria</a>
                         <ul class="dropdown-menu mb-2" aria-labelledby="navbarDropdown">
                             @foreach ($categories as $category)
                                 <li><a id="btn-registrati" class="dropdown-item"
-                                        href="">{{ $category['name'] }}</a>
+                                        href="{{ route('article.byCategory',$category->name)}}">{{ $category['name'] }}</a>
                                 </li>
                             @endforeach
                         </ul>
                     </li>
                 @endif
-                @if (request()->route()->getName() == 'homepage' || request()->route()->getName() == 'work.with.us')
-                    @auth
-                        <li class="nav-item"><a class="nav-link" href="{{ route('work.with.us') }}">Lavora con noi</a>
-                        </li>
-                    @endauth
-                    <li class="nav-item"><a class="nav-link" href="#recent">Recenti</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contactaci</a></li>
+                @auth
+                    <li class="nav-item"><a class="nav-link" href="{{ route('work.with.us') }}">Lavora con noi</a></li>
+                @endauth
+                @if (request()->route()->getName() == 'homepage')
+                    <li class="nav-item"><a class="nav-link" href="#recent">Recenti</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">Chi siamo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contattaci</a></li>
                 @endif
             </ul>
             {{-- navbar (user login) --}}
@@ -45,11 +43,8 @@
                                 <li>
                                     <a class="dropdown-item" href="">Profilo</a>
                                 </li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="{{ route('article.create') }}">Inserisci
-                                        articolo</a>
+                                <li><a class="dropdown-item" href="{{ route('admin.dashboard') }}">Admin dashboard</a></li>                               
+                                 <li><a class="dropdown-item" href="{{ route('article.create') }}">Inserisciarticolo</a>
                                 </li>
                                 <li><a class="dropdown-item" href="#"
                                         onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a>
