@@ -23,15 +23,14 @@ Route::get('/home',[PublicController::class , 'homepage'])->name ('homepage');
 // Article route
 Route::get('/article/create', [ArticleController::class, 'create'])->name ('article.create');
 Route::post('/article/store', [ArticleController::class, 'store'])->name('article.store');
-// Insert article
-Route::get('/article/index', [ArticleController::class, 'index'])->name('article.index');
-Route::get('/articles/{category}/index', [ArticleController::class, 'articlesForcategory'])->name('articles.category');
-Route::get('/articles/category/{category}', [ArticleController::class, 'byCategory'])->name('article.byCategory');
 // Show article
+Route::get('/article/index', [ArticleController::class, 'index'])->name('article.index');
 Route::get('/article/show/{article}', [ArticleController::class, 'show'])->name('article.show');
-Route::get('/articles/{article}/show', [ArticleController::class, 'show'])->name('articles.show');
-Route::get('/article/category/{category}' , [ArticleController::class, 'byCategory'])->name('article.byCategory');
 Route::get('/article/user/{user}' , [ArticleController::class, 'byUser'])->name('article.byUser');
+Route::get('/article/category/{category}' , [ArticleController::class, 'byCategory'])->name('articles.category');
+// Route::get('/articles/{article}/show', [ArticleController::class, 'show'])->name('articles.show');
+// Route::get('/articles/{category}/index', [ArticleController::class, 'byCategory'])->name('articles.category');
+// Route::get('/articles/category/{category}', [ArticleController::class, 'byCategory'])->name('article.byCategory');
 // Login routes
 Route::get('/login',[PublicController::class , 'login'])->name ('login');
 // Register routes
