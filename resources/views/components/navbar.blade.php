@@ -73,8 +73,8 @@
                 </ul>
             @endif
             <div class="mx-auto">
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <form action="{{route('search.articles')}}" method="get" class="d-flex">
+                    <input class="form-control me-2" name="key" type="text" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
                 </form>
             </div>
