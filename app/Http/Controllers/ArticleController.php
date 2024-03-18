@@ -15,20 +15,20 @@ class ArticleController extends Controller
      */
     public function index()
     {
-    $articles = Article::orderBy('created_at', 'desc')->get();
-     return view ('article.index', compact('articles'));
+        $articles = Article::orderBy('created_at', 'desc')->get();
+        return view('article.index', compact('articles'));
     }
 
     public function byCategory(Category $category)
     {
         $articles = $category->articles()->orderby('created_at' , 'desc')->get();
-        return view('article.by-category' , compact('category' , 'articles'));
+        return view('article.bycategory' , compact('category' , 'articles'));
     }
 
     public function byUser(User $user)
     {
         $articles = $user->articles()->orderby('created_at' , 'desc')->get();
-        return view('article.by-user' , compact('user' , 'articles'));
+        return view('article.byuser' , compact('user' , 'articles'));
     }
     /**
      * Show the form for creating a new resource.

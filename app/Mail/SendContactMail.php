@@ -9,35 +9,21 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class RequestRoleMail extends Mailable
+class SendContactMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $info;
-    /**
-     * Create a new message instance.
-     */
-    public function __construct($info)
+    public $mail;
+    public function __construct($mail)
     {
-        $this->info = $info;
+        $this->mail = $mail;
     }
 
-    public function build()
-    {
-        return $this->view('mail.Rolerequest',
-        [
-            'info' => $this->info
-        ]
-        );
-    }
 
-    /**
-     * Get the message envelope.
-     */
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Richiesta di lavoro ricevuta',
+            subject: 'Mail contactaci',
         );
     }
 
@@ -47,7 +33,7 @@ class RequestRoleMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'mail.career-request-mail',
+            view: 'mail.message',
         );
     }
 
