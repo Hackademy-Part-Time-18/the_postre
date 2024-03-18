@@ -91,9 +91,9 @@ class PublicController extends Controller
     }
 
     public function searchArticle(Request $request)
-    {
+    { 
         $key = $request->input('key');
         $articles = Article::search($key)->where('is_accepted', true)->get();
-        return view('articles.index' , compact('articles', 'key')); 
+        return view('article.index' , compact('articles', 'key')); 
     }
 }
