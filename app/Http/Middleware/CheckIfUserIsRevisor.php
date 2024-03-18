@@ -16,7 +16,7 @@ class CheckIfUserIsRevisor
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::user() && Auth::iser()->is_revisor)
+        if(Auth::user() && Auth::user()->is_revisor)
         {
         return $next($request);
         }

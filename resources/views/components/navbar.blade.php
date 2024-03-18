@@ -22,7 +22,9 @@
                     </li>
                 @endif
                 @auth
-                    <li class="nav-item"><a class="nav-link" href="{{ route('work.with.us') }}">Lavora con noi</a></li>
+                @if (auth()->user()->is_writer)       
+                <li class="nav-item"><a class="nav-link" href="{{ route('work.with.us') }}">Lavora con noi</a></li>
+                @endif
                 @endauth
                 @if (request()->route()->getName() == 'homepage')
                     <li class="nav-item"><a class="nav-link" href="#recent">Recenti</a></li>
