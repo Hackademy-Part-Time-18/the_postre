@@ -22,7 +22,7 @@
                     </li>
                 @endif
                 @auth
-                @if (auth()->user()->is_writer)       
+                @if (auth()->user()->is_writer != 1 && auth()->user()->is_revisor != 1 && auth()->user()->is_admin != 1)       
                 <li class="nav-item"><a class="nav-link" href="{{ route('work.with.us') }}">Lavora con noi</a></li>
                 @endif
                 @endauth
