@@ -20,7 +20,7 @@
                 <li class="nav-item">
                     <a href="#">
                         <i class="fa fa-map nav-icon"></i>
-                        <span class="nav-text">Profilo</span>
+                        <span class="nav-text">Profilo User Story</span>
                     </a>
                 </li>
 

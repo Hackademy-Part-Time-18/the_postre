@@ -57,3 +57,5 @@ Route::middleware('revisor')->group(function(){
     Route::get('/revisor/article/{article}/reject', [RevisorController::class, 'rejectArticle'])->name('revisor.reject');
 });
 Route::get('/article/search' , [PublicController::class, 'searchArticle'])->name('search.articles');
+// sidebar
+Route::get('/user',[PublicController::class , 'user'])->name ('user');

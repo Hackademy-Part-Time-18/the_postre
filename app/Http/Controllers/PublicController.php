@@ -17,14 +17,16 @@ class PublicController extends Controller
     {
         $mostViewedArticles = (new ArticleController())->mostViewedArticlesLastWeek();
         $articles = Article::orderBy('created_at', 'desc')->take(6)->get();
-        return view('homepage', compact('articles','mostViewedArticles'));
+        return view('homepage', compact('articles', 'mostViewedArticles'));
     }
-    public function login () {
-            return view('auth.login');
-        }
-        public function register () {
-            return view('auth.register');
-        }
+    public function login()
+    {
+        return view('auth.login');
+    }
+    public function register()
+    {
+        return view('auth.register');
+    }
 
 
     public function careers()
@@ -40,66 +42,72 @@ class PublicController extends Controller
             'message' => 'required',
         ]);
 
-       $user = Auth::user();
-       $role = $request->input('role');
-       $email = $request->input('email');
-       $presentation = $request->input('presentation');
-       $requestMail = new RequestRoleMail(compact('role', 'email', 'presentation'));
+        $user = Auth::user();
+        $role = $request->input('role');
+        $email = $request->input('email');
+        $presentation = $request->input('presentation');
+        $requestMail = new RequestRoleMail(compact('role', 'email', 'presentation'));
 
-       Mail::to('admin@thepostre.it')->send($requestMail);
+        Mail::to('admin@thepostre.it')->send($requestMail);
 
-       switch ($role) {
-        case 'admin':
-            $user->is_admin = NULL;
-            break;
-
-        case 'revisor':
-             $user->is_revisor = NULL;
+        switch ($role) {
+            case 'admin':
+                $user->is_admin = NULL;
                 break;
 
-        case 'writer':
-             $user->is_writer = NULL;
-                    break;
-       }
+            case 'revisor':
+                $user->is_revisor = NULL;
+                break;
 
-       $user->update();
+            case 'writer':
+                $user->is_writer = NULL;
+                break;
+        }
 
-       return redirect()->route('homepage')->with('message' , 'Grazie per averci contattato!');
+        $user->update();
+
+        return redirect()->route('homepage')->with('message', 'Grazie per averci contattato!');
     }
 
     public function workWithUs()
     {
         return view('workwithus');
     }
-    
-    public function send(Request $request){
+
+    public function send(Request $request)
+    {
         $request->validate(
             [
-                'name'=>'required',
-                'email'=>'required',
-                'message'=>'required',
-                'phone'=>'required',
+                'name' => 'required',
+                'email' => 'required',
+                'message' => 'required',
+                'phone' => 'required',
             ]
         );
-        $name= $request->input('name');
+        $name = $request->input('name');
         $email = $request->input('email');
         $message = $request->input('message');
         $phone = $request->input('phone');
-        $requestMail = new SendContactMail(compact('name','email','message','phone'));
+        $requestMail = new SendContactMail(compact('name', 'email', 'message', 'phone'));
         Mail::to('admin@thepostre.it')->send($requestMail);
-        return redirect(route('homepage'))->with('message' , 'Grazie per averci contattato!');
-
+        return redirect(route('homepage'))->with('message', 'Grazie per averci contattato!');
     }
 
     public function searchArticle(Request $request)
-    { 
+    {
         $key = $request->input('key');
         $articles = Article::search($key)->where('is_accepted', true)->get();
-        return view('article.index' , compact('articles', 'key')); 
+        return view('article.index', compact('articles', 'key'));
     }
 
     public function category()
     {
         return view('article.bycategory');
+    }
+
+    public function user()
+    {
+        $articles = Article::orderBy('created_at', 'desc')->get();
+        return view('user' , ['articles'=> $articles]);
     }
 }

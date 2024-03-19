@@ -1,3 +1,4 @@
+
 <div class="card">
 <img src="{{ Storage::url($image) }}" alt="" class="card-img-top">
 <div class="card-body">
