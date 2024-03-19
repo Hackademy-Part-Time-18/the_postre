@@ -16,8 +16,14 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //$articles = Article::orderBy('created_at', 'desc')->get();
-        return view('components.index');
+        $articles = Article::orderBy('created_at', 'desc')->get();
+        return view('article.index', compact('articles'));
+    }
+
+    public function byCategory(Category $category)
+    {
+        $articles = $category->articles()->orderby('created_at', 'desc')->get();
+        return view('article.bycategory', compact('category', 'articles'));
     }
 
     public function byUser(User $user)
