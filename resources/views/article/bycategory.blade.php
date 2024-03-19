@@ -1,47 +1,43 @@
 <x-layout>
+
     <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <link rel="stylesheet" href="style.css">
-    <script defer src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
-    <script defer   src="main.js"></script>
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script defer src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+        <script defer src="main.js"></script>
     </head>
     <nav class="main-menu">
         <div>
             <div class="user-info">
                 <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/e5a707f4-d5ac-4f30-afd8-4961ae353dbc" alt="user" />
-                <p>Mia Taylor</p>
+                <p>{{Auth::user()->name}}</p>
             </div>
             <ul>
-                <li class="nav-item active">
-                    <a href="#">
+                <li class="nav-item dropdown nav-item active">
+                    <a class="nav-link dropdown-toggle" href="{{ route('article.create') }}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa fa-user nav-icon"></i>
-                        <span class="nav-text">Profile</span>
+                        <span class="nav-text">Categorie</span>
                     </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        @foreach($categories as $category)
+                        <li>
+                            <a class="dropdown-item" href="">{{$category->name}}</a>
+                        </li>
+                        @endforeach
+                    </ul>
                 </li>
 
                 <li class="nav-item">
                     <a href="#">
                         <i class="fa fa-map nav-icon"></i>
-                        <span class="nav-text">Discover</span>
+                        <span class="nav-text">Most popular</span>
                     </a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="#">
-                        <i class="fa fa-arrow-trend-up nav-icon"></i>
-                        <span class="nav-text">Trending</span>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="#">
-                        <i class="fa-solid fa-chart-simple nav-icon"></i>
-                        <span class="nav-text">Analytics</span>
-                    </a>
+                    
                 </li>
 
                 <li class="nav-item">
