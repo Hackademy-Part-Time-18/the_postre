@@ -23,7 +23,7 @@ class ArticleController extends Controller
     public function byCategory(Category $category)
     {
         $articles = $category->articles()->orderby('created_at', 'desc')->get();
-        return view('article.bycategory', compact('category', 'articles'));
+        return view('article.bycategory', compact('articles'));
     }
 
     public function byUser(User $user)
