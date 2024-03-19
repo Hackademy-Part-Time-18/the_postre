@@ -59,3 +59,4 @@ Route::middleware('revisor')->group(function(){
 Route::get('/article/search' , [PublicController::class, 'searchArticle'])->name('search.articles');
 // sidebar
 Route::get('/user',[PublicController::class , 'user'])->name ('user');
+Route::get('/articles',[PublicController::class , 'articles'])->name ('articles');

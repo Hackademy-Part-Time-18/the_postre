@@ -7,22 +7,13 @@
         @if ( request()->route()->getName() != 'user')
         <div class="collapse navbar-collapse " id="navbarResponsive">
             <ul class="navbar-nav mx-auto align-items-start">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="" id="" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categoria</a>
-                    <ul class="dropdown-menu mb-2" aria-labelledby="navbarDropdown">
-                        @foreach ($categories as $category)
-                        <li><a id="btn-registrati" class="dropdown-item" href="{{ route('articles.category',$category->name)}}">{{ $category['name'] }}</a>
-                        </li>
-                        @endforeach
-                    </ul>
-                </li>
                 @auth
                 @if (auth()->user()->is_writer != 1 && auth()->user()->is_revisor != 1 && auth()->user()->is_admin != 1)
                 <li class="nav-item"><a class="nav-link" href="{{ route('work.with.us') }}">Lavora con noi</a></li>
                 @endif
                 @endauth
                 @if (request()->route()->getName() == 'homepage')
-                <li class="nav-item"><a class="nav-link" href="#recent">Recenti</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('articles')}}">Articoli</a></li>
                 <li class="nav-item"><a class="nav-link" href="#about">Chi siamo</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">Contattaci</a></li>
                 @endif
