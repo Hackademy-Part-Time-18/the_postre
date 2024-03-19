@@ -18,7 +18,7 @@ class RevisorController extends Controller
         $article->is_accepted = true;
         $article->save();
 
-        return redirect()-> route('revisor.dashboard');
+        return redirect()->route('revisor.dashboard');
     }
 
     public function rejectArticle(Article $article){
