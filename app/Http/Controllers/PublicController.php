@@ -15,8 +15,9 @@ class PublicController extends Controller
 
     public function homepage()
     {
+        $mostViewedArticles = (new ArticleController())->mostViewedArticlesLastWeek();
         $articles = Article::orderBy('created_at', 'desc')->take(6)->get();
-        return view('homepage', compact('articles'));
+        return view('homepage', compact('articles','mostViewedArticles'));
     }
     public function login () {
             return view('auth.login');
@@ -95,5 +96,10 @@ class PublicController extends Controller
         $key = $request->input('key');
         $articles = Article::search($key)->where('is_accepted', true)->get();
         return view('article.index' , compact('articles', 'key')); 
+    }
+
+    public function category()
+    {
+        return view('article.bycategory');
     }
 }

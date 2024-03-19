@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Article;
 use App\Models\Category;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -21,14 +22,14 @@ class ArticleController extends Controller
 
     public function byCategory(Category $category)
     {
-        $articles = $category->articles()->orderby('created_at' , 'desc')->get();
-        return view('article.bycategory' , compact('category' , 'articles'));
+        $articles = $category->articles()->orderby('created_at', 'desc')->get();
+        return view('article.bycategory', compact('articles'));
     }
 
     public function byUser(User $user)
     {
-        $articles = $user->articles()->orderby('created_at' , 'desc')->get();
-        return view('article.byuser' , compact('user' , 'articles'));
+        $articles = $user->articles()->orderby('created_at', 'desc')->get();
+        return view('article.byuser', compact('user', 'articles'));
     }
     /**
      * Show the form for creating a new resource.
@@ -59,9 +60,8 @@ class ArticleController extends Controller
             'category_id' => $request->category,
             'user_id' => Auth::user()->id,
         ]);
-        
-        return redirect(route('homepage'))->with('message', 'Articolo creato correttamente');
 
+        return redirect(route('homepage'))->with('message', 'Articolo creato correttamente');
     }
 
     /**
@@ -69,14 +69,23 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
+        $article->increment('views');
         return view('article.show', compact('article'));
     }
 
     public function __construct()
     {
-        $this->middleware('auth')->except('index' , 'show');
+        $this->middleware('auth')->except('index', 'show');
     }
 
+    //article most view last week
+    public function mostViewedArticlesLastWeek()
+    {
+        $startDate = Carbon::now()->subWeek();
+        $endDate = Carbon::now();
+
+        return Article::whereBetween('created_at', [$startDate, $endDate])->orderByDesc('views')->limit(4)->get();
+    }
     /**
      * Show the form for editing the specified resource.
      */
@@ -100,7 +109,4 @@ class ArticleController extends Controller
     {
         //
     }
-
-   
-
 }
