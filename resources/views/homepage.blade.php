@@ -15,7 +15,7 @@
           </p>
           <p class="card-text">{{ $article->subtitle }}</p>
           <p class="small text-muted fst-italic text-capitalize">{{ $article->category->name }}</p>
-        <button>Read More</button>
+          <button>Read More</button>
         </div>
       </li>
       @endforeach
@@ -32,36 +32,39 @@
   <div class="alert alert-success bg-message text-center"><i class="bi bi-exclamation-circle mx-1"></i>{{ session('message') }}
   </div>
   @endif
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
 
-  {{-- Recent Article  ; Articoli recenti --}}
-  <div id="recent" class="container my-2">
-    <div class="row justify-content-around row-cols-1 row-cols-md-3">
-      {{-- create article card --}}
-      @foreach ($articles as $article)
-      <div class="col mb-4">
-        <div class="card h-100 w-100">
-          <img src="{{ Storage::url($article->image) }}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">{{ $article->title }}</h5>
-            <p class="card-text">{{ $article->subtitle }}</p>
-            <p class="small text-muted fst-italic text-capitalize">{{ $article->category->name }}</p>
-          </div>
-          <div class="card-footer text-muted d-flex justify-content-between align-items-center">
-            Redatto il {{ $article->created_at->format('d/m/Y') }} da {{ $article->user->name }}
-            <a href="{{ route('article.show', compact('article')) }}" class="btn btn-dark bg-message text-white border-0">Leggi</a>
-          </div>
-        </div>
-      </div>
-      @endforeach
-    </div>
-  </div>
+  <br><br>
 
-  <!-- About-->
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  {{-- Paragrafo scrittura --}}
+
   <section class="page-section bg-primary" id="about">
     <div class="container px-4 px-lg-5">
       <div class="row gx-4 gx-lg-5 justify-content-center">
         <div class="col-lg-8 text-center">
-          <h2 class="text-white mt-0">abbiamo cio che ti serve!</h2>
+          <h2 class="text-white mt-0">Titolo Paragrafo</h2>
           <hr class="divider divider-light" />
           <p class="text-white-75 mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur,
             veniam sint. Laborum error vitae, adipisci, atque harum quidem, sed quae quasi expedita
@@ -71,6 +74,35 @@
       </div>
     </div>
   </section>
+
+
+  <br>
+
+  {{-- Recent Article  ; Articoli recenti --}}
+  <section>
+    <div id="recent" class="container my-2">
+      <div class="row justify-content-around row-cols-1 row-cols-md-3">
+        {{-- create article card --}}
+        @foreach ($articles as $article)
+        <div class="col mb-4">
+          <div class="card h-100 w-100">
+            <img src="{{ Storage::url($article->image) }}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{ $article->title }}</h5>
+              <p class="card-text">{{ $article->subtitle }}</p>
+              <p class="small text-muted fst-italic text-capitalize">{{ $article->category->name }}</p>
+            </div>
+            <div class="card-footer text-muted d-flex justify-content-between align-items-center">
+              Redatto il {{ $article->created_at->format('d/m/Y') }} da {{ $article->user->name }}
+              <a href="{{ route('article.show', compact('article')) }}" class="btn btn-dark bg-message text-white border-0">Leggi</a>
+            </div>
+          </div>
+        </div>
+        @endforeach
+      </div>
+    </div>
+  </section>
+
 
   <!-- Contact-->
   <section class="page-section" id="contact">
@@ -123,6 +155,4 @@
             </div> --}}
     </div>
   </section>
-
-
 </x-layout>
