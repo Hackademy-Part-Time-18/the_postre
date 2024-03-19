@@ -100,6 +100,7 @@ class PublicController extends Controller
 
     public function category()
     {
-        return view('article.bycategory');
+        $articles = Article::orderBy('created_at', 'desc')->get();
+        return view('article.bycategory', compact('articles'));
     }
 }
