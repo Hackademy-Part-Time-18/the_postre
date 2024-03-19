@@ -1,6 +1,6 @@
 <x-layout>
 <x-sidebar/>
 @foreach($articles as $article)
-<x-card :article="$article"/>
+<x-card/>
 @endforeach
 </x-layout>

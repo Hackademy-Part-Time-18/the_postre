@@ -1,4 +1,4 @@
-
+@foreach($articles as $article)
 <div class="card">
 <img src="{{ Storage::url($image) }}" alt="" class="card-img-top">
 <div class="card-body">
@@ -11,3 +11,4 @@
     <a href="{{ $url }}" class="btn btn-info text-white">Leggi</a>
 </div>
 </div>
+@endforeach

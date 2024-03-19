@@ -110,4 +110,11 @@ class PublicController extends Controller
         $articles = Article::orderBy('created_at', 'desc')->get();
         return view('user' , ['articles'=> $articles]);
     }
+
+    public function articles()
+    {
+        $articles = Article::orderBy('created_at', 'desc')->get();
+        return view('articles' , ['articles'=> $articles]);
+    }
 }
+
