@@ -1,0 +1,113 @@
+[
+    {
+      "id": 1,
+      "title": "El equipo local gana el campeonato de fútbol",
+      "subtitle": "Gran victoria para el equipo de casa",
+      "body": "En un emocionante partido que mantuvo a los espectadores al borde de sus asientos, el equipo local aseguró la victoria en el campeonato de fútbol.",
+      "image": "https://via.placeholder.com/300",
+      "user_id": 1,
+      "category_id": 1,
+      "created_at": "2024-02-13",
+      "is_accepted": 1
+    },
+    {
+      "id": 2,
+      "title": "Las acciones de tecnología alcanzan un nuevo máximo histórico",
+      "subtitle": "El sector de la tecnología sigue siendo líder en el mercado",
+      "body": "Las acciones de las principales empresas tecnológicas alcanzaron un nuevo máximo histórico, impulsando el mercado bursátil y generando optimismo entre los inversores.",
+      "image": "https://via.placeholder.com/300",
+      "user_id": 1,
+      "category_id": 2,
+      "created_at": "2024-02-13",
+      "is_accepted": 1
+    },
+    {
+      "id": 3,
+      "title": "Se revelan nuevas revelaciones en el caso de corrupción política",
+      "subtitle": "Escándalo político sacude al gobierno",
+      "body": "En una serie de revelaciones impactantes, se han expuesto detalles adicionales sobre el escándalo de corrupción que involucra a varios funcionarios gubernamentales de alto rango.",
+      "image": "https://via.placeholder.com/300",
+      "user_id": 1,
+      "category_id": 4,
+      "created_at": "2024-02-13",
+      "is_accepted": 1
+    },
+    {
+      "id": 4,
+      "title": "El último avance médico en la lucha contra el cáncer",
+      "subtitle": "Nueva terapia muestra prometedores resultados",
+      "body": "Un nuevo enfoque terapéutico en el tratamiento del cáncer ha mostrado resultados prometedores en estudios preliminares, brindando esperanza a pacientes y médicos por igual.",
+      "image": "https://via.placeholder.com/300",
+      "user_id": 1,
+      "category_id": 3,
+      "created_at": "2024-02-13",
+      "is_accepted": 1
+    },
+    {
+      "id": 5,
+      "title": "El mercado inmobiliario experimenta un aumento en la demanda",
+      "subtitle": "Los compradores buscan nuevas viviendas en un mercado competitivo",
+      "body": "Con una economía en crecimiento y tasas de interés favorables, el mercado inmobiliario está experimentando un aumento en la demanda de viviendas, lo que ha llevado a un aumento en los precios y una mayor competencia entre los compradores.",
+      "image": "https://via.placeholder.com/300",
+      "user_id": 1,
+      "category_id": 2,
+      "created_at": "2024-02-13",
+      "is_accepted": 1
+    },
+    {
+      "id": 6,
+      "title": "La ciudad se prepara para una ola de calor récord",
+      "subtitle": "Se emiten advertencias de calor extremo",
+      "body": "Con temperaturas pronosticadas para alcanzar niveles récord, las autoridades locales están tomando medidas para proteger a los residentes vulnerables y garantizar la seguridad pública durante la ola de calor.",
+      "image": "https://via.placeholder.com/300",
+      "user_id": 1,
+      "category_id": 3,
+      "created_at": "2024-02-13",
+      "is_accepted": 1
+    },
+    {
+      "id": 7,
+      "title": "El nuevo plan de infraestructura recibe críticas mixtas",
+      "subtitle": "Debate sobre el financiamiento y la efectividad del proyecto",
+      "body": "El plan propuesto para mejorar la infraestructura nacional ha generado un intenso debate político, con críticos cuestionando el financiamiento y la efectividad de las medidas propuestas.",
+      "image": "https://via.placeholder.com/300",
+      "user_id": 1,
+      "category_id": 4,
+      "created_at": "2024-02-13",
+      "is_accepted": 1
+    },
+    {
+      "id": 8,
+      "title": "El equipo de investigación descubre una nueva especie de flora",
+      "subtitle": "Hallazgo sorprendente en una expedición científica",
+      "body": "Durante una expedición de investigación en una selva tropical remota, un equipo de científicos descubrió una nueva especie de planta que se cree que tiene propiedades medicinales únicas.",
+      "image": "https://via.placeholder.com/300",
+      "user_id": 1,
+      "category_id": 3,
+      "created_at": "2024-02-13",
+      "is_accepted": 1
+    },
+    {
+      "id": 9,
+      "title": "El festival anual de música atrae a miles de asistentes",
+      "subtitle": "Celebración de la diversidad musical",
+      "body": "El festival de música anual, conocido por su diversidad de géneros y artistas de renombre, atrajo a miles de asistentes este año, generando entusiasmo y energía positiva en toda la comunidad.",
+      "image": "https://via.placeholder.com/300",
+      "user_id": 1,
+      "category_id": 1,
+      "created_at": "2024-02-13",
+      "is_accepted": 1
+    },
+    {
+      "id": 10,
+      "title": "El último avance tecnológico revoluciona la industria automotriz",
+      "subtitle": "Nueva tecnología promete mejorar la seguridad y eficiencia de los vehículos",
+      "body": "Un avance innovador en la tecnología automotriz podría cambiar la forma en que conducimos para siempre, con sistemas avanzados de asistencia al conductor que prometen mejorar la seguridad y eficiencia de los vehículos.",
+      "image": "https://via.placeholder.com/300",
+      "user_id": 1,
+      "category_id": 2,
+      "created_at": "2024-02-13",
+      "is_accepted": 1
+    }
+  ]
+  

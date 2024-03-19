@@ -179,18 +179,14 @@ width: 500px;
 color: rgba(0, 0, 0, 0.5);
 }
 
- * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
+/* css header */
+/*   
   body {
     height: 100vh;
     display: grid;
     place-items: center;
     overflow: hidden;
-  }
+  } */
   
   main {
     position: relative;
@@ -338,10 +334,10 @@ color: rgba(0, 0, 0, 0.5);
   }
 
 
-body {
+/* body {
     min-height: 100vh;
     background: linear-gradient(#051f30, #000000);
-}
+} */
 
 .menu::-webkit-scrollbar {
     display: none;
@@ -355,7 +351,7 @@ body {
     height: 100%;
     transition: .3s;
     scrollbar-width: none;
-    overflow: hidden scroll;
+    overflow: hidden;
     background: #ffffff12;
     -ms-overflow-style: none;
     padding: 20px 20px 20px 0;
@@ -480,11 +476,11 @@ h2 {
   font-size: clamp(0.9rem, 4vw, 1rem);
 }
 
-body {
+/* body {
   position: relative;
   background: var(--bg-body);
   overflow: hidden;
-}
+} */
 
 /* MAIN MENU */
 
@@ -1237,7 +1233,7 @@ body::-webkit-scrollbar-thumb {
   .left-content {
     grid-area: leftContent;
     height: auto;
-    overflow: unset;
+    overflow: auto;
   }
 
   .header-mobile,
