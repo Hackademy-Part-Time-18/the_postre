@@ -30,7 +30,7 @@ Route::get('/article/user/{user}' , [ArticleController::class, 'byUser'])->name(
 Route::get('/article/category/{category}' , [ArticleController::class, 'byCategory'])->name('articles.category');
 // Route::get('/articles/{article}/show', [ArticleController::class, 'show'])->name('articles.show');
 // Route::get('/articles/{category}/index', [ArticleController::class, 'byCategory'])->name('articles.category');
-// Route::get('/articles/category/{category}', [ArticleController::class, 'byCategory'])->name('article.byCategory');
+Route::get('/articles/category', [PublicController::class, 'category'])->name('category');
 // Login routes
 Route::get('/login',[PublicController::class , 'login'])->name ('login');
 // Register routes

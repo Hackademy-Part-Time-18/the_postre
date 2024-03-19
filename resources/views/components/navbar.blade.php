@@ -8,9 +8,9 @@
         </button>
         <div class="collapse navbar-collapse " id="navbarResponsive">
             <ul class="navbar-nav mx-auto align-items-start">
-                @if (request()->route()->getName() != 'register' && request()->route()->getName() != 'login')
-                <li class="nav-item"><a class="nav-link" href="{{ route('articles.byCategory') }}">Lavora con noi</a></li> 
-                @endif
+                <!-- @if (request()->route()->getName() != 'register' && request()->route()->getName() != 'login') -->
+                <li class="nav-item"><a class="nav-link" href="{{ route('category') }}">Categorie</a></li> 
+                <!-- @endif -->
                 @auth
                 @if (auth()->user()->is_writer != 1 && auth()->user()->is_revisor != 1 && auth()->user()->is_admin != 1)       
                 <li class="nav-item"><a class="nav-link" href="{{ route('work.with.us') }}">Lavora con noi</a></li>

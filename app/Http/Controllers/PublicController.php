@@ -97,4 +97,9 @@ class PublicController extends Controller
         $articles = Article::search($key)->where('is_accepted', true)->get();
         return view('article.index' , compact('articles', 'key')); 
     }
+
+    public function category()
+    {
+        return view('article.bycategory');
+    }
 }
