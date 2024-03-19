@@ -10,7 +10,7 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::table('users', function (Blueprint $table) {
             $table->boolean('is_admin')->after('email')->nullable()->default(false);
@@ -29,7 +29,7 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
-    public function down(): void
+    public function down()
     {
         User::where('email' , 'admin@thepostre.it')->delete();
         Schema::table('users', function (Blueprint $table) {

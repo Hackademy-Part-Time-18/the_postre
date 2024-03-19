@@ -23,7 +23,7 @@ class AdminController extends Controller
             return redirect()->route('admin.dashboard');
         }
 
-        public function makeUserrevisor(User $user)
+        public function makeUserRevisor(User $user)
         {
             $user->is_revisor = true;
             $user->save();
