@@ -45,8 +45,8 @@ class PublicController extends Controller
         $user = Auth::user();
         $role = $request->input('role');
         $email = $request->input('email');
-        $presentation = $request->input('presentation');
-        $requestMail = new RequestRoleMail(compact('role', 'email', 'presentation'));
+        $message = $request->input('message');
+        $requestMail = new RequestRoleMail(compact('role', 'email', 'message'));
 
         Mail::to('admin@thepostre.it')->send($requestMail);
 
