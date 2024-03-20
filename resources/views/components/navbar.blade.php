@@ -21,10 +21,8 @@
                         </ul>
                     </li>
                 @endif
-                @auth
-                @if (auth()->user()->is_writer != 1 && auth()->user()->is_revisor != 1 && auth()->user()->is_admin != 1)       
+                @auth  
                 <li class="nav-item"><a class="nav-link" href="{{ route('work.with.us') }}">Lavora con noi</a></li>
-                @endif
                 @endauth
                 @if (request()->route()->getName() == 'homepage')
                     <li class="nav-item"><a class="nav-link" href="#recent">Recenti</a></li>
@@ -45,7 +43,8 @@
                                 <li>
                                     <a class="dropdown-item" href="">Profilo</a>
                                 </li>
-                                <li><a class="dropdown-item" href="{{ route('admin.dashboard') }}">Admin dashboard</a></li>                               
+                                @if (Auth::user()->is_admin) 
+                                <li><a class="dropdown-item" href="{{ route('admin.dashboard') }}">Admin dashboard</a></li> @endif                              
                                  <li><a class="dropdown-item" href="{{ route('article.create') }}">Inserisciarticolo</a>
                                 </li>
                                 <li><a class="dropdown-item" href="#"

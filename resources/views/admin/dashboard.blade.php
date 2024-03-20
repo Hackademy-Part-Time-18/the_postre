@@ -1,29 +1,39 @@
 <x-layout>
-<div class="container my-3">
-    <div class="row">
-        <div class="col-12">
-            <h2>Richiesta di amministratore</h2>
-            <x-admin-requests-table :adminRequests="$adminRequests" role="amministratore"/>
-        </div>
+<div class="container-fluid p-5 bg-info text-center text-white">
+    <div class="row justify-content-center">
+        <h1 class="display-1">
+            Bentornato amministratore
+        </h1>
     </div>
 </div>
 
-<div class="container my-3">
-    <div class="row">
+@if (session('message'))
+    <div class="alert alert-success text-center">
+        {{ session('message')}}
+    </div>
+@endif
+<div class="container my-5">
+    <div class="row justify-content-center">
         <div class="col-12">
-            <h2>Richiesta di revisore</h2>
-            <x-revisor-requests-table :revisorRequests="$revisorRequests" role="revisore"/>
+            <h2>Richiesta ruolo amministratore</h2>
+            <x-request-table :roleRequests="$adminRequests" role="amminnistratore"/>
         </div>
     </div>
 </div>
-
-<div class="container my-3">
-    <div class="row">
+<div class="container my-5">
+    <div class="row justify-content-center">
         <div class="col-12">
-            <h2>Richiesta di scrittore</h2>
-            <x-writer-requests-table :writerRequests="$writerRequests" role="scrittore"/>
+            <h2>Richiesta ruolo revisore</h2>
+            <x-request-table :roleRequests="$revisorRequests" role="revisore"/>
         </div>
     </div>
 </div>
-
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <h2>Richiesta ruolo scrittore</h2>
+            <x-request-table :roleRequests="$writerRequests" role="scrittore"/>
+        </div>
+    </div>
+</div>
 </x-layout>

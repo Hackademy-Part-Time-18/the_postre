@@ -36,4 +36,28 @@ class AdminController extends Controller
             $user->save();
             return redirect()->route('admin.dashboard');
         }
+
+        public function setAdmin(User $user)
+        {
+            $user->is_admin = true;
+            $user->save();
+
+            return redirect(route('admin.dashboard'))->with('message' , 'Hai corretamente reso amministratore l\utente scelto');
+        }
+
+        public function setRevisor(User $user)
+        {
+            $user->is_revisor = true;
+            $user->save();
+
+            return redirect(route('admin.dashboard'))->with('message' , 'Hai corretamente reso revisore l\'utente scelto');
+        }
+
+        public function setWriter(User $user)
+        {
+            $user->is_writer = true;
+            $user->save();
+
+            return redirect(route('admin.dashboard'))->with('message' , 'Hai corretamente reso scrittore l\'utente scelto');
+        }
 }
