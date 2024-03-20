@@ -1,332 +1,184 @@
 /* background fixed 100% */
 .bg-100 {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background-image: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url('/public/img/bg-masthead.jpg');
-background-size: cover;
-background-position: center;
-z-index: -1;
-}
-/* border card */
-.border-05{
-    border-radius: 1%;
-}
-/* message css */
-.bg-message{
-    color: #fff;
-    background-color: rgb(244, 98, 58);
-}
-/* CSS Register and Login */
-body{
-margin:0;
-background:#efeeee;
-font:600 16px/18px 'Open Sans',sans-serif;
-}
-
-.login-box{
-width:100%;
-border-radius: 0.5%;
-margin:auto;
-max-width:500px;
-min-height:630px;
-position:relative;
-background-color: whitesmoke;
-box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(222, 125, 14, 0.19);
-}
-.login-snip{
-width:100%;
-height:100%;
-border-radius: 0.5%;
-position:absolute;
-padding:90px 70px 50px 70px;
-/* background:rgba(77, 54, 0, 0.9); */
-}
-.login-snip .login,
-.login-snip .sign-up-form{
-top:0;
-left:0;
-right:0;
-bottom:0;
-position:absolute;
-transform:rotateY(180deg);
-backface-visibility:hidden;
-transition:all .4s linear;
-}
-.login-snip .sign-in,
-.login-snip .sign-up,
-.login-space .group .check{
-display:none;
-}
-.login-snip .tab,
-.login-space .group .label,
-.login-space .group .button{
-text-transform:uppercase;
-}
-.login-snip .tab{
-font-size:22px;
-margin-right:15px;
-padding-bottom:5px;
-margin:0 15px 10px 0;
-display:inline-block;
-border-bottom:2px solid transparent;
-}
-.login-snip .sign-in:checked + .tab,
-.login-snip .sign-up:checked + .tab{
-color:rgb(244, 98, 58);
-border-color:rgb(244, 98, 58);
-}
-.login-space{
-min-height:345px;
-position:relative;
-perspective:1000px;
-transform-style:preserve-3d;
-}
-.login-space .group{
-margin-bottom:15px;
-}
-.login-space .group .label,
-.login-space .group .input,
-.login-space .group .button{
-width:100%;
-color:#fff;
-display:block;
-}
-.login-space .group .input,
-.login-space .group .button{
-border:none;
-padding:15px 20px;
-border-radius:25px;
-background:rgba(171, 160, 160, 0.568);
-}
-.login-space .group input[data-type="password"]{
--webkit-text-security:circle;
-}
-.login-space .group .label{
-color:#aaa;
-font-size:12px;
-}
-.login-space .group .button{
-background:rgb(244, 98, 58);
-}
-.login-space .group label .icon{
-width:15px;
-height:15px;
-border-radius:2px;
-position:relative;
-display:inline-block;
-background:rgba(255,255,255,.1);
-}
-.login-space .group label .icon:before,
-.login-space .group label .icon:after{
-content:'';
-width:10px;
-height:2px;
-background:#c7c0c0;
-position:absolute;
-transition:all .2s ease-in-out 0s;
-}
-.login-space .group label .icon:before{
-left:3px;
-width:5px;
-bottom:6px;
-transform:scale(0) rotate(0);
-}
-.login-space .group label .icon:after{
-top:6px;
-right:0;
-transform:scale(0) rotate(0);
-}
-.login-space .group .check:checked + label{
-color:rgb(244, 98, 58);
-}
-.login-space .group .check + label .icon{
-    background:rgb(244, 98, 58,0.8) !important;
-}
-.login-space .group .check:checked + label .icon{
-background:rgb(244, 98, 58);
-}
-.login-space .group .check:checked + label .icon:before{
-transform:scale(1) rotate(45deg);
-background:rgb(255, 255, 255);
-}
-.login-space .group .check:checked + label .icon:after{
-transform:scale(1) rotate(-45deg);
-background:rgb(255, 255, 255);
-}
-.login-snip .sign-in:checked + .tab + .sign-up + .tab + .login-space .login{
-transform:rotate(0);
-}
-.login-snip .sign-up:checked + .tab + .login-space .sign-up-form{
-transform:rotate(0);
-}
-
-*,:after,:before{box-sizing:border-box}
-.clearfix:after,.clearfix:before{content:'';display:table}
-.clearfix:after{clear:both;display:block}
-a{color:inherit;text-decoration:none}
-
-.foot{
-text-align:center;
-}
-.card{
-width: 500px;
-}
-
-::placeholder{
-color: rgba(0, 0, 0, 0.5);
-}
-
-/* css header */
-
-  header {
-    width: 100%;
-    height:70%;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-    overflow: hidden;
-    z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url('/public/img/bg-masthead.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  }
+  /* border card */
+  .border-05{
+      border-radius: 1%;
+  }
+  /* message css */
+  .bg-message{
+      color: #fff;
+      background-color: rgb(244, 98, 58);
+  }
+  /* CSS Register and Login */
+  body{
+  margin:0;
+  background:#efeeee;
+  font:600 16px/18px 'Open Sans',sans-serif;
   }
   
-  .item {
-    width: 150px;
-    height: 200px;
-    list-style-type: none;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-80%);
-    z-index: 1;
-    background-position: center;
-    background-size: cover;
-    border-radius: 20px;
-    box-shadow: 0 20px 30px rgba(255,255,255,0.3) inset;
-    transition: transform 0.1s, left 0.75s, top 0.75s, width 0.75s, height 0.75s;
-  
-    &:nth-child(1), &:nth-child(2) {
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 73%;
-      transform: none;
-      border-radius: 0;
-      box-shadow: none;
-      opacity: 1;
-    }
-  
-    &:nth-child(3) { left: 50%; }
-    &:nth-child(4) { left: calc(50% + 220px); }
-    &:nth-child(5) { left: calc(50% + 440px); }
-    &:nth-child(6) { left: calc(50% + 660px); opacity: 0; }
+  .login-box{
+  width:100%;
+  border-radius: 0.5%;
+  margin:auto;
+  max-width:500px;
+  min-height:630px;
+  position:relative;
+  background-color: whitesmoke;
+  box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(222, 125, 14, 0.19);
+  }
+  .login-snip{
+  width:100%;
+  height:100%;
+  border-radius: 0.5%;
+  position:absolute;
+  padding:90px 70px 50px 70px;
+  /* background:rgba(77, 54, 0, 0.9); */
+  }
+  .login-snip .login,
+  .login-snip .sign-up-form{
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  position:absolute;
+  transform:rotateY(180deg);
+  backface-visibility:hidden;
+  transition:all .4s linear;
+  }
+  .login-snip .sign-in,
+  .login-snip .sign-up,
+  .login-space .group .check{
+  display:none;
+  }
+  .login-snip .tab,
+  .login-space .group .label,
+  .login-space .group .button{
+  text-transform:uppercase;
+  }
+  .login-snip .tab{
+  font-size:22px;
+  margin-right:15px;
+  padding-bottom:5px;
+  margin:0 15px 10px 0;
+  display:inline-block;
+  border-bottom:2px solid transparent;
+  }
+  .login-snip .sign-in:checked + .tab,
+  .login-snip .sign-up:checked + .tab{
+  color:rgb(244, 98, 58);
+  border-color:rgb(244, 98, 58);
+  }
+  .login-space{
+  min-height:345px;
+  position:relative;
+  perspective:1000px;
+  transform-style:preserve-3d;
+  }
+  .login-space .group{
+  margin-bottom:15px;
+  }
+  .login-space .group .label,
+  .login-space .group .input,
+  .login-space .group .button{
+  width:100%;
+  color:#fff;
+  display:block;
+  }
+  .login-space .group .input,
+  .login-space .group .button{
+  border:none;
+  padding:15px 20px;
+  border-radius:25px;
+  background:rgba(171, 160, 160, 0.568);
+  }
+  .login-space .group input[data-type="password"]{
+  text-security:circle;
+  -webkit-text-security:circle;
+  }
+  .login-space .group .label{
+  color:#aaa;
+  font-size:12px;
+  }
+  .login-space .group .button{
+  background:rgb(244, 98, 58);
+  }
+  .login-space .group label .icon{
+  width:15px;
+  height:15px;
+  border-radius:2px;
+  position:relative;
+  display:inline-block;
+  background:rgba(255,255,255,.1);
+  }
+  .login-space .group label .icon:before,
+  .login-space .group label .icon:after{
+  content:'';
+  width:10px;
+  height:2px;
+  background:#c7c0c0;
+  position:absolute;
+  transition:all .2s ease-in-out 0s;
+  }
+  .login-space .group label .icon:before{
+  left:3px;
+  width:5px;
+  bottom:6px;
+  transform:scale(0) rotate(0);
+  }
+  .login-space .group label .icon:after{
+  top:6px;
+  right:0;
+  transform:scale(0) rotate(0);
+  }
+  .login-space .group .check:checked + label{
+  color:rgb(244, 98, 58);
+  }
+  .login-space .group .check + label .icon{
+      background:rgb(244, 98, 58,0.8) !important;
+  }
+  .login-space .group .check:checked + label .icon{
+  background:rgb(244, 98, 58);
+  }
+  .login-space .group .check:checked + label .icon:before{
+  transform:scale(1) rotate(45deg);
+  background:rgb(255, 255, 255);
+  }
+  .login-space .group .check:checked + label .icon:after{
+  transform:scale(1) rotate(-45deg);
+  background:rgb(255, 255, 255);
+  }
+  .login-snip .sign-in:checked + .tab + .sign-up + .tab + .login-space .login{
+  transform:rotate(0);
+  }
+  .login-snip .sign-up:checked + .tab + .login-space .sign-up-form{
+  transform:rotate(0);
   }
   
-  .content {
-    width: min(30vw,400px);
-    position: absolute;
-    top: 50%;
-    left: 3rem;
-    transform: translateY(-50%);
-    font: 400 0.85rem helvetica,sans-serif;
-    color: white;
-    text-shadow: 0 3px 8px rgba(0,0,0,0.5);
-    opacity: 0;
-    display: none;
+  *,:after,:before{box-sizing:border-box}
+  .clearfix:after,.clearfix:before{content:'';display:table}
+  .clearfix:after{clear:both;display:block}
+  a{color:inherit;text-decoration:none}
   
-    & .title {
-      font-family: 'arial-black';
-      text-transform: uppercase;
-    }
-  
-    & .description {
-      line-height: 1.7;
-      margin: 1rem 0 1.5rem;
-      font-size: 0.8rem;
-    }
-  
-    & button {
-      width: fit-content;
-      background-color: rgba(0,0,0,0.1);
-      color: white;
-      border: 2px solid white;
-      border-radius: 0.25rem;
-      padding: 0.75rem;
-      cursor: pointer;
-    }
+  .foot{
+  text-align:center;
+  }
+  .card{
+  width: 500px;
   }
   
-  .item:nth-of-type(2) .content {
-    display: block;
-    animation: show 0.75s ease-in-out 0.3s forwards;
+  ::placeholder{
+  color: rgba(0, 0, 0, 0.5);
   }
-  
-  @keyframes show {
-    0% {
-      filter: blur(5px);
-      transform: translateY(calc(-50% + 75px));
-    }
-    100% {
-      opacity: 1;
-      filter: blur(0);
-    }
-  }
-  
-  .nav-header {
-    position: absolute;
-    bottom: 35vh;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 5;
-    user-select: none;
-  
-    & .btn {
-      background-color: rgba(255,255,255,0.5);
-      color: rgba(0,0,0,0.7);
-      border: 2px solid rgba(0,0,0,0.6);
-      margin: 0 0.25rem;
-      padding: 0.75rem;
-      border-radius: 50%;
-      cursor: pointer;
-  
-      &:hover {
-        background-color: rgba(255,255,255,0.3);
-      }
-    }
-  }
-  
-  @media (width > 650px) and (width < 900px) {
-    .content {
-      & .title        { font-size: 1rem; }
-      & .description  { font-size: 0.7rem; }
-      & button        { font-size: 0.7rem; }
-    }
-    .item {
-      width: 160px;
-      height: 270px;
-  
-      &:nth-child(3) { left: 50%; }
-      &:nth-child(4) { left: calc(50% + 170px); }
-      &:nth-child(5) { left: calc(50% + 340px); }
-      &:nth-child(6) { left: calc(50% + 510px); opacity: 0; }
-    }
-  }
-  
-  @media (width < 650px) {
-    .content {
-      & .title        { font-size: 0.9rem; }
-      & .description  { font-size: 0.65rem; }
-      & button        { font-size: 0.7rem; }
-    }
-    .item {
-      width: 130px;
-      height: 220px;
-  
-      &:nth-child(3) { left: 50%; }
-      &:nth-child(4) { left: calc(50% + 140px); }
-      &:nth-child(5) { left: calc(50% + 280px); }
-      &:nth-child(6) { left: calc(50% + 420px); opacity: 0; }
-    }
-  }
-
 /* body {
     min-height: 100vh;
     background: linear-gradient(#051f30, #000000);
