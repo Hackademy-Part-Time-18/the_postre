@@ -3,29 +3,25 @@
     {{-- <div style="height: 5000px"> --}}
 
     {{-- header --}}
-    <header class="masthead justify-content-center video" name="page-top">
+    <header>
         <ul class='slider'>
             @foreach ($articles as $article)
                 <li class='item' style="background-image: url('{{ Storage::url($article->image) }}')">
                     <div class='content'>
                         <h2 class='title'>{{ $article->title }}</h2>
-                        <p class='description'> Lorem ipsum, dolor sit amet consectetur
-                            adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
-                            praesentium nisi. Id laboriosam ipsam enim.
+                        <p class='description'>{{ $article->subtitle }}
                         </p>
-                        <p class="card-text">{{ $article->subtitle }}</p>
-                        <p class="small text-muted fst-italic text-capitalize">{{ $article->category->name }}</p>
-                        <button>Read More</button>
+                        <button href="">Read More</button>
                     </div>
                 </li>
             @endforeach
         </ul>
-        <nav class='nav'>
+        <nav class='nav-header'>
             <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
             <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
         </nav>
     </header>
-    <div style="height: 5000px">
+    {{-- <div style="height: 5000px"> --}}
 
 
     {{-- message --}}
@@ -41,15 +37,9 @@
             <div class="row justify-content-around row-cols-1 row-cols-md-3">
                 {{-- create article card --}}
                 @foreach ($articles as $article)
-                  <x-card 
-                  title={{ $article->title }};
-                  subtitle={{ $article->subtitle }};
-                  image={{ $article->image }};
-                  category={{ $article->category->name }};
-                  data={{ $article->created_at->format('d/m/Y') }};
-                  user={{ $article->user->name }};
-                  url="{{ route('article.show',compact('article')) }}"
-                  />
+                    <x-card title={{ $article->title }}; subtitle={{ $article->subtitle }}; image={{ $article->image }};
+                        category={{ $article->category->name }}; data={{ $article->created_at->format('d/m/Y') }};
+                        user={{ $article->user->name }}; url="{{ route('article.show', compact('article')) }}" />
                 @endforeach
             </div>
         </div>
@@ -58,19 +48,19 @@
     {{-- Paragrafo scrittura --}}
 
     <section class="page-section bg-primary" id="about">
-      <div class="container px-4 px-lg-5">
-          <div class="row gx-4 gx-lg-5 justify-content-center">
-              <div class="col-lg-8 text-center">
-                  <h2 class="text-white mt-0">Titolo Paragrafo</h2>
-                  <hr class="divider divider-light" />
-                  <p class="text-white-75 mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur,
-                      veniam sint. Laborum error vitae, adipisci, atque harum quidem, sed quae quasi expedita
-                      provident iste quos maxime fugiat iusto nulla voluptatum!</p>
-                  <a class="btn btn-light btn-xl" href="#recent">Andiamo!</a>
-              </div>
-          </div>
-      </div>
-  </section>
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="text-white mt-0">Titolo Paragrafo</h2>
+                    <hr class="divider divider-light" />
+                    <p class="text-white-75 mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur,
+                        veniam sint. Laborum error vitae, adipisci, atque harum quidem, sed quae quasi expedita
+                        provident iste quos maxime fugiat iusto nulla voluptatum!</p>
+                    <a class="btn btn-light btn-xl" href="#recent">Andiamo!</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <!-- Contact-->
