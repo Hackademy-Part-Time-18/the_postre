@@ -4,22 +4,7 @@
 
     {{-- header --}}
     <header>
-        <ul class='slider'>
-            @foreach ($articles as $article)
-                <li class='item' style="background-image: url('{{ Storage::url($article->image) }}')">
-                    <div class='content'>
-                        <h2 class='title'>{{ $article->title }}</h2>
-                        <p class='description'>{{ $article->subtitle }}
-                        </p>
-                        <button href="">Read More</button>
-                    </div>
-                </li>
-            @endforeach
-        </ul>
-        <nav class='nav-header'>
-            <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
-            <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
-        </nav>
+
     </header>
     {{-- <div style="height: 5000px"> --}}
 

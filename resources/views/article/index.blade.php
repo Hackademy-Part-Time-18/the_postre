@@ -1,4 +1,6 @@
 <x-layout>
+    
+    {{--
 
     <head>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -560,5 +562,5 @@
     </div>
 
 
-
+ --}}
 </x-layout>
