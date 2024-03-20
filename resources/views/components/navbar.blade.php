@@ -8,12 +8,12 @@
         <div class="collapse navbar-collapse " id="navbarResponsive">
             <ul class="navbar-nav mx-auto align-items-start">
                 @auth
-                @if (auth()->user()->is_writer != 1 && auth()->user()->is_revisor != 1 && auth()->user()->is_admin != 1)
+                {{-- @if (auth()->user()->is_writer != 1 && auth()->user()->is_revisor != 1 && auth()->user()->is_admin != 1) --}}
                 <li class="nav-item"><a class="nav-link" href="{{ route('work.with.us') }}">Lavora con noi</a></li>
-                @endif
+                {{-- @endif --}}
                 @endauth
                 @if (request()->route()->getName() == 'homepage')
-                <li class="nav-item"><a class="nav-link" href="{{ route('articles')}}">Articoli</a></li>
+                {{-- <li class="nav-item"><a class="nav-link" href="{{ route('articles')}}">Articoli</a></li> --}}
                 <li class="nav-item"><a class="nav-link" href="#about">Chi siamo</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">Contattaci</a></li>
                 @endif
