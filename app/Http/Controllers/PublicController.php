@@ -64,7 +64,7 @@ class PublicController extends Controller
                 break;
         }
 
-        $user->update();
+        // $user->update();
 
         return redirect()->route('homepage')->with('message', 'Grazie per averci contattato!');
     }

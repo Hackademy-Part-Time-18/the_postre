@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Article;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\File;
 
 class ArticleSeeder extends Seeder
 {

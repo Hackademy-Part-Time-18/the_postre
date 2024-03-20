@@ -23,6 +23,20 @@ return new class extends Migration
             'email' => 'admin@thepostre.it',
             'password' => bcrypt('12345678'),
             'is_admin' => true,
+        ],[
+            'name' => 'writer',
+            'email' => 'writer@writer.it',
+            'password' => bcrypt('12345678'),
+            'is_writer' => true,
+        ],[
+            'name' => 'revisor',
+            'email' => 'revisor@revisor.it',
+            'password' => bcrypt('12345678'),
+            'is_revisor' => true,
+        ],[
+            'name' => 'example',
+            'email' => 'example@example.it',
+            'password' => bcrypt('12345678'),
         ]);
     }
 
@@ -32,6 +46,10 @@ return new class extends Migration
     public function down()
     {
         User::where('email' , 'admin@thepostre.it')->delete();
+        User::where('email' , 'writer@writer.it')->delete();
+        User::where('email' , 'revisor@revisor.it')->delete();
+        User::where('email' , 'example@example.it')->delete();
+
         Schema::table('users', function (Blueprint $table) {
            $table->dropColumn(['is_admin', 'is_revisor', 'is_writer']);
         });
