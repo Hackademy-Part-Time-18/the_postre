@@ -12,4 +12,9 @@
                 class="btn btn-dark bg-message text-white border-0">Leggi</a>
         </div>
     </div>
+    <div class="card-footer text-muted d-flex justify-content-between align-items-center">
+        Redatto il {{ $article->created_at->format('d/m/Y') }} da {{ $article->user->name }}
+        <a href="{{ route('article.show', compact('article')) }}"
+            class="btn btn-dark bg-message text-white border-0">Leggi</a>
+    </div>
 </div>
