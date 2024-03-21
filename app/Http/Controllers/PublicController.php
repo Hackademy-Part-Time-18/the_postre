@@ -16,8 +16,8 @@ class PublicController extends Controller
     public function homepage()
     {
         $mostViewedArticles = (new ArticleController())->mostViewedArticlesLastWeek();
-        $articles = Article::orderBy('created_at', 'desc')->take(5)->get();
-        return view('homepage', compact('articles', 'mostViewedArticles'));
+        $articles = Article::orderBy('created_at', 'desc')->take(6)->get();
+        return view('homepage', compact('articles','mostViewedArticles'));
     }
     public function login()
     {

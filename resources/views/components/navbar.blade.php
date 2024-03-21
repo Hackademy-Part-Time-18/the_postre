@@ -8,19 +8,17 @@
         </button>
         <div class="collapse navbar-collapse " id="navbarResponsive">
             <ul class="navbar-nav mx-auto align-items-start">
-                @if (request()->route()->getName() != 'register' && request()->route()->getName() != 'login')
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">Categoria</a>
                         <ul class="dropdown-menu mb-2" aria-labelledby="navbarDropdown">
                             @foreach ($categories as $category)
                                 <li><a id="btn-registrati" class="dropdown-item"
-                                        href="{{ route('articles.category',$category->name)}}">{{ $category['name'] }}</a>
+                                        href="{{ route('article.bycategory',$category->id)}}">{{ $category['name'] }}</a>
                                 </li>
                             @endforeach
                         </ul>
                     </li>
-                @endif
                 @auth  
                 <li class="nav-item"><a class="nav-link" href="{{ route('work.with.us') }}">Lavora con noi</a></li>
                 @endauth

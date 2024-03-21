@@ -1,20 +1,28 @@
 <x-layout>
 
-    {{-- <div style="height: 5000px"> --}}
 
     {{-- header --}}
-    <header class="masthead justify-content-center" name="page-top">
-        <div class="row gx-4 gx-lg-6 h-100 align-items-center justify-content-center text-center">
-            <div class="col-lg-8 align-self-end">
-                <h1 class="text-white font-weight-bold">Il tuo posto preferito per sapere la vita degli altri</h1>
-                <hr class="divider" />
-            </div>
-            <div class="col-lg-8 align-self-baseline">
-                <p class="text-white-75 mb-5">!!Tutto lo sapiamo!!</p>
-                <a class="btn btn-primary btn-xl" href="{{ route('article.index') }}">Tutti gli articoli</a>
-            </div>
-        </div>
+    <div class=" bg-header"></div>
+    <header class="mb-4">
+        <ul class='slider'>
+            @foreach ($mostViewedArticles as $article)
+                <li class='item' style="background-image: url('{{ Storage::url($article->image) }}')">
+                    <div class='content'>
+                        <h2 class='title'>{{ $article->title }}</h2>
+                        <p class='description'>{{ $article->subtitle }}
+                        </p>
+                        <button href=""><a href="{{ route('article.show', compact('article')) }}">Continua a leggere</a></button>
+                    </div>
+                </li>
+            @endforeach
+        </ul>
+        <nav class='nav-header'>
+            <i class="btn prev bi bi-caret-left-square" name="arrow-back-outline"></i>
+            <i class="btn next bi bi-caret-right-square" name="arrow-forward-outline"></i>
+        </nav>
     </header>
+
+    {{-- <div style="height: 5000px"></div> --}}
 
 
     {{-- message --}}
@@ -28,7 +36,7 @@
     <div id="recent" class="container my-2">
         <div class="row justify-content-around row-cols-1 row-cols-md-3">
             {{-- create article card --}}
-            @foreach ($articles as $article)
+            @foreach($articles as $article)
             <x-card title={{ $article->title }} 
                 subtitle={{ $article->subtitle }}
                 image={{ $article->image }}

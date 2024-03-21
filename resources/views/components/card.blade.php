@@ -1,4 +1,3 @@
-<div class="col mb-4">
     <div class="card h-100 w-100">
         <img src="{{ Storage::url($article->image) }}" class="card-img-top" alt="...">
         <div class="card-body">
