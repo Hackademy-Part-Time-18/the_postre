@@ -15,7 +15,7 @@
 <body id="page-top">
     <x-navbar/>
     @if (request()->route()->getName()!='homepage') 
-    <div style="height: 70px"></div>
+    <div style="height: 70px" class="mb-1"></div>
     @endif
 
     {{ $slot }}

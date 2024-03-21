@@ -1,6 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 @if (request()->route()->getname()=='homepage') text-visibility @else navbar-shrink @endif" 
 @if (request()->route()->getname()=='homepage')
 id="mainNav"
+@else
+id="mainNav2"
 @endif>
     <div class=" container px-4 px-lg-5 ">
         <a class="navbar-brand" href="{{ route('homepage') }}"> ThePostre</a>
@@ -48,7 +50,7 @@ id="mainNav"
                                 <li><a class="dropdown-item" href="{{ route('admin.dashboard') }}">Admin dashboard</a></li> @endif  
                                 @if (Auth::user()->is_revisor) 
                                 <li><a class="dropdown-item" href="{{ route('revisor.dashboard') }}">Revisor dashboard</a></li> @endif                             
-                                 <li><a class="dropdown-item" href="{{ route('article.create') }}">Inserisciarticolo</a>
+                                <li><a class="dropdown-item" href="{{ route('article.create') }}">Inserisci articolo</a>
                                 </li>
                                 <li><a class="dropdown-item" href="#"
                                         onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a>
