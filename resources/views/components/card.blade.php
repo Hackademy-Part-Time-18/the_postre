@@ -17,9 +17,13 @@
                                     <div class="card-block">
                                         <h4 class="card-title">{{ $subtitle }}</h4>
                                         <p class="card-text">{{ $category }}</p>
+                                        @if ($category)
+                                        <a href="{{ $url }}" class="btn btn-dark bg-message text-white border-0">Leggi</a>
+                                        @else
+                                            <p class="smal text-muted st-italic text-capitalize">Non categorizzato</p>
+                                        @endif
                                         <div class="card-footer text-muted d-flex justify-content-between align-items-center">
                                             Redatto il {{ $data }} da {{ $user }}
-                                            <a href="{{ $url }}" class="btn btn-dark bg-message text-white border-0">Leggi</a>
                                         </div>
                                     </div>
                                 </div>
