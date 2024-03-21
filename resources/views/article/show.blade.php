@@ -22,6 +22,7 @@
                 </div>
                 <hr>
                 <p>{{ $article->body }}</p>
+                <p>{{ $article->category->name }}</p>
                 <div class="card-footer text-muted d-flex justify-content-between align-items-center2 mb-3"> Redatto il
                     {{ $article->created_at->format('d/m/Y') }} da {{ $article->user->name }}
                     <a href="{{ route('article.index') }}" class="btn btn-dark bg-message border-0 text-white">Torna

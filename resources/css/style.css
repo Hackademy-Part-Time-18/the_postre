@@ -1,3 +1,7 @@
+.text-visibility{
+  text-shadow: 0 3px 8px rgb(0, 0, 0),0 0 1em rgba(0, 0, 0, 0.774)
+  /* 0 0 0.2em rgba(255, 191, 0, 0.788); */
+}
 /* background fixed 100% */
 .bg-100 {
   position: fixed;
@@ -230,7 +234,7 @@
     transform: translateY(-50%);
     font: 400 0.85rem helvetica,sans-serif;
     color: white;
-    text-shadow: 0 3px 8px rgba(0,0,0,0.5);
+    text-shadow: 0 3px 8px rgb(0, 0, 0),0 0 1em rgba(0, 0, 0, 0.774);
     opacity: 0;
     display: none;
     

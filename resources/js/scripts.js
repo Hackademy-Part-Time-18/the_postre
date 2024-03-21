@@ -8,8 +8,11 @@ return;
 }
 if (window.scrollY === 0) {
 navbarCollapsible.classList.remove('navbar-shrink')
+navbarCollapsible.classList.add('text-visibility')
+
 } else {
 navbarCollapsible.classList.add('navbar-shrink')
+navbarCollapsible.classList.remove('text-visibility')
 }
 
 };

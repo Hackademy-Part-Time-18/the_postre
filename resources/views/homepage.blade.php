@@ -2,16 +2,16 @@
 
 
     {{-- header --}}
-    <div class=" bg-header"></div>
+    {{-- <div class=" bg-header"></div> --}}
     <header class="mb-4">
         <ul class='slider'>
             @foreach ($mostViewedArticles as $article)
-                <li class='item' style="background-image: url('{{ Storage::url($article->image) }}')">
+                <li class='item ' style="background-image: url('{{ Storage::url($article->image) }}')">
                     <div class='content'>
                         <h2 class='title'>{{ $article->title }}</h2>
                         <p class='description'>{{ $article->subtitle }}
                         </p>
-                        <a href="{{ route('article.show', compact('article')) }}" class="btn btn-dark bg-message text-white border-0">Continua a leggere</a>
+                        <a href="{{ route('article.show', compact('article')) }}" class="btn btn-dark bg-message text-white border-0" style="text-shadow:0 0 0 0em !important;">Continua a leggere</a>
                     </div>
                 </li>
             @endforeach
