@@ -38,6 +38,16 @@
             {{-- create article card --}}
             @foreach($articles as $article)
             <x-card 
+<<<<<<< HEAD
+                :tags= "$article->tags"
+                title={{ $article->title }} 
+                subtitle={{ $article->subtitle }}
+                image={{ $article->image }}
+                category={{ $article->category->name }}
+                 data={{ $article->created_at->format('d/m/Y') }}
+                user={{ $article->user->name }}
+                 url="{{ route('article.show', compact('article')) }}" />
+=======
                 title="{{ $article->title }} "
                 subtitle="{{ $article->subtitle }}"
                 image="{{ $article->image }}"
@@ -46,6 +56,7 @@
                 user="{{ $article->user->name }}"
                  url="{{ route('article.show', compact('article')) }}" 
                  />
+>>>>>>> ee676aea487a2058760ce17d2dabf7a3389c69c9
             @endforeach
         </div>
     </div>

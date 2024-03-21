@@ -15,6 +15,7 @@
                     @foreach ($articles as $article)
                         <div class="col mb-4">
                             <x-card 
+                                :tags= "$article->tags"
                                 title={{ $article->title }} 
                                 subtitle={{ $article->subtitle }}
                                 image={{ $article->image }}

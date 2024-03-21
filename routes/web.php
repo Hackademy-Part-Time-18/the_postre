@@ -51,8 +51,13 @@ Route::middleware('writer')->group(function(){
     Route::post('/article/store', [ArticleController::class, 'store'])->name('article.store');
 });
 Route::middleware('revisor')->group(function(){
+<<<<<<< HEAD
+    Route::get('/revisor/dashboard' , [RevisorController::class, 'revisorDashboard'])->name('revisor.dashboard');
+    Route::post('/revisor/{article}/detail', [RevisorController::class, 'articleDetail'])->name('revisor.detail');
+=======
     Route::get('/revisor/dashboard' , [RevisorController::class, 'dashboard'])->name('revisor.dashboard');
     Route::post('/revisor/article/{article}/detail', [RevisorController::class, 'articleDetail'])->name('revisor.detail');
+>>>>>>> ee676aea487a2058760ce17d2dabf7a3389c69c9
     Route::post('/revisor/{article}/accept' , [RevisorController::class, 'acceptArticle'])->name('revisor.accept');
     Route::post('/revisor/{article}/reject', [RevisorController::class, 'rejectArticle'])->name('revisor.reject');
 });
