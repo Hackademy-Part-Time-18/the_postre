@@ -1,3 +1,4 @@
+@if (request()->route()->getname()!='user')
 <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 @if (request()->route()->getname()=='homepage') text-visibility @else navbar-shrink @endif" @if (request()->route()->getname()=='homepage')
     id="mainNav"
     @else
@@ -78,3 +79,4 @@
         </div>
     </div>
 </nav>
+@endif
