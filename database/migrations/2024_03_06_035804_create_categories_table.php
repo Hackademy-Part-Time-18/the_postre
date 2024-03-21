@@ -16,6 +16,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->timestamps();
+            $table->unsignedInteger('views')->default(0);
         });
 
         $categories = ['sport', 'finanza', 'cronaca', 'politica'];
@@ -33,6 +34,9 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::table('categories', function (Blueprint $table) {
+            $table->dropColumn('views');
+        });
         Schema::dropIfExists('categories');
     }
 };

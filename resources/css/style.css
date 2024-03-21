@@ -216,17 +216,17 @@
       opacity: 1;
     }
   
-    &:nth-child(3) { left: 50%; }
-    &:nth-child(4) { left: calc(50% + 220px); }
-    &:nth-child(5) { left: calc(50% + 440px); }
-    &:nth-child(6) { left: calc(50% + 660px); opacity: 0; }
+    &:nth-child(3) { left: 60%; }
+    &:nth-child(4) { left: calc(60% + 220px); }
+    &:nth-child(5) { left: calc(60% + 440px); }
+    &:nth-child(6) { left: calc(60% + 660px); opacity: 0; }
   }
   
   .content {
     width: min(30vw,400px);
     position: absolute;
     top: 50%;
-    left: 3rem;
+    left: 4rem;
     transform: translateY(-50%);
     font: 400 0.85rem helvetica,sans-serif;
     color: white;

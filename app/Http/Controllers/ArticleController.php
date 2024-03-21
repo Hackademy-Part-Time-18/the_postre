@@ -70,6 +70,9 @@ class ArticleController extends Controller
     public function show(Article $article)
     {
         $article->increment('views');
+        $article->user->increment('views');
+        $article->category->increment('views');
+        
         return view('article.show', compact('article'));
     }
 

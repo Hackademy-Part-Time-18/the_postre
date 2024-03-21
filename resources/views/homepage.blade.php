@@ -11,13 +11,13 @@
                         <h2 class='title'>{{ $article->title }}</h2>
                         <p class='description'>{{ $article->subtitle }}
                         </p>
-                        <button href=""><a href="{{ route('article.show', compact('article')) }}">Continua a leggere</a></button>
+                        <a href="{{ route('article.show', compact('article')) }}" class="btn btn-dark bg-message text-white border-0">Continua a leggere</a>
                     </div>
                 </li>
             @endforeach
         </ul>
         <nav class='nav-header'>
-            <i class="btn prev bi bi-caret-left-square" name="arrow-back-outline"></i>
+            <i class="btn prev bi bi-caret-left-square " name="arrow-back-outline"></i>
             <i class="btn next bi bi-caret-right-square" name="arrow-forward-outline"></i>
         </nav>
     </header>
