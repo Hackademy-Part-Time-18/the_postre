@@ -30,11 +30,11 @@
                 </div>
                 <div class="d-flex justify-content-betweeen">
                     if (Auth::user() && Auth::user->is_revisor)
-                        <form action="{{ route('revisor.accept' , compact('article')}}" method="post">
+                        <form action="{{ route('revisor.accept' , compact('article'))}}" method="post">
                             @csrf
                             <button class="btn btn-success text-white">Accetta articolo</button>
                         </form>
-                        <form action="{{ route('revisor.reject' , compact('article')}}" method="post">
+                        <form action="{{ route('revisor.reject' , compact('article'))}}" method="post">
                         @csrf
                         <button class="btn btn-danger text-white">Rifiuta articolo</button>
                     </form>
