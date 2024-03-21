@@ -38,6 +38,7 @@
                         @csrf
                         <button class="btn btn-danger text-white">Rifiuta articolo</button>
                     </form>
+                    @endif
                 </div>
             </div>
         </div>
