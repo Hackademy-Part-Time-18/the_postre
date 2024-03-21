@@ -37,7 +37,9 @@
         <div class="row justify-content-around row-cols-1 row-cols-md-3">
             {{-- create article card --}}
             @foreach($articles as $article)
-            <x-card title={{ $article->title }} 
+            <x-card 
+                :tags= "$article->tags"
+                title={{ $article->title }} 
                 subtitle={{ $article->subtitle }}
                 image={{ $article->image }}
                 category={{ $article->category->name }}
