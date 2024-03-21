@@ -45,6 +45,7 @@ Route::middleware('admin')->group(function(){
     Route::patch('/admin/{user}/set-admin' , [AdminController::class , 'setAdmin'])->name('admin.setAdmin');
     Route::patch('/admin/{user}/set-revisor' , [AdminController::class , 'setRevisor'])->name('admin.setRevisor');
     Route::patch('/admin/{user}/set-writer' , [AdminController::class , 'setWriter'])->name('admin.setWriter');
+    
 });
 Route::middleware('writer')->group(function(){
     Route::get('/article/create', [ArticleController::class,  'create'])->name('article.create');
