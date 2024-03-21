@@ -16,7 +16,7 @@
         <td>
             @switch($role)
             @case('amministratore')
-                <form action="{{ route('admin.setAdmin' , compact('user')}}" method="post">
+                <form action="{{ route('admin.setAdmin' , compact('user'))}}" method="post">
                     @csrf
                     @method('patch')
 
@@ -24,7 +24,7 @@
                 </form>
                 @break
             @case('revisore')
-            <form action="{{ route('admin.setRevisor' , compact('user')}}" method="post">
+            <form action="{{ route('admin.setRevisor' , compact('user'))}}" method="post">
                     @csrf
                     @method('patch')
 
@@ -32,7 +32,7 @@
                 </form>
                 @break
             @case('scrittore')
-            <form action="{{ route('admin.setWriter' , compact('user')}}" method="post">
+            <form action="{{ route('admin.setWriter' , compact('user'))}}" method="post">
                     @csrf
                     @method('patch')
 
