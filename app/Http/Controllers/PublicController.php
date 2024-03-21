@@ -107,7 +107,7 @@ class PublicController extends Controller
 
     public function user()
     {
-        $articles = Article::orderBy('created_at', 'desc')->get();
+        $articles = Article::where('is_accepted' , true)->orderBy('created_at', 'desc')->take(6)->get();
         return view('user' , ['articles'=> $articles]);
     }
 
