@@ -14,7 +14,7 @@ class RevisorController extends Controller
         $acceptedArticles = Article::where('is_accepted', true)->get();
         $rejectedArticles = Article::where('is_accepted', false)->get();
 
-        return view('revisor.dashboard', compact('unrevisionedaAticles', 'acceptedArticles', 'rejectedArticles'));
+        return view('revisor.dashboard', compact('unrevisionedArticles', 'acceptedArticles', 'rejectedArticles'));
     }
 
     public function acceptArticle(Article $article){
@@ -49,7 +49,7 @@ class RevisorController extends Controller
     public function articles_by_category(Category $category){
         $articles = Article::where('category_id' , $category->id)->where('is_accepted' , true)->orderBy('created_at', 'DESC')->get();
 
-        return view('article.category' , compact('articles', 'category')); 
+        return view('article.bycategory' , compact('articles', 'category')); 
     }
 
 

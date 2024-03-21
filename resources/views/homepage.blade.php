@@ -3,7 +3,7 @@
 
     {{-- header --}}
     {{-- <div class=" bg-header"></div> --}}
-    <header class="mb-4">
+    <header class="mb-5">
         <ul class='slider'>
             @foreach ($mostViewedArticles as $article)
                 <li class='item ' style="background-image: url('{{ Storage::url($article->image) }}')">
@@ -38,6 +38,7 @@
             {{-- create article card --}}
             @foreach($articles as $article)
             <x-card 
+<<<<<<< HEAD
                 :tags= "$article->tags"
                 title={{ $article->title }} 
                 subtitle={{ $article->subtitle }}
@@ -46,6 +47,16 @@
                  data={{ $article->created_at->format('d/m/Y') }}
                 user={{ $article->user->name }}
                  url="{{ route('article.show', compact('article')) }}" />
+=======
+                title="{{ $article->title }} "
+                subtitle="{{ $article->subtitle }}"
+                image="{{ $article->image }}"
+                category="{{ $article->category->name }}"
+                 data="{{ $article->created_at->format('d/m/Y') }}"
+                user="{{ $article->user->name }}"
+                 url="{{ route('article.show', compact('article')) }}" 
+                 />
+>>>>>>> ee676aea487a2058760ce17d2dabf7a3389c69c9
             @endforeach
         </div>
     </div>
