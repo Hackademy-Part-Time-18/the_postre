@@ -335,6 +335,9 @@
       &:nth-child(6) { left: calc(50% + 420px); opacity: 0; display: none; }
     }
   }
+
+
+  
   /* .bg-header{
     position: absolute;
     height: 70%;
