@@ -64,7 +64,7 @@
                         @guest
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false"> Unete a noi </a>
+                                    data-bs-toggle="dropdown" aria-expanded="false"> Unisciti a noi </a>
                                 <ul class="dropdown-menu mb-2" style="text-shadow:none;" aria-labelledby="navbarDropdown">
                                     <li><a id="btn-accedi" class="dropdown-item"
                                             href="{{ route('register') }}">Registrati</a>
