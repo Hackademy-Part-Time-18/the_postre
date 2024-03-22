@@ -1,5 +1,7 @@
 <x-layout>
-<div class="container-fluid p-5 bg-info text-center text-white">
+    <div class="bg-100"></div>
+
+<div class="container-fluid p-5 text-center text-white">
     <div class="row justify-content-center">
         <h1 class="display-1">
             Bentornato revisore
@@ -12,7 +14,7 @@
         {{ session('message')}}
     </div>
 @endif
-<div class="container my-5">
+<div class="container bg-white p-1 my-5" style="border-radius: 0.5em">
     <div class="row justify-content-center">
         <div class="col-12">
             <h2>Articoli da revisionare</h2>
@@ -20,7 +22,7 @@
         </div>
     </div>
 </div>
-<div class="container my-5">
+<div class="container bg-white p-1 my-5" style="border-radius: 0.5em">
     <div class="row justify-content-center">
         <div class="col-12">
             <h2>Articoli pubblicati</h2>
@@ -28,7 +30,7 @@
         </div>
     </div>
 </div>
-<div class="container my-5">
+<div class="container bg-white p-1 my-5" style="border-radius: 0.5em" >
     <div class="row justify-content-center">
         <div class="col-12">
             <h2>Articoli respinti</h2>
