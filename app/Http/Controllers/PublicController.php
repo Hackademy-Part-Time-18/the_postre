@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Mail\RequestRoleMail;
 use App\Mail\SendContactMail;
 use App\Models\Article;
+use App\Models\Category;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Routing\RouteUri;
 use Illuminate\Support\Facades\Auth;
@@ -17,7 +19,9 @@ class PublicController extends Controller
     {
         $mostViewedArticles = (new ArticleController())->mostViewedArticlesLastWeek();
         $articles = Article::where('is_accepted' , true)->orderBy('created_at', 'desc')->take(6)->get();
-        return view('homepage', compact('articles','mostViewedArticles'));
+        $mostViewedCategories = Category::orderByDesc('views')->take(5)->get();
+        $mostViewedUsers = User::orderByDesc('views')->take(5)->get();
+        return view('homepage', compact('articles','mostViewedArticles','mostViewedCategories','mostViewedUsers'));
     }
     public function login()
     {
@@ -108,6 +112,10 @@ class PublicController extends Controller
     public function user()
     {
         $articles = Article::where('is_accepted' , true)->orderBy('created_at', 'desc')->take(6)->get();
+        $mostViewedArticles = (new ArticleController())->mostViewedArticlesLastWeek();
+        $articles = Article::where('is_accepted' , true)->orderBy('created_at', 'desc')->take(6)->get();
+        $mostViewedCategories = Category::orderByDesc('views')->take(4)->get();
+        $mostViewedUsers = User::orderByDesc('views')->take(4)->get();
         return view('user' , ['articles'=> $articles]);
     }
 

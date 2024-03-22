@@ -3,7 +3,7 @@
 
     {{-- header --}}
     {{-- <div class=" bg-header"></div> --}}
-    <header class="mb-5">
+    <header class="mb-5 header-home">
         <ul class='slider'>
             @foreach ($mostViewedArticles as $article)
                 <li class='item ' style="background-image: url('{{ Storage::url($article->image) }}')">
@@ -12,19 +12,18 @@
                         <p class='description'>{{ $article->subtitle }}
                         </p>
                         <a href="{{ route('article.show', compact('article')) }}"
-                            class="btn btn-dark bg-message text-white border-0"
-                            style="text-shadow:0 0 0 0em !important;">Continua a leggere</a>
+                            class="btn btn-dark bg-message text-white border-0" style="text-shadow:none;">Continua a
+                            leggere</a>
                     </div>
                 </li>
             @endforeach
         </ul>
         <nav class='nav-header'>
-            <i class="btn prev bi bi-caret-left-square " name="arrow-back-outline"></i>
-            <i class="btn next bi bi-caret-right-square" name="arrow-forward-outline"></i>
+            <i class="btn prev bi bi-caret-left-square-fill text-white" style="font-size: 2.5rem;" name="arrow-back-outline"></i>
+            <i class="btn next bi bi-caret-right-square-fill text-white" style="font-size: 2.5rem;" name="arrow-forward-outline"></i>
         </nav>
     </header>
 
-    {{-- <div style="height: 5000px"></div> --}}
 
 
     {{-- message --}}
@@ -33,24 +32,65 @@
                 class="bi bi-exclamation-circle mx-1"></i>{{ session('message') }}
         </div>
     @endif
+    {{-- section navigate  --}}
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 d-flex justify-content-center">
+                    <a href="{{ route('article.index') }}" class="btn mx-2 mb-2 btn-dark bg-message text-white border-0"
+                        style="text-shadow:none;">Tutti gli articoli</a>
+                    <button class="btn mx-2 mb-2 btn-dark bg-message text-white border-0" style="text-shadow:none;">
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Categorie piu viste</a>
+                            <ul class="dropdown-menu mb-2" aria-labelledby="navbarDropdown">
+                                @foreach ($mostViewedCategories as $category)
+                                    <li><a id="btn-registrati" class="dropdown-item"
+                                            href="{{ route('article.bycategory', $category->id) }}">{{ $category['name'] }}</a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </button>
+                    <button class="btn mx-2 mb-2 btn-dark bg-message text-white border-0" style="text-shadow:none;">
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">User piu famosi</a>
+                            <ul class="dropdown-menu mb-2" aria-labelledby="navbarDropdown">
+                                @foreach ($mostViewedUsers as $user)
+                                    <li><a id="btn-registrati" class="dropdown-item"
+                                            href="{{ route('article.bycategory', $user->id) }}">{{ $user['name'] }}</a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </button>
+                    {{-- <a href="{{ route('article.show', compact('article')) }}"
+                        class="btn mx-2 mb-2 btn-dark bg-message text-white border-0" style="text-shadow:none;">Continua
+                        a leggere</a> --}}
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     {{-- Recent Article  ; Articoli recenti --}}
-    <div id="recent" class="container my-2">
+    <div id="recent" class="container my-2 d-flex">
         <div class="row justify-content-around row-cols-1 row-cols-md-3 d-flex">
             {{-- create article card --}}
             @foreach ($articles as $article)
                 <div class="col mb-4">
-                    <x-card 
-                    title="{{ $article->title }} " 
-                    subtitle="{{ $article->subtitle }}"
-                    image="{{ $article->image }}" 
-                    category="{{ $article->category->name }}"
-                    data="{{ $article->created_at->format('d/m/Y') }}" 
-                    user="{{ $article->user->name }}"
-                    url="{{ route('article.show', compact('article')) }}" 
-                    />
+                    <x-card title="{{ $article->title }} " subtitle="{{ $article->subtitle }}"
+                        image="{{ $article->image }}" category="{{ $article->category->name }}"
+                        data="{{ $article->created_at->format('d/m/Y') }}" user="{{ $article->user->name }}"
+                        url="{{ route('article.show', compact('article')) }}" />
                 </div>
             @endforeach
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
         </div>
     </div>
 

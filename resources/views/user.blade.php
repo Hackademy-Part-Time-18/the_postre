@@ -1,6 +1,6 @@
 <x-layout>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-    <script href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <x-sidebar/>
     <div id="recent" class="container my-2">
         <div class="row justify-content-around row-cols-1 row-cols-md-3 d-flex">
