@@ -21,7 +21,13 @@ class PublicController extends Controller
         $articles = Article::where('is_accepted' , true)->orderBy('created_at', 'desc')->take(6)->get();
         $mostViewedCategories = Category::orderByDesc('views')->take(5)->get();
         $mostViewedUsers = User::orderByDesc('views')->take(5)->get();
-        return view('homepage', compact('articles','mostViewedArticles','mostViewedCategories','mostViewedUsers'));
+        $mostViewedCategoriesCard = Category::orderByDesc('views')->take(3)->get();
+        $mostViewedArticlesByCategory = Article::with('category')->orderBy('category_id')->orderByDesc('views')->get()->groupBy('category_id')->map(
+            function ($articles) {
+            return $articles->take(3);
+        });
+
+        return view('homepage', compact('articles','mostViewedArticles','mostViewedCategories','mostViewedUsers','mostViewedCategoriesCard','mostViewedArticlesByCategory'));
     }
     public function login()
     {
