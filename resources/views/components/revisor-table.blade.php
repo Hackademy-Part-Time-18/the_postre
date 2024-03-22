@@ -21,7 +21,11 @@
             <td>{{ $article->user->name}}</td>
             <td>{{ $article->created_at->format('Y-m-d') }}</td>
             <td>
-                <a href="{{ route('revisor.detail', $article)}}" class="btn btn-primary">Leggi</a>
+                @if (is_null($article->is_accepted))
+                <a href="{{ route('article.show', $article)}}" class="btn btn-primary">Leggi</a>
+                @else
+                <a href="{{ route('revisor.detail', $article)}}" class="btn btn-primary">Riporta in revisione</a>
+                @endif
             </td>
         </tr>
         @endforeach
