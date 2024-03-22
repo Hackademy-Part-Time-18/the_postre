@@ -61,7 +61,7 @@
                             <ul class="dropdown-menu mb-2" aria-labelledby="navbarDropdown">
                                 @foreach ($mostViewedUsers as $user)
                                     <li><a id="btn-registrati" class="dropdown-item"
-                                            href="{{ route('article.bycategory', $user->id) }}">{{ $user['name'] }}</a>
+                                            href="{{ route('article.byUser', $user->id) }}">{{ $user['name'] }}</a>
                                     </li>
                                 @endforeach
                             </ul>

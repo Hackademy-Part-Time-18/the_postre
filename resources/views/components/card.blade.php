@@ -44,6 +44,9 @@
             </svg>
             <span class="ms-2 fs-7">{{ $data }}</span>
           </a>
+          <a style="" class="position-absolute bottom-0 end-50 mb-3 fs-7 link-secondary text-decoration-none d-flex align-items-center" href="#!">
+            <span class="ms-2 fs-7">{{ $user }}</span>
+          </a>
       {{-- <a href="#!" class="btn btn-primary m-0 text-nowrap entry-more">Read More</a> --}}
     </div>
     {{-- <div class="card-footer border border-top-0 bg-light p-4"> --}}

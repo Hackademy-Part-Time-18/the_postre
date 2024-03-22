@@ -26,12 +26,12 @@
                         <input type="text" name="subtitle" class="form-control" id="subtitle" value="{{old('subtitle')}}">
                     </div>
                     <div class="mb-3">
-                        <label for="image" class="form-label">Immagine:<label>
-                        <input name="tags" class="form-control" id="tags" value="{{ old('tags') }}">
-                        <span class="small fst-italic"> Dividi ogni tag con una virgola </span>
+                        <label for="image" class="form-label">Tags:<label>
+                            <span class="small fst-italic"> Dividi ogni tag con una virgola </span>
+                            <input name="tags" class="form-control" id="tags" value="{{ old('tags') }}">
                     </div>
                     <div class="mb-3">
-                        <label for="tags" class="form-label">Tags:<label>
+                        <label for="tags" class="form-label">Immagine:<label>
                         <input type="file" name="image" class="form-control" id="image">
                     </div>
                     <div class="mb-3">
@@ -47,8 +47,8 @@
                         <textarea name="body" id="body" cols="30" rows="7" class="form-control">{{old('body')}}</textarea>
                     </div>
                     <div class="mt-2">
-                        <button class="btn btn-info text-white">Inserisci un articolo</button>
-                        <a class="btn btn-outline-info" href="{{route('homepage')}}">Torna alla home</a>
+                        <button class="btn btn-dark bg-message border-0 text-white">Inserisci un articolo</button>
+                        <a class="btn btn-outline-dark" href="{{route('homepage')}}">Torna alla home</a>
                     </div>
                 </form>
             </div>

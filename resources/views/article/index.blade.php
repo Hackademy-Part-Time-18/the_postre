@@ -2,6 +2,15 @@
 
 
     <div class="bg-100"></div>
+    @if (request()->route()->getname()=='search.articles')
+    <div class="container-fluid p-5 text-center text-white">
+        <div class="row justify-content-center">
+            <h1 class="display-1">
+                Risultati della ricerca :
+            </h1>
+        </div>
+    </div>
+    @else
     <div class="container-fluid p-5 text-center text-white">
         <div class="row justify-content-center">
             <h1 class="display-1">
@@ -9,6 +18,7 @@
             </h1>
         </div>
     </div>
+    @endif
     <div id="recent" class="container my-2">
         <div class="row justify-content-around row-cols-1 row-cols-md-3 d-flex">
             {{-- create article card --}}

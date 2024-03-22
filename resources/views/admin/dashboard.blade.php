@@ -1,5 +1,7 @@
 <x-layout>
-    <div class="container-fluid p-5 bg-info text-center text-white">
+    <div class="bg-100"></div>
+
+    <div class="container-fluid p-5 text-center text-white">
         <div class="row justify-content-center">
             <h1 class="display-1">
                 Bentornato amministratore
@@ -21,7 +23,7 @@
             </ul>
         </div>
     @endif
-    <div class="container my-5">
+    <div class="container bg-white p-1 my-5" style="border-radius: 0.5em">
         <div class="row justify-content-center">
             <div class="col-12">
                 <h2>Richiesta ruolo amministratore</h2>
@@ -29,7 +31,7 @@
             </div>
         </div>
     </div>
-    <div class="container my-5">
+    <div class="container bg-white p-1 my-5" style="border-radius: 0.5em">
         <div class="row justify-content-center">
             <div class="col-12">
                 <h2>Richiesta ruolo revisore</h2>
@@ -37,7 +39,7 @@
             </div>
         </div>
     </div>
-    <div class="container my-5">
+    <div class="container bg-white p-1 my-5" style="border-radius: 0.5em">
         <div class="row justify-content-center">
             <div class="col-12">
                 <h2>Richiesta ruolo scrittore</h2>
@@ -45,7 +47,7 @@
             </div>
         </div>
     </div>
-    <div class="container my-5">
+    <div class="container bg-white p-1 my-5" style="border-radius: 0.5em">
         <div class="row justify-content-center">
             <div class="col-12">
                 <h2>I tags della piattaforma</h2>
@@ -53,7 +55,7 @@
             </div>
         </div>
     </div>
-    <div class="container my-5">
+    <div class="container bg-white p-1 my-5" style="border-radius: 0.5em">
         <div class="row justify-content-center">
             <div class="col-12">
                 <h2>Le categorie della piattaforma</h2>

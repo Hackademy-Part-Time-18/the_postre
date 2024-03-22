@@ -35,9 +35,9 @@
                                     Benvenuto {{ Auth::user()->name }}
                                 </a>
                                 <ul class="dropdown-menu" style="text-shadow:none;" aria-labelledby="navbarDropdown">
-                                    <li>
+                                    {{-- <li>
                                         <a class="dropdown-item" href="{{ route('user') }}">Profilo</a>
-                                    </li>
+                                    </li> --}}
                                     @if (Auth::user()->is_admin)
                                         <li><a class="dropdown-item" href="{{ route('admin.dashboard') }}">Admin
                                                 dashboard</a></li>
@@ -77,12 +77,14 @@
                     </ul>
                 @endif
         @endif
+        {{-- search bar --}}
         <div class="mx-auto col">
             <form action="{{ route('search.articles') }}" method="get" class="d-flex">
-                <input class="form-control mx-2" name="key" type="text" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
+                <input class="form-control mx-2 text-white border border-dark" name="key" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-dark bg-white btn-outline-dark search-btn" type="submit"><i class="bi bi-search text-black"></i></button>
             </form>
         </div>
+        
     </div>
     </div>
 </nav>
