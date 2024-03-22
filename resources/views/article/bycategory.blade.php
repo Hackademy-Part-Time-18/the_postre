@@ -1,4 +1,5 @@
 <x-layout>
+    <div class="bg-100"></div>
     <div id="recent" class="container my-2">
         <div class="row justify-content-around row-cols-1 row-cols-md-3 d-flex">
             {{-- create article card --}}

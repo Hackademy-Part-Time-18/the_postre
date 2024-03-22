@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use App\Models\Category;
+use App\Models\Tag;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -28,7 +29,7 @@ class ArticleController extends Controller
 
     public function byUser(User $user)
     {
-        $articles = $user->articles()->orderby('created_at', 'desc')->get();
+        $articles = $user->articles()->where('is_accepted' , true)->orderby('created_at', 'desc')->get();
         return view('article.byuser', compact('user', 'articles'));
     }
     /**
