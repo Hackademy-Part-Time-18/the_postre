@@ -19,9 +19,9 @@
             @endforeach
         </ul>
         <nav class='nav-header'>
-            <i class="btn prev bi bi-caret-left-square-fill text-white" style="font-size: 2.5rem;"
+            <i  id="header-btn-left" class="btn prev bi bi-caret-left-square-fill text-white" style="font-size: 2.5rem;"
                 name="arrow-back-outline"></i>
-            <i class="btn next bi bi-caret-right-square-fill text-white" style="font-size: 2.5rem;"
+            <i id="header-btn-right" class="btn next bi bi-caret-right-square-fill text-white" style="font-size: 2.5rem;"
                 name="arrow-forward-outline"></i>
         </nav>
     </header>
