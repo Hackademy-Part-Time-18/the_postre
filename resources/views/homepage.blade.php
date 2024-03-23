@@ -30,104 +30,74 @@
 
     {{-- message --}}
     @if (session('message'))
-        <div class="alert alert-success bg-message text-center"><i
+        <div class="alert alert-success text-center"><i
                 class="bi bi-exclamation-circle mx-1"></i>{{ session('message') }}
         </div>
     @endif
     {{-- section navigate  --}}
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 d-flex justify-content-center">
-                    <a href="{{ route('article.index') }}" class="btn mx-2 mb-2 btn-dark bg-message text-white border-0"
-                        style="text-shadow:none;">Tutti gli articoli</a>
-                    <button class="btn mx-2 mb-2 btn-dark bg-message text-white border-0" style="text-shadow:none;">
-                        <div class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">Categorie piu viste</a>
-                            <ul class="dropdown-menu mb-2" aria-labelledby="navbarDropdown">
-                                @foreach ($mostViewedCategories as $category)
-                                    <li><a id="btn-registrati" class="dropdown-item"
-                                            href="{{ route('article.bycategory', $category->id) }}">{{ $category['name'] }}</a>
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    </button>
-                    <button class="btn mx-2 mb-2 btn-dark bg-message text-white border-0" style="text-shadow:none;">
-                        <div class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">User piu famosi</a>
-                            <ul class="dropdown-menu mb-2" aria-labelledby="navbarDropdown">
-                                @foreach ($mostViewedUsers as $user)
-                                    <li><a id="btn-registrati" class="dropdown-item"
-                                            href="{{ route('article.byUser', $user->id) }}">{{ $user['name'] }}</a>
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    </button>
-                    {{-- <a href="{{ route('article.show', compact('article')) }}"
-                        class="btn mx-2 mb-2 btn-dark bg-message text-white border-0" style="text-shadow:none;">Continua
-                        a leggere</a> --}}
-                </div>
-            </div>
-        </div>
-    </section>
+<x-btn-nav/>
 
 
-    {{-- Recent Article  ; Articoli recenti --}}
+    {{-- Recent Article; Articoli recenti --}}
     <div id="recent" class="container my-2">
         <div class="row justify-content-center">
             {{-- Create article cards --}}
             <div class="col-md-8">
-                <div class="row"><h3>Articoli Recenti</h3></div>
+                <div class="row">
+                    <h3>Articoli Recenti</h3>
+                </div>
                 <div class="row row-cols-1 row-cols-md-2 g-4">
                     @foreach ($articles as $article)
-                    <div class="col mb-2">
-                        <x-card title="{{ $article->title }} " subtitle="{{ $article->subtitle }}"
-                            image="{{ $article->image }}" category="{{ $article->category->name }}"
-                            data="{{ $article->created_at->format('d/m/Y') }}" user="{{ $article->user->name }}"
-                            url="{{ route('article.show', compact('article')) }}" />
-                    </div>
+                        <div class="col mb-2">
+                            <x-card title="{{ $article->title }} " subtitle="{{ $article->subtitle }}"
+                                image="{{ $article->image }}" category="{{ $article->category->name }}"
+                                data="{{ $article->created_at->format('d/m/Y') }}" user="{{ $article->user->name }}"
+                                url="{{ route('article.show', compact('article')) }}"
+                            />
+                        </div>
                     @endforeach
                 </div>
             </div>
             {{-- Create carousels for most viewed articles by category --}}
             <div class="col-md-4">
-                <div class="row"><h3>Categorie piu Ricercate</h3></div>
-                @foreach ($mostViewedArticlesByCategory as $category => $articles)
-                <div class="mb-1">
-                    <h4 class="link-secondary">{{ $articles->first()->category->name }}</h4>
-                    <div id="{{ $articles->first()->category->name }}" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            @foreach ($articles as $key => $article)
-                            <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                                <img src="{{ Storage::url($article->image) }}" class="d-block w-100" alt="...">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <h5>{{ $article->title }}</h5>
-                                    <p>{{ $article->subtitle }}</p>
-                                </div>
-                            </div>
-                            @endforeach
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#{{ $articles->first()->category->name }}"
-                            data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#{{ $articles->first()->category->name }}"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
+                <div class="row">
+                    <h3>Categorie più Ricercate</h3>
                 </div>
+                @foreach ($mostViewedArticlesByCategory as $category => $articles)
+                    <div class="mb-1">
+                        <h4 class="link-secondary">{{ $articles->first()->category->name }}</h4>
+                        <div id="{{ $articles->first()->category->name }}" class="carousel slide"
+                            data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                @foreach ($articles as $key => $article)
+                                    <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                                        <a href="">
+                                            <img src="{{ Storage::url($article->image) }}" class="d-block w-100"
+                                                style="height: 200px; object-fit: cover;" alt="...">
+                                            <div class="carousel-caption d-none d-md-block">
+                                                <h5>{{ $article->title }}</h5>
+                                                <p>{{ $article->subtitle }}</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                @endforeach
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#{{ $articles->first()->category->name }}" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#{{ $articles->first()->category->name }}" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
                 @endforeach
             </div>
         </div>
     </div>
-    
 
     <!-- About-->
     <section class="page-section bg-primary" id="about">

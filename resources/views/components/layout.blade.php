@@ -17,6 +17,7 @@
     <x-navbar/>
     @if (request()->route()->getName()!='homepage') 
     <div style="height: 70px" class="mb-1"></div>
+    <x-btnnav/>
     @endif
 
     {{ $slot }}
