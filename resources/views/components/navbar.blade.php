@@ -39,12 +39,13 @@
                                         <a class="dropdown-item" href="{{ route('user') }}">Profilo</a>
                                     </li> --}}
                                     @if (Auth::user()->is_admin)
-                                        <li><a class="dropdown-item" href="{{ route('admin.dashboard') }}">Admin
-                                                dashboard</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('admin.dashboard') }}">Dashboard Admin</a></li>
                                     @endif
                                     @if (Auth::user()->is_revisor)
-                                        <li><a class="dropdown-item" href="{{ route('revisor.dashboard') }}">Revisor
-                                                dashboard</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('revisor.dashboard') }}">Dashboard del revisore</a></li>
+                                    @endif
+                                    @if (Auth::user()->is_writer)
+                                        <li><a class="dropdown-item" href="{{ route('writer.dashboard') }}">dashboard dello scrittore</a></li>
                                     @endif
                                     @if (Auth::user()->is_writer)
                                     <li><a class="dropdown-item" href="{{ route('article.create') }}">Inserisci articolo</a>
