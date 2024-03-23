@@ -3,6 +3,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 d-flex justify-content-center">
+                    @auth
+                    @if (Auth::user()->is_writer)
+                    <a class="btn mx-2 mb-2 btn-dark bg-message text-white border-0" style="text-shadow:none;" href="{{ route('article.create') }}">Inserisci articolo</a>
+                    @endif
+                    @endauth
                     <a href="{{ route('article.index') }}" class="btn mx-2 mb-2 btn-dark bg-message text-white border-0"
                         style="text-shadow:none;">Tutti gli articoli</a>
                     <button class="btn mx-2 mb-2 btn-dark bg-message text-white border-0" style="text-shadow:none;">

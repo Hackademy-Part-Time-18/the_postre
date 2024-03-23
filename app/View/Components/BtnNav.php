@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\User;
 use Closure;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\Component;
 
 class BtnNav extends Component

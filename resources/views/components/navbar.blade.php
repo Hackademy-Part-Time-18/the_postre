@@ -47,10 +47,7 @@
                                     @if (Auth::user()->is_writer)
                                         <li><a class="dropdown-item" href="{{ route('writer.dashboard') }}">dashboard dello scrittore</a></li>
                                     @endif
-                                    @if (Auth::user()->is_writer)
-                                    <li><a class="dropdown-item" href="{{ route('article.create') }}">Inserisci articolo</a>
-                                    </li>
-                                    @endif
+
                                     <li>
                                         <a class="dropdown-item" href="#"
                                             onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a>

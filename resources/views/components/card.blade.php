@@ -19,7 +19,7 @@
             <ul class="entry-meta list-unstyled d-flex mb-2">
                 <li>
                     <a class="link-primary text-decoration-none"
-                        href="{{ route('article.bycategory', compact('category')) }}">{{ $category }}</a>
+                        href="{{ route('article.bycategory', compact('category'))}}">{{ $nameCategory }}</a>
                 </li>
             </ul>
             <h2 class="card-title entry-title h4 mb-0">
@@ -31,8 +31,8 @@
         </p>
         <a style=""
             class="position-absolute bottom-0  mb-3 fs-7 link-secondary text-decoration-none d-flex align-items-center"
-            href="#!">
-            <span class="ms-0 fs-7">{{ $user }}</span>
+            href="{{ route('article.byUser', compact('user'))}}">
+            <span class="ms-0 fs-7">{{ $nameUser }}</span>
         </a>
         <a style=""
             class="position-absolute bottom-0 end-0 mx-3 mb-3 fs-7 link-secondary text-decoration-none d-flex align-items-center"
