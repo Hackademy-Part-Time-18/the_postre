@@ -59,7 +59,7 @@ Route::middleware('writer')->group(function(){
 });
 Route::middleware('revisor')->group(function(){
     Route::get('/revisor/dashboard' , [RevisorController::class, 'dashboard'])->name('revisor.dashboard');
-    Route::post('/revisor/article/{article}/detail', [RevisorController::class, 'articleDetail'])->name('revisor.detail');
+    Route::get('/revisor/article/{article}/detail', [RevisorController::class, 'articleDetail'])->name('revisor.detail');
     Route::post('/revisor/{article}/accept' , [RevisorController::class, 'acceptArticle'])->name('revisor.accept');
     Route::post('/revisor/{article}/reject', [RevisorController::class, 'rejectArticle'])->name('revisor.reject');
 });
