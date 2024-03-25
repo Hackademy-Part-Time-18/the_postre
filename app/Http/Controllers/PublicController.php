@@ -14,19 +14,6 @@ use Illuminate\Support\Facades\Mail;
 
 class PublicController extends Controller
 {
-
-    // public function layout(){
-    //     $mostViewedArticles = (new ArticleController())->mostViewedArticlesLastWeek();
-    //     $articles = Article::where('is_accepted' , true)->orderBy('created_at', 'desc')->take(6)->get();
-    //     $mostViewedCategories = Category::orderByDesc('views')->take(5)->get();
-    //     $mostViewedUsers = User::orderByDesc('views')->take(5)->get();
-    //     $mostViewedCategoriesCard = Category::orderByDesc('views')->take(3)->get();
-    //     $mostViewedArticlesByCategory = Article::with('category')->orderBy('category_id')->orderByDesc('views')->get()->groupBy('category_id')->map(
-    //         function ($articles) {
-    //         return $articles->take(3);
-    //     });
-    //     return view('homepage', compact('articles','mostViewedArticles','mostViewedCategories','mostViewedUsers','mostViewedCategoriesCard','mostViewedArticlesByCategory'));
-    // }
     public function homepage()
     {
         $mostViewedArticles = (new ArticleController())->mostViewedArticlesLastWeek();
@@ -86,7 +73,7 @@ class PublicController extends Controller
                 break;
         }
 
-        // $user->update();
+        $user->update();
 
         return redirect()->route('homepage')->with('message', 'Grazie per averci contattato!');
     }

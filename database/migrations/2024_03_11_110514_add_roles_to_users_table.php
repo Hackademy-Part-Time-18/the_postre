@@ -19,25 +19,25 @@ return new class extends Migration
         });
 
         $user = User::create([
-            'name' => 'admin',
+            'name' => 'Admin',
             'email' => 'admin@thepostre.it',
             'password' => bcrypt('12345678'),
             'is_admin' => true,
         ]); 
         $user2 = User::create([
-            'name' => 'revisor',
+            'name' => 'Revisor',
             'email' => 'revisor@thepostre.it',
             'password' => bcrypt('12345678'),
             'is_revisor' => true,
         ],);
-        $user4 = User::create([
+        $user3 = User::create([
             'name' => 'User',
             'email' => 'user@thepostre.it',
             'password' => bcrypt('12345678'),
         ],);
         $user4 = User::create([
             
-            'name' => 'writer',
+            'name' => 'Writer',
             'email' => 'writer@thepostre.it',
             'password' => bcrypt('12345678'),
             'is_writer' => true,
@@ -48,12 +48,12 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
-    public function down()
+    public function down(): void
     {
         User::where('email' , 'admin@thepostre.it')->delete();
-        User::where('email' , 'writer@writer.it')->delete();
-        User::where('email' , 'revisor@revisor.it')->delete();
-        User::where('email' , 'example@example.it')->delete();
+        User::where('email' , 'writer@thepostre.it')->delete();
+        User::where('email' , 'revisor@thepostre.it')->delete();
+        User::where('email' , 'user@thepostre.it')->delete();
 
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn(['is_admin', 'is_revisor', 'is_writer']);

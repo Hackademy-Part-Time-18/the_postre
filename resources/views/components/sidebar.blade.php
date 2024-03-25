@@ -60,12 +60,12 @@
                     </a>
                 </li>
 
-                <li class="nav-link">
+                {{-- <li class="nav-link">
                     <a href="#">
                         <i class='bx bx-bar-chart-alt-2 icon' ></i>
                         <span class="text nav-text">Messaggi di Ringraziamento</span>
                     </a>
-                </li>
+                </li> --}}
 
             </ul>
         </div>
