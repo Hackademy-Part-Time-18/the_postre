@@ -1,32 +1,32 @@
-<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 @if (request()->route()->getname() == 'homepage') text-visibility @else navbar-shrink @endif"
-    @if (request()->route()->getname() == 'homepage') id="mainNav"
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 @if (request()->route()->getname() == 'homepage') text-visibility @else navbar-shrink @endif"
+        @if (request()->route()->getname() == 'homepage') id="mainNav"
     @else
     id="mainNav2" @endif>
-    <div class=" container px-4 px-lg-5 ">
-        <a class="navbar-brand" href="{{ route('homepage') }}"> ThePostre</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        @if (request()->route()->getname() != 'user')
-            <div class="collapse navbar-collapse " id="navbarResponsive">
-                <ul class="navbar-nav mx-auto align-items-start">
+        <div class=" container px-4 px-lg-5 ">
+            <a class="navbar-brand" href="{{ route('homepage') }}"> ThePostre</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            @if (request()->route()->getname() != 'user')
+                <div class="collapse navbar-collapse " id="navbarResponsive">
+                    <ul class="navbar-nav mx-auto align-items-start">
 
-                    @auth
-                    @if (Auth::user()->is_admin&&Auth::user()->is_revisor&&Auth::user()->is_writer)
-                    @else
-                    <li class="nav-item"><a class="nav-link" href="{{ route('work.with.us') }}">Lavora con noi</a></li>
-                    @endif
-                    @endauth
-                    @if (request()->route()->getName() == 'homepage')
-                        <li class="nav-item"><a class="nav-link" href="#recent">Recenti</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about">Chi siamo</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contattaci</a></li>
-                    @endif
-                </ul>
-                {{-- navbar (user login) --}}
-                @if (request()->route()->getName() != 'register' && request()->route()->getName() != 'login')
+                        @auth
+                            @if (Auth::user()->is_admin && Auth::user()->is_revisor && Auth::user()->is_writer)
+                            @else
+                                <li class="nav-item"><a class="nav-link" href="{{ route('work.with.us') }}">Lavora con
+                                        noi</a></li>
+                            @endif
+                        @endauth
+                        @if (request()->route()->getName() == 'homepage')
+                            <li class="nav-item"><a class="nav-link" href="#recent">Recenti</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#about">Chi siamo</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#contact">Contattaci</a></li>
+                        @endif
+                    </ul>
+                    {{-- navbar (user login) --}}
                     <ul class="navbar-nav mx-auto">
                         @auth
                             <li class="nav-item dropdown">
@@ -39,13 +39,16 @@
                                         <a class="dropdown-item" href="{{ route('user') }}">Profilo</a>
                                     </li>
                                     @if (Auth::user()->is_admin)
-                                        <li><a class="dropdown-item" href="{{ route('admin.dashboard') }}">Dashboard Admin</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('admin.dashboard') }}">Dashboard
+                                                Admin</a></li>
                                     @endif
                                     @if (Auth::user()->is_revisor)
-                                        <li><a class="dropdown-item" href="{{ route('revisor.dashboard') }}">Dashboard del revisore</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('revisor.dashboard') }}">Dashboard del
+                                                revisore</a></li>
                                     @endif
                                     @if (Auth::user()->is_writer)
-                                        <li><a class="dropdown-item" href="{{ route('writer.dashboard') }}">dashboard dello scrittore</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('writer.dashboard') }}">dashboard dello
+                                                scrittore</a></li>
                                     @endif
 
                                     <li>
@@ -73,16 +76,17 @@
                             </li>
                         @endguest
                     </ul>
-                @endif
-        @endif
-        {{-- search bar --}}
-        <div class="mx-auto col">
-            <form action="{{ route('search.articles') }}" method="get" class="d-flex">
-                <input class="form-control mx-2 text-dark border border-dark" name="key" type="text" placeholder="Search" aria-label="Search">
-                <button class="btn btn-dark bg-white btn-outline-dark search-btn" type="submit"><i class="bi bi-search text-black"></i></button>
-            </form>
+            @endif
+            {{-- search bar --}}
+            <div class="mx-auto col">
+                <form action="{{ route('search.articles') }}" method="get" class="d-flex">
+                    <input class="form-control mx-2 text-dark border border-dark" name="key" type="text"
+                        placeholder="Search" aria-label="Search">
+                    <button class="btn btn-dark bg-white btn-outline-dark search-btn" type="submit"><i
+                            class="bi bi-search text-black"></i></button>
+                </form>
+            </div>
+
         </div>
-        
-    </div>
-    </div>
-</nav>
+        </div>
+    </nav>

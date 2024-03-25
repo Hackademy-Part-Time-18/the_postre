@@ -15,7 +15,7 @@ class ArticleSeeder extends Seeder
     public function run(): void
     {
         $articlesJson = File::get(database_path('data/articles.json'));
-        $articles = json_decode($articlesJson);
+        $articles = json_decode($articlesJson, true);
 
         foreach ($articles as $articleData) {
             Article::create($articleData);

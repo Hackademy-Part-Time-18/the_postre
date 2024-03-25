@@ -1,6 +1,6 @@
 <x-layout>
     <div class="bg-100"></div>
-    <div class="container">
+    <div class="container  my-5">
         <div class ="row">
             <div class="col-md-6 col-ms-12 mx-auto p-0">
                 <div class="card card-register mx-auto">
@@ -40,7 +40,7 @@
                                         </div>
                                         <div class="group">
                                             <input id="check" type="checkbox" class="check" checked>
-                                            <label for="check"><span class="icon"></span>Ricordami</label>
+                                            <label for="check"><span class="icon me-1"></span>Ricordami</label>
                                         </div>
                                         <div class="group">
                                             <input type="submit" class="button " value="Sign In">

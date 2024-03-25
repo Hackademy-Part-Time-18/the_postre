@@ -1,6 +1,6 @@
 <x-layout>
     <div class="bg-100"></div>
-    <div class="container">
+    <div class="container  my-5">
         <div class ="row">
             <div class="col-md-6 col-sm-12 col-md-12 mx-auto p-0">
                 <div class="card card-register  mx-auto">

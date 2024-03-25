@@ -19,7 +19,7 @@ return new class extends Migration
             $table->unsignedInteger('views')->default(0);
         });
 
-        $categories = ['sport', 'finanza', 'cronaca', 'politica'];
+        $categories = ['Sport', 'Finanza', 'Cronaca', 'Politica'];
 
         foreach($categories as $category){
             Category::create([

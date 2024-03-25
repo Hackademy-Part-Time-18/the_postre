@@ -23,22 +23,27 @@ return new class extends Migration
             'email' => 'admin@thepostre.it',
             'password' => bcrypt('12345678'),
             'is_admin' => true,
-        ],[
-            'name' => 'writer',
-            'email' => 'writer@writer.it',
-            'password' => bcrypt('12345678'),
-            'is_writer' => true,
-        ],[
+        ]); 
+        $user2 = User::create([
             'name' => 'revisor',
-            'email' => 'revisor@revisor.it',
+            'email' => 'revisor@thepostre.it',
             'password' => bcrypt('12345678'),
             'is_revisor' => true,
-        ],[
-            'name' => 'example',
-            'email' => 'example@example.it',
+        ],);
+        $user4 = User::create([
+            'name' => 'User',
+            'email' => 'user@thepostre.it',
             'password' => bcrypt('12345678'),
-        ]);
-    }
+        ],);
+        $user4 = User::create([
+            
+            'name' => 'writer',
+            'email' => 'writer@thepostre.it',
+            'password' => bcrypt('12345678'),
+            'is_writer' => true,
+        
+        ],);
+}
 
     /**
      * Reverse the migrations.
@@ -51,7 +56,7 @@ return new class extends Migration
         User::where('email' , 'example@example.it')->delete();
 
         Schema::table('users', function (Blueprint $table) {
-           $table->dropColumn(['is_admin', 'is_revisor', 'is_writer']);
+            $table->dropColumn(['is_admin', 'is_revisor', 'is_writer']);
         });
     }
 };

@@ -14,10 +14,12 @@
 </head>
 
 <body id="page-top">
+    @if (request()->route()->getName() != 'register' && request()->route()->getName() != 'login' || request()->route()->getName() == 'user')
     <x-navbar/>
     @if (request()->route()->getName()!='homepage') 
     <div style="height: 70px" class="mb-1"></div>
     <x-btnnav/>
+    @endif
     @endif
 
     {{ $slot }}
