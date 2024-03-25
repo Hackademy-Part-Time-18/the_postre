@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 //Homepage base
 Route::get('/',[PublicController::class , 'homepage'])->name ('homepage');
 // Homepage user login
-Route::get('/home',[PublicController::class , 'homepage'])->name ('homepage');
+Route::get('/home',[PublicController::class , 'user'])->name ('user');
 // Article route
 Route::get('/article/create', [ArticleController::class, 'create'])->name ('article.create');
 Route::post('/article/store', [ArticleController::class, 'store'])->name('article.store');
