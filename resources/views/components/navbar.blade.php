@@ -35,9 +35,9 @@
                                     Benvenuto {{ Auth::user()->name }}
                                 </a>
                                 <ul class="dropdown-menu" style="text-shadow:none;" aria-labelledby="navbarDropdown">
-                                    {{-- <li>
+                                    <li>
                                         <a class="dropdown-item" href="{{ route('user') }}">Profilo</a>
-                                    </li> --}}
+                                    </li>
                                     @if (Auth::user()->is_admin)
                                         <li><a class="dropdown-item" href="{{ route('admin.dashboard') }}">Dashboard Admin</a></li>
                                     @endif
