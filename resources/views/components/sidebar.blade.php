@@ -17,11 +17,6 @@
     <div class="menu-bar">
         <div class="menu">
 
-            <li class="search-box">
-                <i class='bx bx-search icon'></i>
-                <input type="text" placeholder="Search...">
-            </li>
-
             <ul class="menu-links px-0">
                 <li class="nav-link">
                     <a href="{{ route('homepage') }}">
@@ -33,35 +28,42 @@
                 <li class="nav-link">
                     <a href="#">
                         <i class='bx bx-bar-chart-alt-2 icon' ></i>
-                        <span class="text nav-text">Analytics</span>
+                        <span class="text nav-text">Crea nuovo annuncio</span>
                     </a>
                 </li>
 
                 <li class="nav-link">
                     <a href="#">
                         <i class='bx bx-bell icon'></i>
-                        <span class="text nav-text">Notifications</span>
+                        <span class="text nav-text">Dashboard Admin</span>
                     </a>
                 </li>
 
                 <li class="nav-link">
                     <a href="#">
                         <i class='bx bx-pie-chart-alt icon' ></i>
-                        <span class="text nav-text">Stats</span>
+                        <span class="text nav-text">Dashboard revisore</span>
                     </a>
                 </li>
 
                 <li class="nav-link">
                     <a href="#">
                         <i class='bx bx-heart icon' ></i>
-                        <span class="text nav-text">Favourites</span>
+                        <span class="text nav-text">Dashboard scrittore</span>
                     </a>
                 </li>
 
                 <li class="nav-link">
                     <a href="#">
                         <i class='bx bx-wallet icon' ></i>
-                        <span class="text nav-text">Money</span>
+                        <span class="text nav-text">Like</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="#">
+                        <i class='bx bx-bar-chart-alt-2 icon' ></i>
+                        <span class="text nav-text">Messaggi di Ringraziamento</span>
                     </a>
                 </li>
 
