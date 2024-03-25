@@ -1,36 +1,41 @@
 <x-layout>
-    
-    
-        <div class="bg-100"></div>
-        <div class="container-fluid p-5 text-center text-white">
-            <div class="row justify-content-center">
-                <h1 class="display-1">
-                    Tutti gli articoli
-                </h1>
-            </div>
+
+
+    <div class="bg-100"></div>
+    @if (request()->route()->getname()=='search.articles')
+    <div class="container-fluid p-5 text-center text-white">
+        <div class="row justify-content-center">
+            <h1 class="display-1">
+                Risultati della ricerca :
+            </h1>
         </div>
-        <div>
-            <div class="container my-5">
-                <div class="row justify-content-around  row-cols-1 row-cols-md-3">
-                    @foreach ($articles as $article)
-                        <div class="col mb-4">
-                            <x-card 
-                                :tags= "$article->tags"
-                                title={{ $article->title }} 
-                                subtitle={{ $article->subtitle }}
-                                image={{ $article->image }}
-                                category={{ $article->category->name }}
-                                data={{ $article->created_at->format('d/m/Y') }}
-                                user={{ $article->user->name }}
-                                url="{{ route('article.show', compact('article')) }}" 
-                            />
-                        </div>
-                    @endforeach
-                </div>
-            </div>
+    </div>
+    @else
+    <div class="container-fluid p-5 text-center text-white">
+        <div class="row justify-content-center">
+            <h1 class="display-1">
+                Tutti gli articoli
+            </h1>
         </div>
-    
-    
+    </div>
+    @endif
+    <div id="recent" class="container my-2">
+        <div class="row justify-content-around row-cols-1 row-cols-md-3 d-flex">
+            {{-- create article card --}}
+            @foreach ($articles as $article)
+            <div class="col mb-2">
+                <x-card title="{{ $article->title }} " subtitle="{{ $article->subtitle }}"
+                    image="{{ $article->image }}" category="{{ $article->category->id }}"
+                    data="{{ $article->created_at->format('d/m/Y') }}" user="{{ $article->user->id }}"
+                    url="{{ route('article.show', compact('article')) }}" nameCategory="{{ $article->category->name }}"
+                    nameUser="{{ $article->user->name }}"
+                />
+            </div>
+        @endforeach
+            </div>
+    </div>
+
+
 
     {{--
 
@@ -66,7 +71,7 @@
                         <span class="nav-text">Categorie</span>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        @foreach($categories as $category)
+                        @foreach ($categories as $category)
                         <li>
                             <a class="dropdown-item" href="">{{$category->name}}</a>
                         </li>

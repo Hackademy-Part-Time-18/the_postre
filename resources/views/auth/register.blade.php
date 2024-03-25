@@ -3,7 +3,7 @@
     <div class="container">
         <div class ="row">
             <div class="col-md-6 col-ms-12 mx-auto p-0">
-                <div class="card card-register">
+                <div class="card card-register mx-auto">
                     <div class="login-box">
                         <div class="login-snip">
                             <input id="tab-1" type="radio" name="tab" class="sign-in"><label

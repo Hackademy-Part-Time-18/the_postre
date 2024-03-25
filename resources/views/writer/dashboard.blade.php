@@ -4,7 +4,7 @@
 <div class="container-fluid p-5 text-center text-white">
     <div class="row justify-content-center">
         <h1 class="display-1">
-            Bentornato revisore
+            Bentornato scrittore
         </h1>
     </div>
 </div>
@@ -17,8 +17,8 @@
 <div class="container bg-white p-1 my-5" style="border-radius: 0.5em">
     <div class="row justify-content-center">
         <div class="col-12">
-            <h2>Articoli da revisionare</h2>
-            <x-revisor-table :articles="$unrevisionedArticles"/>
+            <h2>Articoli in fase di revisione</h2>
+            <x-writer-articles-table :articles="$unrevisionedArticles"/>
         </div>
     </div>
 </div>
@@ -26,7 +26,7 @@
     <div class="row justify-content-center">
         <div class="col-12">
             <h2>Articoli pubblicati</h2>
-            <x-revisor-table :articles="$acceptedArticles"/>
+            <x-writer-articles-table :articles="$acceptedArticles"/>
         </div>
     </div>
 </div>
@@ -34,7 +34,7 @@
     <div class="row justify-content-center">
         <div class="col-12">
             <h2>Articoli respinti</h2>
-            <x-revisor-table :articles="$rejectedArticles"/>
+            <x-writer-articles-table :articles="$rejectedArticles"/>
         </div>
     </div>
 </div>

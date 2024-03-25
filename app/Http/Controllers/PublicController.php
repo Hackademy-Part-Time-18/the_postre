@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Mail\RequestRoleMail;
 use App\Mail\SendContactMail;
 use App\Models\Article;
+use App\Models\Category;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Routing\RouteUri;
 use Illuminate\Support\Facades\Auth;
@@ -13,11 +15,31 @@ use Illuminate\Support\Facades\Mail;
 class PublicController extends Controller
 {
 
+    public function layout(){
+        $mostViewedArticles = (new ArticleController())->mostViewedArticlesLastWeek();
+        $articles = Article::where('is_accepted' , true)->orderBy('created_at', 'desc')->take(6)->get();
+        $mostViewedCategories = Category::orderByDesc('views')->take(5)->get();
+        $mostViewedUsers = User::orderByDesc('views')->take(5)->get();
+        $mostViewedCategoriesCard = Category::orderByDesc('views')->take(3)->get();
+        $mostViewedArticlesByCategory = Article::with('category')->orderBy('category_id')->orderByDesc('views')->get()->groupBy('category_id')->map(
+            function ($articles) {
+            return $articles->take(3);
+        });
+        return view('homepage', compact('articles','mostViewedArticles','mostViewedCategories','mostViewedUsers','mostViewedCategoriesCard','mostViewedArticlesByCategory'));
+    }
     public function homepage()
     {
         $mostViewedArticles = (new ArticleController())->mostViewedArticlesLastWeek();
         $articles = Article::where('is_accepted' , true)->orderBy('created_at', 'desc')->take(6)->get();
-        return view('homepage', compact('articles','mostViewedArticles'));
+        $mostViewedCategories = Category::orderByDesc('views')->take(5)->get();
+        $mostViewedUsers = User::orderByDesc('views')->take(5)->get();
+        $mostViewedCategoriesCard = Category::orderByDesc('views')->take(3)->get();
+        $mostViewedArticlesByCategory = Article::with('category')->orderBy('category_id')->orderByDesc('views')->get()->groupBy('category_id')->map(
+            function ($articles) {
+            return $articles->take(3);
+        });
+
+        return view('homepage', compact('articles','mostViewedArticles','mostViewedCategories','mostViewedUsers','mostViewedCategoriesCard','mostViewedArticlesByCategory'));
     }
     public function login()
     {
@@ -108,6 +130,10 @@ class PublicController extends Controller
     public function user()
     {
         $articles = Article::where('is_accepted' , true)->orderBy('created_at', 'desc')->take(6)->get();
+        $mostViewedArticles = (new ArticleController())->mostViewedArticlesLastWeek();
+        $articles = Article::where('is_accepted' , true)->orderBy('created_at', 'desc')->take(6)->get();
+        $mostViewedCategories = Category::orderByDesc('views')->take(4)->get();
+        $mostViewedUsers = User::orderByDesc('views')->take(4)->get();
         return view('user' , ['articles'=> $articles]);
     }
 
