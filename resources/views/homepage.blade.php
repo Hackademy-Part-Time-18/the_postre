@@ -49,7 +49,7 @@
                                 :image="$article->image" :category="$article->category->id"
                                 :data="$article->created_at->format('d/m/Y')" :user="$article->user->id"
                                 :url="route('article.show', compact('article'))" :nameCategory="$article->category->name"
-                                :nameUser="$article->user->name" :readDuration="{{ $article->readDuration()}}"
+                                :nameUser="$article->user->name" :readDuration="$article->readDuration()"
                                 :tags="$article->tags"
                             />
                         </div>
