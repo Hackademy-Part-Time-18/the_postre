@@ -1,4 +1,40 @@
-<nav class="sidebar close">
+<div class="wrapper">
+    <aside id="sidebar">
+        <div class="d-flex">
+            <button id="toggle-sidebar"></button>
+            <div class="sidebar-logo">
+                <a href="#">{{ Auth::user()->name }}</a>
+            </div>
+        </div>
+        <ul class="sidebar-nav">
+            <li class="sidebar-item">
+                <a href="#">
+                    <i class="lni lni-user"></i>
+                    <span>Profile</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#">
+                    <i class="lni lni-user"></i>
+                    <span>Profile</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#">
+                    <i class="lni lni-user"></i>
+                    <span>Profile</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="#">
+                    <i class="lni lni-user"></i>
+                    <span>Profile</span>
+                </a>
+            </li>
+        </ul>
+    </aside>
+</div>
+{{-- <nav class="sidebar close">
     <header>
         <div class="image-text">
             <span class="image">
@@ -66,7 +102,7 @@
                         <span class="text nav-text">Messaggi di Ringraziamento</span>
                     </a>
                 </li> --}}
-
+{{-- 
             </ul>
         </div>
 
@@ -76,7 +112,7 @@
                     <i class='bx bx-log-out icon' ></i>
                     <span class="text nav-text">Logout</span>
                 </a>
-            </li>
+            </li> --}}
 
             {{-- <li class="mode">
                 <div class="sun-moon">
@@ -89,7 +125,7 @@
                     <span class="switch"></span>
                 </div>
             </li> --}}
-
+{{-- 
         </div>
     </div>
 
@@ -97,4 +133,4 @@
 
 <section class="home">
     <div class="text">Dashboard Sidebar</div>
-</section>
+</section> --}}

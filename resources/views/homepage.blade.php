@@ -98,7 +98,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div id="custCarousel" class="carousel slide" data-ride="carousel" align="center">
+                <div id="custCarousel" class="carousel slide align-items-center" data-ride="carousel">
                     <!-- slides -->
                     <div class="carousel-inner">
                         <div class="carousel-item active">
@@ -162,11 +162,11 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-8 text-center">
-                    <h2 class="text-white mt-0">Come nasce "The_Postre" ?</h2>
+                    <h2 class="text-white mt-0">Come nasce "ThePostre" ?</h2>
                     <hr>
                     <p class="text-white-75 mb-4">
                         The_Postre racconta l'esperienza collaborativa tra Maelo, Luca e Nicolò, che dopo un incontro fortuito, hanno unito le proprie competenze per concepire un progetto di eccellenza. Attraverso una sinergia di passioni e competenze nel campo della tecnologia, del design e della scrittura, abbiamo dedicato impegno e creatività per sviluppare una piattaforma unica. Il risultato è stato un sito web che offre agli utenti una vasta gamma di articoli, notizie e racconti coinvolgenti. Questa esperienza dimostra come individui con differenti background possano convergere verso un obiettivo comune e realizzare progetti di straordinaria rilevanza lavorando insieme.
-                        <p />
+                    </p>
                         <a class="btn btn-light btn-xl" href="#recent">Dai un occhiata ai nostri ultimi articoli!</a>
                 </div>
             </div>
@@ -192,7 +192,7 @@
                         @csrf
                         <!-- Name input-->
                         <div class="form-floating mb-3">
-                            <input value="{{ old('name') }}" required name="name" class="form-control" id="name" placeholder="Enter your name..." type="text" />
+                            <input value="{{ old('name') }}" required name="name" class="form-control" id="name" placeholder="Nome" type="text" />
                             <label for="name">Nome</label>
                         </div>
                         <!-- Email address input-->
