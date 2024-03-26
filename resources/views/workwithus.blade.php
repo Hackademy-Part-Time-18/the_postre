@@ -37,10 +37,15 @@
                         <label for="role" class="form-label">Per quale ruolo ti stai candidando?</label>
                         <select name="role" id="role" class="form-control">
                             <option value="">Scegli qui</option>
-                            
+                            @if (Auth::user()->is_admin == false)
                             <option value="admin">Amministratore</option>
+                            @endif
+                            @if (Auth::user()->is_revisor == false)
                             <option value="revisor">Revisore</option>
+                            @endif
+                            @if (Auth::user()->is_writer == false)
                             <option value="writer">Scrittore</option>
+                            @endif
                         </select>
                     </div>
                     <div class="mb-3">

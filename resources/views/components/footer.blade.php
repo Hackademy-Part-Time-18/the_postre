@@ -1,5 +1,5 @@
 <div class="footer-dark">
-    <footer>
+    {{-- <footer>
         <div class="container">
             <div class="row">
                 <div class="col-md-3 item2">
@@ -34,5 +34,5 @@
             </div>
             <p class="copyright">BBBootstrap.com &copy; 2020</p>
         </div>
-    </footer>
+    </footer> --}}
 </div>
