@@ -2,7 +2,7 @@
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-md-3 item">
+                <div class="col-md-3 item2">
                     <h3>Services</h3>
                     <ul>
                         <li><a href="#">Web design</a></li>
@@ -10,7 +10,7 @@
                         <li><a href="#">Hosting</a></li>
                     </ul>
                 </div>
-                <div class="col-md-3 item">
+                <div class="col-md-3 item2">
                     <h3>Services</h3>
                     <ul>
                         <li><a href="#">Web design</a></li>
@@ -18,7 +18,7 @@
                         <li><a href="#">Hosting</a></li>
                     </ul>
                 </div>
-                <div class="col-md-3 item">
+                <div class="col-md-3 item2">
                     <h3>About</h3>
                     <ul>
                         <li><a href="#">Company</a></li>
@@ -26,7 +26,7 @@
                         <li><a href="#">Careers</a></li>
                     </ul>
                 </div>
-                <div class="col-md-3 item text">
+                <div class="col-md-3 item2 text">
                     <h3>BBBootstrap.com</h3>
                     <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus.</p>
                 </div>
