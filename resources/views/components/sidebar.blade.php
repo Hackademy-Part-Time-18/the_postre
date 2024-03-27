@@ -1,5 +1,5 @@
-<div  onmouseover="MouseSideUp()" onmouseout="MouseSideLeave()" class="sidebar close">
-     <div class="header-sidebar">
+<div onmouseover="MouseSideUp()" onmouseout="MouseSideLeave()" class="sidebar close">
+    <div class="header-sidebar">
         <div class="image-text">
             <span class="image">
                 <i class="bi bi-person"></i>
@@ -7,7 +7,18 @@
 
             <div class="text logo-text">
                 <span class="name">{{ Auth::user()->name }}</span>
-                <span class="profession">empleado</span>
+                <span class="profession">
+                    Utente
+                    @if (Auth::user()->is_admin)
+                        Admin
+                    @endif
+                    @if (Auth::user()->is_writer)
+                        Scrittore
+                    @endif
+                    @if (Auth::user()->is_revisor)
+                        Revisore
+                    @endif
+                </span>
             </div>
         </div>
 
@@ -20,52 +31,57 @@
             <ul class="menu-links px-0">
                 <li class="sidebar-link">
                     <a href="{{ route('homepage') }}">
-                        <i class='bi bi-house icon' ></i>
+                        <i class='bi bi-house icon'></i>
                         <span class="text nav-text">Homepage</span>
                     </a>
                 </li>
 
                 <li class="sidebar-link">
-                    <a href="#">
-                        <i class='bi bi-journal-plus icon' ></i>
+                    <a href="{{ route('article.create') }}">
+                        <i class='bi bi-journal-plus icon'></i>
                         <span class="text nav-text">Crea nuovo annuncio</span>
                     </a>
                 </li>
+                @if (Auth::user()->is_admin)
+                    <li class="sidebar-link">
+                        <a href="{{ route('admin.dashboard') }}">
+                            <i class='bi bi-cpu icon'></i>
+                            <span class="text nav-text">Dashboard Amministratore</span>
+                        </a>
+                    </li>
+                @endif
+                @if (Auth::user()->is_revisor)
 
                 <li class="sidebar-link">
-                    <a href="#">
-                        <i class='bi bi-cpu icon'></i>
-                        <span class="text nav-text">Dashboard Admin</span>
-                    </a>
-                </li>
-
-                <li class="sidebar-link">
-                    <a href="#">
-                        <i class='bi bi-sunglasses icon' ></i>
+                    <a href="{{ route('revisor.dashboard') }}">
+                        <i class='bi bi-sunglasses icon'></i>
                         <span class="text nav-text">Dashboard revisore</span>
                     </a>
                 </li>
+                @endif
 
+                    @if (Auth::user()->is_writer)
                 <li class="sidebar-link">
-                    <a href="#">
-                        <i class='bi bi-vector-pen icon' ></i>
+                    <a href="{{ route('writer.dashboard') }}">
+                        <i class='bi bi-vector-pen icon'></i>
                         <span class="text nav-text">Dashboard scrittore</span>
                     </a>
                 </li>
+@endif
 
                 <li class="sidebar-link">
                     <a href="#">
-                        <i class='bi bi-bookmark-heart icon' ></i>
+                        <i class='bi bi-bookmark-heart icon'></i>
                         <span class="text nav-text">Like</span>
                     </a>
                 </li>
 
-                <li class="sidebar-link">
+                {{-- <li class="sidebar-link">
                     <a href="#">
-                        <i class='bi bi-balloon-heart icon' ></i>
+                        <i class='bi bi-balloon-heart icon'></i>
                         <span class="text nav-text">Messaggi di Ringraziamento</span>
                     </a>
-                </li>
+                </li> --}}
 
             </ul>
         </div>
@@ -73,7 +89,7 @@
         <div class="bottom-content">
             <li class="">
                 <a href="#">
-                    <i class='bi bi-box-arrow-left icon' ></i>
+                    <i class='bi bi-box-arrow-left icon'></i>
                     <span class="text nav-text">Logout</span>
                 </a>
             </li>
