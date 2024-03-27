@@ -1,4 +1,4 @@
-<div  class="sidebar close">
+<div  onmouseover="MouseSideUp()" onmouseout="MouseSideLeave()" class="sidebar close">
      <div class="header-sidebar">
         <div class="image-text">
             <span class="image">
@@ -14,7 +14,7 @@
         <i onclick="toggleSidebar()" class='bi bi-caret-right-fill toggle'></i>
     </div>
 
-    <div onmouseover="toggleSidebar()" class="menu-bar">
+    <div class="menu-bar">
         <div class="menu">
 
             <ul class="menu-links px-0">
