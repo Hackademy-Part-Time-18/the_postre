@@ -9,7 +9,8 @@
       "category_id": 1,
       "created_at": "2024-03-21",
       "is_accepted": true,
-      "views": 3
+      "views": 3,
+      "slug":"il-teamlocale-vince-il-campiona-di-calcio"
   },
   {
       "id": 2,
@@ -21,7 +22,9 @@
       "category_id": 2,
       "created_at": "2024-03-21",
       "is_accepted": true,
-      "views": 3
+      "views": 3,
+      "slug":"il-teamlocale-vince-il-campionato-di-calc"
+
   },
   {
       "id": 3,
@@ -33,7 +36,8 @@
       "category_id": 4,
       "created_at": "2024-03-21",
       "is_accepted": true,
-      "views": 3
+      "views": 3,
+      "slug":"il-teamcale-vince-il-campiona-di-calcio"
   },
   {
       "id": 4,
@@ -45,7 +49,8 @@
       "category_id": 3,
       "created_at": "2024-03-21",
       "is_accepted": true,
-      "views": 3
+      "views": 3,
+      "slug":"iteamlocale-vince-il-campiona-di-calcio"
   },
   {
       "id": 5,
@@ -56,7 +61,8 @@
       "user_id": 1,
       "category_id": 2,
       "created_at": "2024-02-13",
-      "is_accepted": true
+      "is_accepted": true,
+      "slug":"il-teamlocalence-il-campiona-di-calcio"
   },
   {
       "id": 6,
@@ -67,7 +73,8 @@
       "user_id": 1,
       "category_id": 3,
       "created_at": "2024-02-13",
-      "is_accepted": true
+      "is_accepted": true,
+      "slug":"il-teamlocale-il-campiona-di-calcio"
   },
   {
       "id": 7,
@@ -78,7 +85,8 @@
       "user_id": 1,
       "category_id": 4,
       "created_at": "2024-02-13",
-      "is_accepted": true
+      "is_accepted": true,
+      "slug":"il-teamlocacampiona-di-calcio"
   },
   {
       "id": 8,
@@ -89,7 +97,8 @@
       "user_id": 1,
       "category_id": 3,
       "created_at": "2024-02-13",
-      "is_accepted": true
+      "is_accepted": true,
+      "slug":"icalence-il-campiona-di-calcio"
   },
   {
       "id": 9,
@@ -100,7 +109,8 @@
       "user_id": 1,
       "category_id": 1,
       "created_at": "2024-02-13",
-      "is_accepted": true
+      "is_accepted": true,
+      "slug":"il-teamlocalenceio"
   },
   {
       "id": 10,
@@ -111,55 +121,9 @@
       "user_id": 1,
       "category_id": 2,
       "created_at": "2024-02-13",
-      "is_accepted": true
-    },
-    {
-        "id": 11,
-        "title": "Il team locale vince il campionato di calcio",
-        "subtitle": "Grande vittoria per il team di Monaco",
-        "body": "In una partita emozionante che ha tenuto gli spettatori sulle spine, il team locale ha assicurato la vittoria nel campionato di calcio.",
-        "image": "public/image/1.jpg",
-        "user_id": 1,
-        "category_id": 5,
-        "created_at": "2024-03-21",
-        "is_accepted": true,
-        "views": 3
-    },
-    {
-        "id": 12,
-        "title": "Il team locale vince il campionato di calcio",
-        "subtitle": "Grande vittoria per il team di Rio",
-        "body": "In una partita emozionante che ha tenuto gli spettatori sulle spine, il team locale ha assicurato la vittoria nel campionato di calcio.",
-        "image": "public/image/2.jpg",
-        "user_id": 1,
-        "category_id": 5,
-        "created_at": "2024-03-21",
-        "is_accepted": true,
-        "views": 3
-    },
-    {
-        "id": 13,
-        "title": "Il team locale vince il campionato di calcio",
-        "subtitle": "Grande vittoria per il team di New York",
-        "body": "In una partita emozionante che ha tenuto gli spettatori sulle spine, il team locale ha assicurato la vittoria nel campionato di calcio.",
-        "image": "public/image/3.jpg",
-        "user_id": 1,
-        "category_id": 5,
-        "created_at": "2024-03-21",
-        "is_accepted": true,
-        "views": 3
-    },
-    {
-        "id": 14,
-        "title": "Il team locale vince il campionato di calcio",
-        "subtitle": "Grande vittoria per il team di Ecquador",
-        "body": "In una partita emozionante che ha tenuto gli spettatori sulle spine, il team locale ha assicurato la vittoria nel campionato di calcio.",
-        "image": "public/image/4.jpg",
-        "user_id": 1,
-        "category_id": 5,
-        "created_at": "2024-03-21",
-        "is_accepted": true,
-        "views": 3
+      "is_accepted": true,
+      "slug":"il-t-calcio"
     }
+
   ]
   
