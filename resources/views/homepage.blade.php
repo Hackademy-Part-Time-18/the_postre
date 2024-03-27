@@ -172,7 +172,7 @@
                 <div class="row row-cols-4 row-cols-md-2 g-6">
                     @foreach ($articles as $article)
                     <div class="col mb-8">
-                        <x-card :title="$article->title " :subtitle="$article->subtitle" :image="$article->image" :category="$article->category->id" :data="$article->created_at->format('d/m/Y')" :user="$article->user->id" :url="route('article.show', compact('article'))" :nameCategory="$article->category->name" :nameUser="$article->user->name" />
+                        <x-card :title="$article->title " :subtitle="$article->subtitle" :image="$article->image" :category="$article->category->id" :data="$article->created_at->format('d/m/Y')" :user="$article->user->id" :url="route('article.show', compact('article'))" :nameCategory="$article->category->name" :nameUser="$article->user->name" :readDuration="$article->readDuration()" />
                     </div>
                     @endforeach
                 </div>

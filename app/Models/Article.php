@@ -31,6 +31,9 @@ class Article extends Model
     {
         $totalWords = str_word_count($this->body);
         $minutesToRead = round($totalWords / 200);
+        if($minutesToRead<1){
+            return 1;
+        }
         return intval($minutesToRead);
     }
 
