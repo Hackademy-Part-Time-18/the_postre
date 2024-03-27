@@ -25,8 +25,12 @@ class PublicController extends Controller
             function ($articles) {
             return $articles->take(3);
         });
+        $mostViewedArticlesByEstero = Article::with('category')->orderBy('category_id')->orderByDesc('views')->get()->groupBy('category_id'== 5)->map(
+            function ($articles) {
+            return $articles->take(3);
+        });
 
-        return view('homepage', compact('articles','mostViewedArticles','mostViewedCategories','mostViewedUsers','mostViewedCategoriesCard','mostViewedArticlesByCategory'));
+        return view('homepage', compact('articles','mostViewedArticles','mostViewedCategories','mostViewedUsers','mostViewedCategoriesCard','mostViewedArticlesByCategory', 'mostViewedArticlesByEstero'));
     }
     public function login()
     {

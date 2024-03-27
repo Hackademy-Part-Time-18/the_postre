@@ -44,14 +44,9 @@
                 </div>
                 <div class="row row-cols-1 row-cols-md-2 g-4">
                     @foreach ($articles as $article)
-                        <div class="col mb-2">
-                            <x-card :title="$article->title " :subtitle="$article->subtitle"
-                                :image="$article->image" :category="$article->category->id"
-                                :data="$article->created_at->format('d/m/Y')" :user="$article->user->id"
-                                :url="route('article.show', compact('article'))" :nameCategory="$article->category->name"
-                                :nameUser="$article->user->name"
-                            />
-                        </div>
+                    <div class="col mb-2">
+                        <x-card :title="$article->title " :subtitle="$article->subtitle" :image="$article->image" :category="$article->category->id" :data="$article->created_at->format('d/m/Y')" :user="$article->user->id" :url="route('article.show', compact('article'))" :nameCategory="$article->category->name" :nameUser="$article->user->name" />
+                    </div>
                     @endforeach
                 </div>
             </div>
@@ -93,67 +88,90 @@
     </div>
 
     <!-- Conosci il mondo-->
-
-    {{-- Create carousels for most viewed articles by category --}}
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div id="custCarousel" class="carousel slide align-items-center" data-ride="carousel">
-                    <!-- slides -->
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="https://i.imgur.com/weXVL8M.jpg" alt="Hills">
-                        </div>
-
-                        <div class="carousel-item">
-                            <img src="https://i.imgur.com/Rpxx6wU.jpg" alt="Hills">
-                        </div>
-
-                        <div class="carousel-item">
-                            <img src="https://i.imgur.com/83fandJ.jpg" alt="Hills">
-                        </div>
-
-                        <div class="carousel-item">
-                            <img src="https://i.imgur.com/JiQ9Ppv.jpg" alt="Hills">
-                        </div>
-                    </div>
-
-                    <!-- Left right -->
-                    <a class="carousel-control-prev" href="#custCarousel" data-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </a>
-                    <a class="carousel-control-next" href="#custCarousel" data-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </a>
-
-                    <!-- Thumbnails -->
-                    <ol class="carousel-indicators list-inline">
-                        <li class="list-inline-item active">
-                            <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#custCarousel">
-                                <img src="https://i.imgur.com/weXVL8M.jpg" class="img-fluid">
-                            </a>
-                        </li>
-
-                        <li class="list-inline-item">
-                            <a id="carousel-selector-1" data-slide-to="1" data-target="#custCarousel">
-                                <img src="https://i.imgur.com/Rpxx6wU.jpg" class="img-fluid">
-                            </a>
-                        </li>
-
-                        <li class="list-inline-item">
-                            <a id="carousel-selector-2" data-slide-to="2" data-target="#custCarousel">
-                                <img src="https://i.imgur.com/83fandJ.jpg" class="img-fluid">
-                            </a>
-                        </li>
-
-                        <li class="list-inline-item">
-                            <a id="carousel-selector-2" data-slide-to="3" data-target="#custCarousel">
-                                <img src="https://i.imgur.com/JiQ9Ppv.jpg" class="img-fluid">
-                            </a>
-                        </li>
-                    </ol>
+    <div id="carouselExampleCaptions" class="carousel slide container my-2">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        @foreach ($mostViewedArticlesByEstero as $category => $articles)
+        @foreach ($articles as $key => $article)
+        <div id="{{ $articles->first()->category->name }}" class="carousel-inner">
+            <div class="carousel-item active {{ $key == 0 ? 'active' : '' }}">
+                <a href="{{ Storage::url($article->image) }}">
+                    <img src="{{ Storage::url($article->image) }}" class="d-block w-100" style="height: 800px; object-fit:fill;" alt="...">
+                </a>
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>{{ $article->title }}</h5>
+                    <h2>{{ $article->subtitle }}</h2>
+                    <p>{{ $article->body }}</p>
                 </div>
             </div>
+        </div>
+        @endforeach
+        @endforeach
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <!-- corousel di articoli-->
+
+    <!-- Seconda sezione articoli-->
+    {{-- Create article cards --}}
+
+    <div id="recent" class="container my-2">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="row">
+                    <h3>Categorie più Ricercate</h3>
+                </div>
+                @foreach ($mostViewedArticlesByCategory as $category => $articles)
+                <div class="mb-1">
+                    <h4 class="link-secondary">{{ $articles->first()->category->name }}</h4>
+                    <div id="{{ $articles->first()->category->name }}" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            @foreach ($articles as $key => $article)
+                            <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                                <a href="">
+                                    <img src="{{ Storage::url($article->image) }}" class="d-block w-100" style="height: 200px; object-fit: cover;" alt="...">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>{{ $article->title }}</h5>
+                                        <p>{{ $article->subtitle }}</p>
+                                    </div>
+                                </a>
+                            </div>
+                            @endforeach
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#{{ $articles->first()->category->name }}" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#{{ $articles->first()->category->name }}" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+            <div class="col-md-8">
+                <div class="row">
+                    <h3>Articolic Suggeriti Per te</h3>
+                </div>
+                <div class="row row-cols-4 row-cols-md-2 g-6">
+                    @foreach ($articles as $article)
+                    <div class="col mb-8">
+                        <x-card :title="$article->title " :subtitle="$article->subtitle" :image="$article->image" :category="$article->category->id" :data="$article->created_at->format('d/m/Y')" :user="$article->user->id" :url="route('article.show', compact('article'))" :nameCategory="$article->category->name" :nameUser="$article->user->name" />
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -167,7 +185,7 @@
                     <p class="text-white-75 mb-4">
                         The_Postre racconta l'esperienza collaborativa tra Maelo, Luca e Nicolò, che dopo un incontro fortuito, hanno unito le proprie competenze per concepire un progetto di eccellenza. Attraverso una sinergia di passioni e competenze nel campo della tecnologia, del design e della scrittura, abbiamo dedicato impegno e creatività per sviluppare una piattaforma unica. Il risultato è stato un sito web che offre agli utenti una vasta gamma di articoli, notizie e racconti coinvolgenti. Questa esperienza dimostra come individui con differenti background possano convergere verso un obiettivo comune e realizzare progetti di straordinaria rilevanza lavorando insieme.
                     </p>
-                        <a class="btn btn-light btn-xl" href="#recent">Dai un occhiata ai nostri ultimi articoli!</a>
+                    <a class="btn btn-light btn-xl" href="#recent">Dai un occhiata ai nostri ultimi articoli!</a>
                 </div>
             </div>
         </div>
