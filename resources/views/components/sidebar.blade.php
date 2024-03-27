@@ -1,123 +1,87 @@
-<div class="wrapper">
-    <aside id="sidebar">
-        <div class="d-flex">
-            <button id="toggle-sidebar"></button>
-            <div class="sidebar-logo">
-                <a href="#">{{ Auth::user()->name }}</a>
-            </div>
-        </div>
-        <ul class="sidebar-nav">
-            <li class="sidebar-item">
-                <a href="#">
-                    <i class="lni lni-user"></i>
-                    <span>Profile</span>
-                </a>
-            </li>
-            <li class="sidebar-item">
-                <a href="#">
-                    <i class="lni lni-user"></i>
-                    <span>Profile</span>
-                </a>
-            </li>
-            <li class="sidebar-item">
-                <a href="#">
-                    <i class="lni lni-user"></i>
-                    <span>Profile</span>
-                </a>
-            </li>
-            <li class="sidebar-item">
-                <a href="#">
-                    <i class="lni lni-user"></i>
-                    <span>Profile</span>
-                </a>
-            </li>
-        </ul>
-    </aside>
-</div>
-{{-- <nav class="sidebar close">
-    <header>
+<div  class="sidebar close">
+     <div class="header-sidebar">
         <div class="image-text">
             <span class="image">
-                <!--<img src="logo.png" alt="">-->
+                <i class="bi bi-person"></i>
             </span>
 
             <div class="text logo-text">
-                <span class="name">TomTom</span>
-                <span class="profession">New Edge</span>
+                <span class="name">{{ Auth::user()->name }}</span>
+                <span class="profession">empleado</span>
             </div>
         </div>
 
-        <i class='bx bx-chevron-right toggle'></i>
-    </header>
+        <i onclick="toggleSidebar()" class='bi bi-caret-right-fill toggle'></i>
+    </div>
 
-    <div class="menu-bar">
+    <div onmouseover="toggleSidebar()" class="menu-bar">
         <div class="menu">
 
             <ul class="menu-links px-0">
-                <li class="nav-link">
+                <li class="sidebar-link">
                     <a href="{{ route('homepage') }}">
-                        <i class='bx bx-home-alt icon' ></i>
+                        <i class='bi bi-house icon' ></i>
                         <span class="text nav-text">Homepage</span>
                     </a>
                 </li>
 
-                <li class="nav-link">
+                <li class="sidebar-link">
                     <a href="#">
-                        <i class='bx bx-bar-chart-alt-2 icon' ></i>
+                        <i class='bi bi-journal-plus icon' ></i>
                         <span class="text nav-text">Crea nuovo annuncio</span>
                     </a>
                 </li>
 
-                <li class="nav-link">
+                <li class="sidebar-link">
                     <a href="#">
-                        <i class='bx bx-bell icon'></i>
+                        <i class='bi bi-cpu icon'></i>
                         <span class="text nav-text">Dashboard Admin</span>
                     </a>
                 </li>
 
-                <li class="nav-link">
+                <li class="sidebar-link">
                     <a href="#">
-                        <i class='bx bx-pie-chart-alt icon' ></i>
+                        <i class='bi bi-sunglasses icon' ></i>
                         <span class="text nav-text">Dashboard revisore</span>
                     </a>
                 </li>
 
-                <li class="nav-link">
+                <li class="sidebar-link">
                     <a href="#">
-                        <i class='bx bx-heart icon' ></i>
+                        <i class='bi bi-vector-pen icon' ></i>
                         <span class="text nav-text">Dashboard scrittore</span>
                     </a>
                 </li>
 
-                <li class="nav-link">
+                <li class="sidebar-link">
                     <a href="#">
-                        <i class='bx bx-wallet icon' ></i>
+                        <i class='bi bi-bookmark-heart icon' ></i>
                         <span class="text nav-text">Like</span>
                     </a>
                 </li>
 
-                {{-- <li class="nav-link">
+                <li class="sidebar-link">
                     <a href="#">
-                        <i class='bx bx-bar-chart-alt-2 icon' ></i>
+                        <i class='bi bi-balloon-heart icon' ></i>
                         <span class="text nav-text">Messaggi di Ringraziamento</span>
                     </a>
-                </li> --}}
-{{-- 
+                </li>
+
             </ul>
         </div>
 
         <div class="bottom-content">
             <li class="">
                 <a href="#">
-                    <i class='bx bx-log-out icon' ></i>
+                    <i class='bi bi-box-arrow-left icon' ></i>
                     <span class="text nav-text">Logout</span>
                 </a>
-            </li> --}}
+            </li>
 
             {{-- <li class="mode">
                 <div class="sun-moon">
-                    <i class='bx bx-moon icon moon'></i>
-                    <i class='bx bx-sun icon sun'></i>
+                    <i class='bi bi-moon icon moon'></i>
+                    <i class='bi bi-sun icon sun'></i>
                 </div>
                 <span class="mode-text text">Dark mode</span>
 
@@ -125,12 +89,9 @@
                     <span class="switch"></span>
                 </div>
             </li> --}}
-{{-- 
+
         </div>
     </div>
 
-</nav>
-
-<section class="home">
-    <div class="text">Dashboard Sidebar</div>
-</section> --}}
+</div>
+<script src="/js/sidebar.js"></script>

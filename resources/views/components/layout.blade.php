@@ -16,9 +16,12 @@
 
 <body id="page-top">
     @if (
-        request()->route()->getName() != 'register' && request()->route()->getName() != 'login' ||
-            request()->route()->getName() == 'user')
+        request()->route()->getName() != 'register' && request()->route()->getName() != 'login' &&
+            request()->route()->getName() != 'user')
         <x-navbar />
+        @auth            
+        <x-sidebar/>
+        @endauth
         @if (request()->route()->getName() != 'homepage')
             <div style="height: 70px" class="mb-1"></div>
             <x-btnnav />
