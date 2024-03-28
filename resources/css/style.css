@@ -4,7 +4,7 @@
   background: rgb(244, 98, 58) !important;
   border-color: rgb(244, 98, 58);
 }
-/* text visibility */
+/* //text visibility
 .text-visibility{
   text-shadow: 0 3px 8px rgb(0, 0, 0),0 0 1em rgba(0, 0, 0, 0.774)
 }
@@ -12,7 +12,7 @@
 .text-visibility{
   text-shadow:none;
 }
-}
+} */
 /* background fixed 100% */
 .bg-100 {
   position: fixed;

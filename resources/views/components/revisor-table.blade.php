@@ -7,7 +7,7 @@
             <th scope="col">Categoria</th>
             <th scope="col">Scritto da</th>
             <th scope="col">Scritto il</th>
-            <th scope="col">Leggi</th>
+            <th scope="col">Azioni</th>
         </tr>
     </thead>
 

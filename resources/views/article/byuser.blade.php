@@ -12,11 +12,12 @@
             {{-- create article card --}}
             @foreach ($articles as $article)
             <div class="col mb-2">
-                <x-card title="{{ $article->title }} " subtitle="{{ $article->subtitle }}"
-                    image="{{ $article->image }}" category="{{ $article->category->id }}"
-                    data="{{ $article->created_at->format('d/m/Y') }}" user="{{ $article->user->id }}"
-                    url="{{ route('article.show', compact('article')) }}" nameCategory="{{ $article->category->name }}"
-                    nameUser="{{ $article->user->name }}" :readDuration="$article->readDuration()"
+                <x-card :title="$article->title " :subtitle="$article->subtitle"
+                    :image="$article->image" :category="$article->category->id"
+                    :data="$article->created_at->format('d/m/Y')" :user="$article->user->id"
+                    :url="route('article.show', compact('article'))" :nameCategory="$article->category->name"
+                    :nameUser="$article->user->name" :readDuration="$article->readDuration()"
+                    :tags="$article->tags"
                 />
             </div>
         @endforeach

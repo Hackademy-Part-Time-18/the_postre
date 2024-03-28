@@ -107,7 +107,7 @@ class ArticleController extends Controller
         $startDate = Carbon::now()->subWeek();
         $endDate = Carbon::now();
 
-        return Article::whereBetween('created_at', [$startDate, $endDate])->where('is_accepted' , true)->orderByDesc('views')->limit(4)->get();
+        return Article::where('is_accepted' , true)->whereBetween('created_at', [$startDate, $endDate])->orderByDesc('views')->limit(4)->get();
     }
     /**
      * Show the form for editing the specified resource.

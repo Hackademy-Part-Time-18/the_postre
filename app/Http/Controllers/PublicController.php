@@ -21,9 +21,9 @@ class PublicController extends Controller
         $mostViewedCategories = Category::orderByDesc('views')->take(5)->get();
         $mostViewedUsers = User::orderByDesc('views')->take(5)->get();
         $mostViewedCategoriesCard = Category::orderByDesc('views')->take(3)->get();
-        $mostViewedArticlesByCategory = Article::with('category')->orderBy('category_id')->orderByDesc('views')->get()->groupBy('category_id')->map(
+        $mostViewedArticlesByCategory = Article::where('is_accepted' , true)->with('category')->orderBy('category_id')->orderByDesc('views')->get()->groupBy('category_id')->map(
             function ($articles) {
-            return $articles->where('is_accepted' , true)->take(3);
+            return $articles->take(3);
         });
         $mostViewedArticlesByEstero = Article::with('category')->orderBy('category_id')->orderByDesc('views')->get()->groupBy('category_id'== 5)->map(
             function ($articles) {
@@ -79,7 +79,7 @@ class PublicController extends Controller
 
         $user->update();
 
-        return redirect()->route('homepage')->with('message', 'Grazie per averci contattato!');
+        return redirect()->route('homepage')->with('success', 'Grazie per averci contattato!');
     }
 
     public function workWithUs()
@@ -120,18 +120,7 @@ class PublicController extends Controller
 
     public function user()
     {
-        $articles = Article::where('is_accepted' , true)->orderBy('created_at', 'desc')->take(6)->get();
-        $mostViewedArticles = (new ArticleController())->mostViewedArticlesLastWeek();
-        $articles = Article::where('is_accepted' , true)->orderBy('created_at', 'desc')->take(6)->get();
-        $mostViewedCategories = Category::orderByDesc('views')->take(4)->get();
-        $mostViewedUsers = User::orderByDesc('views')->take(4)->get();
-        return view('user' , ['articles'=> $articles]);
-    }
-
-    public function articles()
-    {
-        $articles = Article::orderBy('created_at', 'desc')->get();
-        return view('articles' , ['articles'=> $articles]);
+        return view('user');
     }
 }
 

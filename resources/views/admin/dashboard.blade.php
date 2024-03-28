@@ -9,11 +9,17 @@
         </div>
     </div>
 
+    {{-- message --}}
     @if (session('message'))
-        <div class="alert alert-success text-center">
-            {{ session('message') }}
-        </div>
+    <div class="alert alert-danger text-center"><i class="bi bi-exclamation-circle mx-1"></i>{{ session('message') }}
+    </div>
     @endif
+    @if (session('success'))
+    <div class="alert alert-success text-center"><i class="bi bi-check-circle mx-1"></i>{{ session('success') }}
+    </div>
+    @endif
+    {{-- section navigate  --}}
+    <x-btn-nav />
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
