@@ -21,11 +21,7 @@
                     <a class="link-primary text-decoration-none"
                         href="{{ route('article.bycategory', compact('category'))}}">{{ $nameCategory }}</a>
                 </li>
-<<<<<<< HEAD
                 <span class="text-muted small fst-italic">tempo di lettura{{ $readDuration }} min </span>
-=======
-                 {{-- <span class="text-muted small fst-italic">tempo di lettura{{ $readDuration }} min</span> --}}
->>>>>>> dba72e0e0fde7accd93fc4791efc11ea0c18ee9a
             </ul>
             <h2 class="card-title entry-title h4 mb-0">
                 <a class="link-dark text-decoration-none" href="{{ $url }}">{{ $title }}</a>

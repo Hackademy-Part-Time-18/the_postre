@@ -28,7 +28,11 @@
 
     {{-- message --}}
     @if (session('message'))
-    <div class="alert alert-success text-center"><i class="bi bi-exclamation-circle mx-1"></i>{{ session('message') }}
+    <div class="alert alert-danger text-center"><i class="bi bi-exclamation-circle mx-1"></i>{{ session('message') }}
+    </div>
+    @endif
+    @if (session('success'))
+    <div class="alert alert-success text-center"><i class="bi bi-check-circle mx-1"></i>{{ session('success') }}
     </div>
     @endif
     {{-- section navigate  --}}
@@ -50,7 +54,7 @@
                                 :image="$article->image" :category="$article->category->id"
                                 :data="$article->created_at->format('d/m/Y')" :user="$article->user->id"
                                 :url="route('article.show', compact('article'))" :nameCategory="$article->category->name"
-                                :nameUser="$article->user->name" readDuration="{{ $article->readDuration()}}"
+                                :nameUser="$article->user->name" :readDuration="$article->readDuration()"
                                 :tags="$article->tags"
                             />
                         </div>
@@ -94,38 +98,41 @@
         </div>
     </div>
 
-    <!-- Conosci il mondo-->
-    <div id="carouselExampleCaptions" class="carousel slide container my-2">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
+<!-- Conosci il mondo -->
+<div id="carouselExampleCaptions" class="carousel slide container my-2">
+    <div class="carousel-indicators">
         @foreach ($mostViewedArticlesByEstero as $category => $articles)
-        @foreach ($articles as $key => $article)
-        <div id="{{ $articles->first()->category->name }}" class="carousel-inner">
-            <div class="carousel-item active {{ $key == 0 ? 'active' : '' }}">
-                <a href="{{ Storage::url($article->image) }}">
-                    <img src="{{ Storage::url($article->image) }}" class="d-block w-100" style="height: 800px; object-fit:fill;" alt="...">
-                </a>
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>{{ $article->title }}</h5>
-                    <h2>{{ $article->subtitle }}</h2>
-                    <p>{{ $article->body }}</p>
-                </div>
-            </div>
-        </div>
+            @foreach ($articles as $key => $article)
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{ $key }}" class="{{ $key == 0 ? 'active' : '' }}" aria-current="{{ $key == 0 ? 'true' : 'false' }}" aria-label="Slide {{ $key + 1 }}"></button>
+            @endforeach
         @endforeach
-        @endforeach
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
     </div>
+    <div class="carousel-inner">
+        @foreach ($mostViewedArticlesByEstero as $category => $articles)
+            @foreach ($articles as $key => $article)
+                <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                    <a href="{{ Storage::url($article->image) }}">
+                        <img src="{{ Storage::url($article->image) }}" class="d-block w-100" style="height: 800px; object-fit: fill;" alt="...">
+                    </a>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>{{ $article->title }}</h5>
+                        <h2>{{ $article->subtitle }}</h2>
+                        <p>{{ $article->body }}</p>
+                    </div>
+                </div>
+            @endforeach
+        @endforeach
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
     <!-- corousel di articoli-->
 
     <!-- Seconda sezione articoli-->

@@ -23,7 +23,7 @@ class PublicController extends Controller
         $mostViewedCategoriesCard = Category::orderByDesc('views')->take(3)->get();
         $mostViewedArticlesByCategory = Article::with('category')->orderBy('category_id')->orderByDesc('views')->get()->groupBy('category_id')->map(
             function ($articles) {
-            return $articles->take(3);
+            return $articles->where('is_accepted' , true)->take(3);
         });
         $mostViewedArticlesByEstero = Article::with('category')->orderBy('category_id')->orderByDesc('views')->get()->groupBy('category_id'== 5)->map(
             function ($articles) {

@@ -9,6 +9,7 @@ use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class ArticleController extends Controller
@@ -80,7 +81,7 @@ class ArticleController extends Controller
 
         }
 
-        return redirect(route('homepage'))->with('message', 'Articolo creato correttamente');
+        return redirect(route('homepage'))->with('success', 'Articolo creato correttamente');
     }
 
     /**
@@ -100,7 +101,7 @@ class ArticleController extends Controller
         $this->middleware('auth')->except('index', 'show','byCategory','byUser');
     }
 
-    //article most view last week
+    //articoli piu visti settimana passata
     public function mostViewedArticlesLastWeek()
     {
         $startDate = Carbon::now()->subWeek();
@@ -162,7 +163,7 @@ class ArticleController extends Controller
         }
         $article->tags()->sync($newTag);
 
-        return redirect(route('writer.dashboard'))->with('message', 'Hai correttamente aggiornato l\articolo scelto'); 
+        return redirect(route('writer.dashboard'))->with('success', 'Hai correttamente aggiornato l\articolo scelto'); 
     }
 
     /**
@@ -176,6 +177,6 @@ class ArticleController extends Controller
 
         $article->delete();
 
-        return redirect(route('writer.dashboard'))->with('message', 'Hai correttamente cancellato l\articolo scelto');
+        return redirect(route('writer.dashboard'))->with('success', 'Hai correttamente cancellato l\articolo scelto');
     }
 }
