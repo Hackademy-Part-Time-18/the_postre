@@ -81,7 +81,7 @@
             <div class="mx-auto col">
                 <form action="{{ route('search.articles') }}" method="get" class="d-flex">
                     <input class="form-control mx-2 text-dark border border-dark" name="key" type="text"
-                        placeholder="Search" aria-label="Search">
+                        placeholder="Cerca" aria-label="Search">
                     <button class="btn btn-dark bg-white btn-outline-dark search-btn" type="submit"><i
                             class="bi bi-search text-black"></i></button>
                 </form>

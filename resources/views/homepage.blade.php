@@ -240,13 +240,13 @@
                         <!-- Message input-->
                         <div class="form-floating mb-3">
                             <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" name="message"></textarea>
-                            <label for="message">Message</label>
+                            <label for="message">Messaggio</label>
                             <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.
                             </div>
                         </div>
 
                         <!-- Submit Button-->
-                        <div class="d-grid"><button class="btn btn-primary btn-xl" id="submitButton" type="submit">Submit</button></div>
+                        <div class="d-grid"><button class="btn btn-primary btn-xl" id="submitButton" type="submit">Contattaci</button></div>
                     </form>
                 </div>
             </div>
