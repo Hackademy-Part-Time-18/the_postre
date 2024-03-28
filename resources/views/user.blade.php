@@ -39,7 +39,7 @@
                                             @if ( Auth::user()->profile_image == NULL)
                                             <i class="bi bi-person-circle"></i>
                                             @else
-                                            <img src="{{ Auth::user()->profile_image }}"
+                                            <img src="{{ Storage::url(Auth::user()->profile_image) }}"
                                             class="img-lg rounded-circle mb-4" alt="profile image">
                                             @endif
                                             <h4>{{ Auth::user()->name }}</h4>

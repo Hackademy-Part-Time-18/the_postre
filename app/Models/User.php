@@ -28,6 +28,9 @@ class User extends Authenticatable
         'is_admin',
         'is_revisor',
         'is_writer',
+        'description',
+        'date_of_birth',
+        'profile_image'
     ];
 
     /**

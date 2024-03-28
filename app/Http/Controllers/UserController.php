@@ -15,7 +15,7 @@ class UserController extends Controller
         'description' => 'nullable|string|max:255',
     ]);
 
-    $imagePath = $request->file('profile_image')->store('profile_images', 'public');
+    $imagePath = $request->file('profile_image')->store('public/profile-images');
     $user = Auth::user();
     $user->update([
         'profile_image' => $imagePath,
