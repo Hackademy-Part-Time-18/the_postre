@@ -9,7 +9,6 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            @if (request()->route()->getname() != 'user')
                 <div class="collapse navbar-collapse " id="navbarResponsive">
                     <ul class="navbar-nav mx-auto align-items-start">
 
@@ -26,57 +25,7 @@
                             <li class="nav-item"><a class="nav-link" href="#contact">Contattaci</a></li>
                         @endif
                     </ul>
-                    {{-- navbar (user login) --}}
-                    <ul class="navbar-nav mx-auto">
-                        @auth
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="{{ route('article.create') }}" id="navbarDropdown"
-                                    role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Benvenuto {{ Auth::user()->name }}
-                                </a>
-                                <ul class="dropdown-menu" style="text-shadow:none;" aria-labelledby="navbarDropdown">
-                                    <li>
-                                        <a class="dropdown-item" href="{{ route('user') }}">Profilo</a>
-                                    </li>
-                                    @if (Auth::user()->is_admin)
-                                        <li><a class="dropdown-item" href="{{ route('admin.dashboard') }}">Dashboard
-                                                Admin</a></li>
-                                    @endif
-                                    @if (Auth::user()->is_revisor)
-                                        <li><a class="dropdown-item" href="{{ route('revisor.dashboard') }}">Dashboard del
-                                                revisore</a></li>
-                                    @endif
-                                    @if (Auth::user()->is_writer)
-                                        <li><a class="dropdown-item" href="{{ route('writer.dashboard') }}">dashboard dello
-                                                scrittore</a></li>
-                                    @endif
 
-                                    <li>
-                                        <a class="dropdown-item" href="#"
-                                            onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a>
-                                    </li>
-                                    <form method="post" action="{{ route('logout') }}" id="form-logout" class="d-none">
-                                        @csrf
-                                    </form>
-                                </ul>
-                            </li>
-                        @endauth
-                        {{-- navbar(user no login) --}}
-                        @guest
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false"> Unisciti a noi </a>
-                                <ul class="dropdown-menu mb-2" style="text-shadow:none;" aria-labelledby="navbarDropdown">
-                                    <li><a id="btn-accedi" class="dropdown-item"
-                                            href="{{ route('register') }}">Registrati</a>
-                                    </li>
-                                    <li><a id="btn-registrati" class="dropdown-item" href="{{ route('login') }}">Accedi</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        @endguest
-                    </ul>
-            @endif
             {{-- search bar --}}
             <div class="mx-auto col">
                 <form action="{{ route('search.articles') }}" method="get" class="d-flex">
@@ -86,6 +35,31 @@
                             class="bi bi-search text-black"></i></button>
                 </form>
             </div>
+                                {{-- navbar (user login) --}}
+                                <ul class="navbar-nav mx-auto">
+                                    @auth
+                                        <li class="nav-item dropdown">
+                                            <diva class="nav-link" href="{{ route('article.create') }}">
+                                                Benvenuto {{ Auth::user()->name }}
+                                            </diva>
+                                        </li>
+                                        <li class="mx-auto">
+                                            <a class="btn btn-dark bg-message border-0" href="#"
+                                                onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a>
+                                        </li>
+                                        <form method="post" action="{{ route('logout') }}" id="form-logout" class="d-none">
+                                            @csrf
+                                        </form>
+                                    @endauth
+                                    {{-- navbar(user no login) --}}
+                                    @guest
+                                                <li class="mx-1"><a id="btn-accedi" class="btn btn-dark bg-message border-0"
+                                                        href="{{ route('register') }}">Registrati</a>
+                                                </li>
+                                                <li class="mx-1"><a id="btn-registrati" class="btn btn-dark bg-message border-0" href="{{ route('login') }}">Accedi</a>
+                                                </li>
+                                    @endguest
+                                </ul>
 
         </div>
         </div>

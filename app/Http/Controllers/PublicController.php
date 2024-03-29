@@ -21,11 +21,11 @@ class PublicController extends Controller
         $mostViewedCategories = Category::orderByDesc('views')->take(5)->get();
         $mostViewedUsers = User::orderByDesc('views')->take(5)->get();
         $mostViewedCategoriesCard = Category::orderByDesc('views')->take(3)->get();
-        $mostViewedArticlesByCategory = Article::where('is_accepted' , true)->with('category')->orderBy('category_id')->orderByDesc('views')->get()->groupBy('category_id')->map(
+        $mostViewedArticlesByCategory = Article::where('is_accepted' , true)->with('category')->orderBy('category_id')->orderByDesc('views')->get()->groupBy('category_id')->take(5)->map(
             function ($articles) {
             return $articles->take(3);
         });
-        $mostViewedArticlesByEstero = Article::with('category')->orderBy('category_id')->orderByDesc('views')->get()->groupBy('category_id'== 5)->map(
+        $mostViewedArticlesByEstero = Article::where('category_id', 6)->where('is_accepted' , true)->orderBy('category_id')->orderByDesc('views')->get()->groupBy('category_id'== 5)->map(
             function ($articles) {
             return $articles->take(3);
         });
