@@ -1,38 +1,13 @@
-<div class="footer-dark">
-    {{-- <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 item2">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="#">Web design</a></li>
-                        <li><a href="#">Development</a></li>
-                        <li><a href="#">Hosting</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3 item2">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="#">Web design</a></li>
-                        <li><a href="#">Development</a></li>
-                        <li><a href="#">Hosting</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3 item2">
-                    <h3>About</h3>
-                    <ul>
-                        <li><a href="#">Company</a></li>
-                        <li><a href="#">Team</a></li>
-                        <li><a href="#">Careers</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3 item2 text">
-                    <h3>BBBootstrap.com</h3>
-                    <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus.</p>
-                </div>
-                <div class="col item social"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-youtube"></i></a><a href="#"><i class="fa fa-instagram"></i></a><a href="#"><i class="fa fa-google"></i></a></div>
-            </div>
-            <p class="copyright">BBBootstrap.com &copy; 2020</p>
-        </div>
-    </footer> --}}
+<div class=" bg-dark">
+    <div class="container">
+        <footer class="py-3 my-4">
+          <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="{{ route('homepage') }}" class="nav-link px-2 text-white">Home</a></li>
+            <li class="nav-item"><a href="{{ route('homepage') }}#contact" class="nav-link px-2 text-white">Contattaci</a></li>
+            <li class="nav-item"><a href="{{ route('homepage') }}#about" class="nav-link px-2 text-white">Chi siamo</a></li>
+            <li class="nav-item"><a href="{{ route('homepage') }}#recent" class="nav-link px-2 text-white">Articoli Recenti</a></li>
+          </ul>
+          <p class="text-center text-white">© 2024 Company, Inc</p>
+        </footer>
+      </div>
 </div>

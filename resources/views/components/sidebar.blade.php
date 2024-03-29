@@ -69,12 +69,12 @@
                 </li>
 @endif
 
-                <li class="sidebar-link">
+                {{-- <li class="sidebar-link">
                     <a href="#">
                         <i class='bi bi-bookmark-heart icon'></i>
-                        <span class="text nav-text">Like</span>
+                        <span class="text nav-text"></span>
                     </a>
-                </li>
+                </li> --}}
 
                 {{-- <li class="sidebar-link">
                     <a href="#">
@@ -90,10 +90,12 @@
             <li class="">
                 <a href="#">
                     <i class='bi bi-box-arrow-left icon'></i>
-                    <span class="text nav-text">Logout</span>
+                    <span class="text nav-text" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</span>
                 </a>
             </li>
-
+            <form method="post" action="{{ route('logout') }}" id="form-logout" class="d-none">
+                @csrf
+            </form>
             {{-- <li class="mode">
                 <div class="sun-moon">
                     <i class='bi bi-moon icon moon'></i>

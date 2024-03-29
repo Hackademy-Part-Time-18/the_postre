@@ -4,7 +4,7 @@
     {{-- background --}}
     <div class="container my-5">
         <div class="row justify-content-center">
-            <div class="col-12 col-md-8">
+            <div class="col-12 col-md-12 d-flex justify-content-center">
                 @if($errors->any())
                     <div class="alert alert-danger">
                         <ul>
@@ -27,7 +27,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="tags" class="form-label">Tags:</label>
-                        <span class="small fst-italic"> Dividi ogni tag con una virgola </span>
+                        <span class="small fst-italic text-secondary"> Dividi ogni tag con una virgola </span>
                         <input name="tags" class="form-control" id="tags" value="{{ old('tags') }}">
                     </div>
                     <div class="mb-3">
