@@ -60,7 +60,7 @@
       "image": "public/image/5.jpg",
       "user_id": 1,
       "category_id": 2,
-      "created_at": "2024-02-13",
+      "created_at": "2024-03-28",
       "is_accepted": true,
       "slug":"il-teamlocalence-il-campiona-di-calcio"
   },
@@ -72,7 +72,7 @@
       "image": "public/image/6.jpg",
       "user_id": 1,
       "category_id": 3,
-      "created_at": "2024-02-28",
+      "created_at": "2024-03-28",
       "is_accepted": true,
       "slug":"il-teamlocale-il-campiona-di-calcio"
   },
@@ -84,7 +84,7 @@
       "image": "public/image/1.jpg",
       "user_id": 1,
       "category_id": 4,
-      "created_at": "2024-02-13",
+      "created_at": "2024-03-28",
       "is_accepted": true,
       "slug":"il-teamlocacampiona-di-calcio"
   },
@@ -96,7 +96,7 @@
       "image": "public/image/2.jpg",
       "user_id": 1,
       "category_id": 3,
-      "created_at": "2024-02-28",
+      "created_at": "2024-03-28",
       "is_accepted": true,
       "slug":"icalence-il-campiona-di-calcio"
   },
@@ -108,7 +108,7 @@
       "image": "public/image/3.jpg",
       "user_id": 1,
       "category_id": 1,
-      "created_at": "2024-02-28",
+      "created_at": "2024-03-28",
       "is_accepted": true,
       "slug":"il-teamlocalenceio"
   },
@@ -120,7 +120,7 @@
       "image": "public/image/4.jpg",
       "user_id": 1,
       "category_id": 2,
-      "created_at": "2024-02-28",
+      "created_at": "2024-03-28",
       "is_accepted": true,
       "slug":"il-t-calcio"
     }
