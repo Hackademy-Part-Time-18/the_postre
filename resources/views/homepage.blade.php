@@ -73,7 +73,7 @@
                             data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 @foreach ($articles as $key => $article)
-                                    <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                                    <div class="carousel-item text-visibility {{ $key == 0 ? 'active' : '' }}">
                                         <a href="{{ route('article.show', compact('article')) }}">
                                             <img src="{{ Storage::url($article->image) }}" class="d-block w-100"
                                                 style="height: 200px; object-fit: cover;" alt="...">
@@ -158,10 +158,10 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-8 text-center">
-                    <h2 class="text-white mt-0">Come nasce "ThePostre" ?</h2>
+                    <h2 class="text-white mt-0">Come nasce ThePostre ?</h2>
                     <hr>
                     <p class="text-white-75 mb-4">
-                        The_Postre racconta l'esperienza collaborativa tra Maelo, Luca e Nicolò, che dopo un incontro
+                        ThePostre racconta l'esperienza collaborativa tra Maelo, Luca e Nicolò, che dopo un incontro
                         fortuito, hanno unito le proprie competenze per concepire un progetto di eccellenza. Attraverso
                         una sinergia di passioni e competenze nel campo della tecnologia, del design e della scrittura,
                         abbiamo dedicato impegno e creatività per sviluppare una piattaforma unica. Il risultato è stato
@@ -169,7 +169,7 @@
                         Questa esperienza dimostra come individui con differenti background possano convergere verso un
                         obiettivo comune e realizzare progetti di straordinaria rilevanza lavorando insieme.
                     </p>
-                    <a class="btn btn-light btn-xl" href="#recent">Dai un occhiata ai nostri ultimi articoli!</a>
+                    <a class="btn btn-light btn-xl" href="#recent">Dai un occhiata ai nostri ultimi articoli</a>
                 </div>
             </div>
         </div>
@@ -182,9 +182,9 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-8 col-xl-6 text-center">
-                    <h2 class="mt-0">Restiamo in contatto!</h2>
+                    <h2 class="mt-0">Restiamo in contatto</h2>
                     <hr class="divider" />
-                    <p class="text-muted mb-5">Hai qualche suggerimento o vuoi contactarci</p>
+                    <p class="text-muted mb-5">Hai qualche suggerimento o vuoi contattarci ?</p>
                 </div>
             </div>
             <div class="row gx-4 gx-lg-5 justify-content-center mb-5">

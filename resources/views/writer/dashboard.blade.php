@@ -9,11 +9,15 @@
     </div>
 </div>
 
-@if (session('message'))
-    <div class="alert alert-success text-center">
-        {{ session('message')}}
+    {{-- message --}}
+    @if (session('message'))
+    <div class="alert alert-danger text-center"><i class="bi bi-exclamation-circle mx-1"></i>{{ session('message') }}
     </div>
-@endif
+    @endif
+    @if (session('success'))
+    <div class="alert alert-success text-center"><i class="bi bi-check-circle mx-1"></i>{{ session('success') }}
+    </div>
+    @endif
 <div class="container bg-white p-1 my-5" style="border-radius: 0.5em">
     <div class="row justify-content-center">
         <div class="col-12">

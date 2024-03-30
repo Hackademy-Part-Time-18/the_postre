@@ -1,8 +1,15 @@
-<div onmouseover="MouseSideUp()" onmouseout="MouseSideLeave()" class="sidebar close">
+<div onmouseover="MouseSideUp()" onmouseout="MouseSideLeave()" class="sidebar @if (request()->route()->getname()!='homepage') bg-dark
+@endif close ">
     <div class="header-sidebar">
         <div class="image-text">
             <span class="image">
-                <i class="bi bi-person"></i>
+                @if (Auth::user()->profile_image == NULL)
+                    
+                <i class="bi bi-person text-white"></i>
+                @else
+                <img src="{{ Storage::url(Auth::user()->profile_image) }}" style="border-radius:50%;width:40px;height:40px" alt="">
+                @endif
+
             </span>
 
             <div class="text logo-text">
@@ -51,30 +58,29 @@
                     </li>
                 @endif
                 @if (Auth::user()->is_revisor)
-
-                <li class="sidebar-link">
-                    <a href="{{ route('revisor.dashboard') }}">
-                        <i class='bi bi-sunglasses icon'></i>
-                        <span class="text nav-text">Dashboard revisore</span>
-                    </a>
-                </li>
+                    <li class="sidebar-link">
+                        <a href="{{ route('revisor.dashboard') }}">
+                            <i class='bi bi-sunglasses icon'></i>
+                            <span class="text nav-text">Dashboard revisore</span>
+                        </a>
+                    </li>
                 @endif
 
-                    @if (Auth::user()->is_writer)
+                @if (Auth::user()->is_writer)
+                    <li class="sidebar-link">
+                        <a href="{{ route('writer.dashboard') }}">
+                            <i class='bi bi-vector-pen icon'></i>
+                            <span class="text nav-text">Dashboard scrittore</span>
+                        </a>
+                    </li>
+                @endif
+
                 <li class="sidebar-link">
-                    <a href="{{ route('writer.dashboard') }}">
-                        <i class='bi bi-vector-pen icon'></i>
-                        <span class="text nav-text">Dashboard scrittore</span>
+                    <a href="{{ route('user') }}">
+                        <i class="bi bi-file-person-fill icon"></i>
+                        <span class="text nav-text">Profilo</span>
                     </a>
                 </li>
-@endif
-
-                {{-- <li class="sidebar-link">
-                    <a href="#">
-                        <i class='bi bi-bookmark-heart icon'></i>
-                        <span class="text nav-text"></span>
-                    </a>
-                </li> --}}
 
                 {{-- <li class="sidebar-link">
                     <a href="#">
@@ -90,7 +96,8 @@
             <li class="">
                 <a href="#">
                     <i class='bi bi-box-arrow-left icon'></i>
-                    <span class="text nav-text" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</span>
+                    <span class="text nav-text"
+                        onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</span>
                 </a>
             </li>
             <form method="post" action="{{ route('logout') }}" id="form-logout" class="d-none">

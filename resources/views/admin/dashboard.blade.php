@@ -19,7 +19,6 @@
     </div>
     @endif
     {{-- section navigate  --}}
-    <x-btn-nav />
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>

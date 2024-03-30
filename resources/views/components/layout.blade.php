@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic"
-        rel="stylesheet" type="text/css" />
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="stylesheet" href="https://cdn.lineicons.com/4.0/lineicons.css" />
     <title>The Postre</title>
 
@@ -16,8 +15,7 @@
 
 <body id="page-top">
     @if (
-        request()->route()->getName() != 'register' && request()->route()->getName() != 'login' &&
-            request()->route()->getName() != 'user')
+        request()->route()->getName() != 'register' && request()->route()->getName() != 'login')
         <x-navbar />
         @auth            
         <x-sidebar/>
@@ -31,7 +29,7 @@
     {{ $slot }}
 
 
-    <x-footer />
+    <x-footer/>
 </body>
 
 </html>

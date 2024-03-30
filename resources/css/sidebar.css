@@ -1,8 +1,8 @@
 :root{
    
     --body-color: #f7eae4;
-    --sidebar-color: #fc680c;
-    --primary-color: #c46207;
+    --sidebar-color: rgb(244, 98, 58);
+    --primary-color: #ffffff;
     --primary-color-light: #F6F5FF;
     --toggle-color: #DDD;
     --text-color: #ffffff;
@@ -27,7 +27,7 @@ body.dark{
     top: 80px;
     left: 2px;
     height: 70%;
-    width: 250px;
+    width: 270px;
     padding: 10px 0px;
     background: var(--sidebar-color);
     transition: var(--tran-05);
@@ -35,7 +35,9 @@ body.dark{
     border-radius: 5px;
 }
 .sidebar.close{
-    width: 50px;
+    width: 54px;
+    background: var(--sidebar-color) !important;
+
 }
 @media (width < 1050px) {
     .sidebar{
@@ -50,6 +52,7 @@ body.dark{
 .sidebar li{
     height: 50px;
     list-style: none;
+    margin: 2px;
     display: flex;
     align-items: center;
     margin-top: 10px;
@@ -133,8 +136,8 @@ body.dark{
     transform: translateY(-50%) rotate(180deg);
     height: 40px;
     width: 40px;
-    background-color: var(--primary-color);
-    color: var(--sidebar-color);
+    background-color:#943a14;
+    color: var(--primary-color);
     border-radius: 3px;
     display: flex;
     align-items: center;
