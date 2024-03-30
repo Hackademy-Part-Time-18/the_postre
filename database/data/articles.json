@@ -140,6 +140,82 @@
       "created_at": "2024-03-28",
       "is_accepted": true,
       "views": 3,
+<<<<<<< HEAD
+      "slug":"il-teamlocale-vince-il-campiona-di-calcio"
+  },
+  {
+      "id": 2,
+      "title": "Le azioni tecnologiche raggiungono un nuovo massimo storico",
+      "subtitle": "Il settore tecnologico rimane leader sul mercato",
+      "body": "Le azioni delle principali aziende tecnologiche hanno raggiunto un nuovo massimo storico, trainando il mercato azionario e generando ottimismo tra gli investitori.",
+      "image": "public/image/2.jpg",
+      "user_id": 1,
+      "category_id": 2,
+      "created_at": "2024-03-28",
+      "is_accepted": true,
+      "views": 3,
+      "slug":"il-teamlocale-vince-il-campionato-di-calc"
+
+  },
+  {
+      "id": 3,
+      "title": "Emergono nuove rivelazioni nel caso di corruzione politica",
+      "subtitle": "Lo scandalo politico scuote il governo",
+      "body": "In una serie di rivelazioni scioccanti, sono stati esposti dettagli aggiuntivi sullo scandalo di corruzione che coinvolge vari funzionari governativi di alto livello.",
+      "image": "public/image/3.jpg",
+      "user_id": 1,
+      "category_id": 4,
+      "created_at": "2024-03-28",
+      "is_accepted": true,
+      "views": 3,
+      "slug":"il-teamcale-vince-il-campiona-di-calcio"
+  },
+  {
+      "id": 4,
+      "title": "L'ultimo avanzamento medico nella lotta contro il cancro",
+      "subtitle": "Nuova terapia mostra risultati promettenti",
+      "body": "Un nuovo approccio terapeutico nel trattamento del cancro ha mostrato risultati promettenti negli studi preliminari, portando speranza sia ai pazienti che ai medici.",
+      "image": "public/image/4.jpg",
+      "user_id": 1,
+      "category_id": 3,
+      "created_at": "2024-03-28",
+      "is_accepted": true,
+      "views": 3,
+      "slug":"iteamlocale-vince-il-campiona-di-calcio"
+  },
+  {
+      "id": 5,
+      "title": "Il mercato immobiliare registra un aumento della domanda",
+      "subtitle": "Gli acquirenti cercano nuove abitazioni in un mercato competitivo",
+      "body": "Con un'economia in crescita e tassi di interesse favorevoli, il mercato immobiliare sta registrando un aumento della domanda di abitazioni, portando a un aumento dei prezzi e a una maggiore concorrenza tra gli acquirenti.",
+      "image": "public/image/5.jpg",
+      "user_id": 1,
+      "category_id": 2,
+      "created_at": "2024-03-28",
+      "is_accepted": true,
+      "slug":"il-teamlocalence-il-campiona-di-calcio"
+  },
+  {
+      "id": 6,
+      "title": "La città si prepara per un'onda di calore record",
+      "subtitle": "Avvisi di calore estremo emessi",
+      "body": "Con temperature previste per raggiungere livelli record, le autorità locali stanno prendendo misure per proteggere i residenti vulnerabili e garantire la sicurezza pubblica durante l'onda di calore.",
+      "image": "public/image/6.jpg",
+      "user_id": 1,
+      "category_id": 3,
+      "created_at": "2024-03-28",
+      "is_accepted": true,
+      "slug":"il-teamlocale-il-campiona-di-calcio"
+  },
+  {
+      "id": 7,
+      "title": "Il nuovo piano infrastrutturale riceve critiche miste",
+      "subtitle": "Discussione sul finanziamento e l'efficacia del progetto",
+      "body": "Il piano proposto per migliorare l'infrastruttura nazionale ha generato un intenso dibattito politico, con i critici che mettono in discussione il finanziamento e l'efficacia delle misure proposte.",
+      "image": "public/image/1.jpg",
+      "user_id": 1,
+      "category_id": 4,
+=======
       "slug": "la-squadra-locale-vince-il-campionato-di-calcio"
     },
     {
@@ -150,6 +226,7 @@
       "image": "public/image/12.jpg",
       "user_id": 1,
       "category_id": 6,
+>>>>>>> cf89e2e9447eea1125b23f5d7eab0024ba17225c
       "created_at": "2024-03-28",
       "is_accepted": true,
       "views": 5,
@@ -162,7 +239,11 @@
       "body": "Gli eventi politici recenti hanno generato tensioni significative tra vari paesi dell'America del Sud, portando la regione sull'orlo di una crisi politica.",
       "image": "public/image/13.jpg",
       "user_id": 1,
+<<<<<<< HEAD
+      "category_id": 3,
+=======
       "category_id": 6,
+>>>>>>> cf89e2e9447eea1125b23f5d7eab0024ba17225c
       "created_at": "2024-03-28",
       "is_accepted": true,
       "views": 7,
@@ -175,7 +256,11 @@
       "body": "Con il miglioramento della connettività e l'aumento della prosperità economica, il turismo in Asia ha sperimentato una crescita esponenziale negli ultimi anni, diventando una fonte importante di entrate per la regione.",
       "image": "public/image/14.jpg",
       "user_id": 1,
+<<<<<<< HEAD
+      "category_id": 1,
+=======
       "category_id": 6,
+>>>>>>> cf89e2e9447eea1125b23f5d7eab0024ba17225c
       "created_at": "2024-03-28",
       "is_accepted": true,
       "views": 100,
@@ -188,7 +273,11 @@
       "body": "Il cambiamento climatico sta avendo un impatto devastante sulla biodiversità in Africa, con la perdita di habitat naturali e l'estinzione delle specie che minacciano la stabilità degli ecosistemi.",
       "image": "public/image/15.jpg",
       "user_id": 1,
+<<<<<<< HEAD
+      "category_id": 2,
+=======
       "category_id": 6,
+>>>>>>> cf89e2e9447eea1125b23f5d7eab0024ba17225c
       "created_at": "2024-03-28",
       "is_accepted": true,
       "views": 11,

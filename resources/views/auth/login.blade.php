@@ -43,12 +43,12 @@
                                             <label for="check"><span class="icon me-1"></span>Ricordami</label>
                                         </div>
                                         <div class="group">
-                                            <input type="submit" class="button " value="Sign In">
+                                            <input type="submit" class="button " value="Accedi">
                                         </div>
                                         <div class="hr"></div>
                                         {{-- <div class="foot">
                                         <p id="username"><a href="#tab-2"> non sei registrato?</a></p>
-                                        <a href="#">Forgot Password?</a>
+                                        <a href="#">Dimenticato la Password?</a>
                                     </div> --}}
                                     </div>
                                 </form>
@@ -72,25 +72,25 @@
                                         <div class="group">
                                             <label for="username" class="label">Username</label>
                                             <input name="name" type="text" class="input" id="username"
-                                                value="{{ old('name') }}" placeholder="Create your Username">
+                                                value="{{ old('name') }}" placeholder="Crea il tuo Username">
                                         </div>
                                         <div class="group">
                                             <label for="email" class="label">Email</label>
                                             <input type="text" id="email" class="input" name="email"
-                                                placeholder="Enter your email address">
+                                                placeholder="Entra con la tua email">
                                         </div>
                                         <div class="group">
                                             <label for="password" class="label">Password</label>
                                             <input name="password" type="password" class="input" id="password"
-                                                placeholder="Create your password">
+                                                placeholder="Crea la tua password">
                                         </div>
                                         <div class="group">
-                                            <label for="password_confirmation" class="label">Password confirm</label>
+                                            <label for="password_confirmation" class="label">Password confermata</label>
                                             <input name="password_confirmation" type="password" class="input"
-                                                id="password_confirmation" placeholder="Repeat your password">
+                                                id="password_confirmation" placeholder="Ripeti la tua password">
                                         </div>
                                         <div class="group">
-                                            <input type="submit" class="button" value="Sign Up">
+                                            <input type="submit" class="button" value="Accedi">
                                         </div>
                                     </div>
                                 </form>
